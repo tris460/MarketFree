@@ -6,7 +6,7 @@
 }
 
 body {
-  background-color: #dededa;
+  background-color: #fff;
 }
 
 .layout {
@@ -16,4 +16,10 @@ body {
 .main {
   margin: 0 auto;
   max-width: 1500px;
+}
+
+.title {
+  font-size: 26px;
+  text-align: center;
+  color: #888;
 }
