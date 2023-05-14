@@ -1,12 +1,26 @@
-#categories {
-  padding: 20px;
-}
-
-.categories {
+@mixin flex-center-wrap {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+}
+
+#benefits, #categories {
+  padding: 20px;
+}
+
+.benefits {
+  @include flex-center-wrap;
+  justify-content: space-evenly;
+
+  &__ind {
+    text-align: center;
+    margin: 3px 15px;
+  }
+}
+
+.categories {
+  @include flex-center-wrap;
 
   &__ind {
     background-color: #000;
