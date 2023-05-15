@@ -1,0 +1,27 @@
+#header {
+  background-color: #121414;
+}
+
+.menu {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__form {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & > input {
+      width: 70%;
+    }
+  }
+}
+
+.btn {
+  border: 1px solid #fff;
+  margin: 10px;
+  color: #fff;
+}
