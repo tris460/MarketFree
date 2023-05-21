@@ -5,6 +5,11 @@
   .container{
     margin: 50px 0px 50px 120px;
   }
+
+  .container2{
+    margin: 5%;
+  }
+
   form {
     display: flex;
     flex-direction: column;
@@ -67,4 +72,55 @@
     object-fit: cover;
   }
   
+  .pedido {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: max-content;
+  
+    .id {
+      font-weight: bold;
+    }
+  
+    .fecha {
+      color: gray;
+    }
+  
+    .total {
+      font-size: 18px;
+      color: green;
+    }
+  }
+  
+  .pagos-lista {
+    h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+  
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+  
+      li {
+        margin-bottom: 10px;
+  
+        .pago-item {
+          display: flex;
+          justify-content: space-between;
+          background-color: #f2f2f2;
+          padding: 10px;
+  
+          .pago-nombre {
+            font-weight: bold;
+          }
+  
+          .pago-monto {
+            color: #27ae60;
+          }
+        }
+      }
+    }
+  }
   
