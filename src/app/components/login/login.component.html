@@ -1,1 +1,55 @@
-<p>login works!</p>
+<div id="login" class="main">
+  <div class="login">
+    <div class="login__logo">
+      <a href="#">
+        <img src="../../../assets/Logo - Test.jpg" alt="MarketFree Logo" title="MarketFree logo">
+      </a>
+    </div>
+    <div class="login__tabs">
+      <ul class="nav nav-tabs nav-fill">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" data-bs-toggle="tab" href="#login-content">Iniciar sesión</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#register-content">Registrarme</a>
+        </li>
+      </ul>
+      <div class="tab-content">
+        <div class="tab-pane fade show active" id="login-content">
+          <form>
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="floatingInput" placeholder="Correo">
+              <label for="floatingInput">Correo</label>
+            </div>
+            <div class="form-floating">
+              <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña">
+              <label for="floatingPassword">Contraseña</label>
+            </div>
+            <button type="button" class="btn">Iniciar Sesión</button>
+          </form>
+        </div>
+        <div class="tab-pane fade" id="register-content">
+          <form>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="floatingName" placeholder="Nombre">
+              <label for="floatingNamet">Nombre</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="floatingEmail" placeholder="Correo">
+              <label for="floatingEmail">Correo</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña">
+              <label for="floatingPassword">Contraseña</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control" id="floatingConfirmPassword" placeholder="Confirmar contraseña">
+              <label for="floatingConfirmPassword">Confirmar contraseña</label>
+            </div>
+            <button type="button" class="btn">Registrarme</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
