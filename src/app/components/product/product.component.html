@@ -1,69 +1,58 @@
 <app-header> </app-header>
-<div class="header__top">
-    <span>
-        <i class="fas fa-shipping-fast"></i>
-        Envío gratuito a domicilio a partir de MXN 699.00
-    </span>
-</div>
-<div id="product" class="main">
 
-    
-<!--LOADER-->
-<div class="loader js-loader" role="loader">
-    <div class="loader__container js-loader-container">
-        <i class="fas fa-spinner"></i>
-        <span>
-            <data class="is-add-cart-loader">Agregando producto al carrito</data>
-            <data class="is-add-cart-success">Se agrego correctamente</data>
-        </span>
-    </div>
-</div>
-<!--LOADER-->
+<div class="barra">
+    <p class="barra__txt">
+        COMPRA
+    </p>
+</div> <!-- Aqui va la barra roja -->
+<div id="product" class="main" >
 
-
-<main class="product">
-    <section class="layout">
-        <!--ROW-->
-        <div class="product__row" role="row">
-            <div class="column" role="column">
-                <!--IMAGE-->
-                <div class="product__thumb" role="thumb">
-                    <div class="product__thumb__loader js-product-thumb-loader" role="loader"></div>
-                    <div class="product__thumb__image is-background">
-                        <img src="../../../assets/Product - Test.jpg" alt="Shop">
-                    </div>
+        <div class="row" >
+            <div class="col-6 flex"> 
+            
+                <img src="../../../assets/One_Product-Test.jpg" alt="Producto1" title="Producto">
+            
+            </div> <!-- Es una seccion -->
+            <div class="col-6">
+                <div class="info">
+                    <p class="info_nombre">Nombre del Producto:</p>
+                    <p class="info_precio">$$</p>
+                    <p class="info_des">Descripcion:</p>
+                    <p class="info_cant">Cantidad: <select name="" id=""> 
+                        <option value="1">1</option>
+                        <option value="1">2</option>
+                        <option value="1">3</option>
+                        <option value="1">4</option>
+                    </select> </p>
+                    
+                    <button class="info_btn">Comprar Ahora</button>
+                    <button  class="info_btn">Agregar al Carrito</button>
                 </div>
-                <!--IMAGE-->
-            </div>
-            <div class="column" role="column">
-                <article class="product__information">
-                    <div class="product__information__stars">
-                        <i class="fas fa-star" aria-hidden="true" style="visibility: inherit; opacity: 1;"></i>
-                        <i class="fas fa-star" aria-hidden="true" style="visibility: inherit; opacity: 1;"></i>
-                        <i class="fas fa-star" aria-hidden="true" style="visibility: inherit; opacity: 1;"></i>
-                        <i class="fas fa-star" aria-hidden="true" style="visibility: inherit; opacity: 1;"></i>
-                        <i class="fas fa-star" aria-hidden="true" style="visibility: inherit; opacity: 1;"></i>
-                    </div>
-                    <h1>Bernardo ALV</h1>
-                    
-                    <span>SKU: <b>UNICO EN SU ESPECIE </b></span>
-                    <span><i class="fas fa-tag"></i>Hombre</span>
-                    
-                    <data>$1,999.00 MXN</data>
-
-                    <p>La mas pvta  </p>
-
-                    <button type="button" class="js-product-add-cart">
-                        <i class="fas fa-shopping-cart"></i>
-                        Comprar
-                    </button>
-                </article>
             </div>
         </div>
-        <!--ROW-->
-    </section>
-</main>
 
-
+  <!-- Products -->
+  <div id="">
+    <div class="products">
+      <div class="title left">
+        <p>Productos Relacionados</p>
+      </div>
+      <div class="products__row">
+        <div class="products__row__card">
+          <img src="../../../assets/Product - Test.jpg" class="products__row__card--img" alt="Product 1">
+          <div class="products__row__card--text">
+            <p>Nombre del producto</p>
+            <p class="price-text">Precio</p>
+          </div>
+        </div>
+        <div class="products__more">
+          <div class="products__more--circle">
+            <img src="../../../assets/arrow-right.svg" alt="Flecha para ver más" title="Da click para ver más productos">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
         <app-footer> </app-footer>
