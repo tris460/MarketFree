@@ -8,6 +8,7 @@ import { PaymentComponent } from './components/payment/payment.component';
 import { ProductComponent } from './components/product/product.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { SellComponent } from './components/sell/sell.component';
+import { PaymentMethodComponent } from './components/payment-method/payment-method.component';
 
 const routes: Routes = [
   { path: 'cart', component: CartComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'payment', component: PaymentComponent },
+  { path: 'payment-method', component: PaymentMethodComponent },
   { path: 'product', component: ProductComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'sell', component: SellComponent },
