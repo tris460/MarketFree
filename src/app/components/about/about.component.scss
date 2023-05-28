@@ -1,6 +1,13 @@
-.main{ 
-    display: Flex; flex-wrap: wrap}
+.main{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px 40px 40px;
+}
 
+.title {
+padding-top: 30px;
+}
 
 .card {
     position: relative;
@@ -92,7 +99,7 @@
 }
 
 .card .contact a:hover {
-    
+
     background: #0b6164;
-   
+
 }
