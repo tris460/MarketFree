@@ -60,3 +60,8 @@ main {
   textarea {
     resize: vertical;
   }
+
+  paypal-button-container{
+    display: flex;
+    align-items: center;
+  }
