@@ -1,0 +1,46 @@
+#header {
+  background-color: #121414;
+}
+
+.menu {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &__form {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    & > input {
+      width: 70%;
+    }
+  }
+
+  &__categories {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0 150px;
+
+    & > a {
+      color: #fff;
+      padding: 20px 10px 10px;
+    }
+  }
+}
+
+.btn {
+  border: 1px solid #fff;
+  margin: 10px;
+  color: #fff;
+}
+
+.nav-link, a {
+  color: #fff;
+}
+
+.dropdown-menu {
+  background-color: #000;;
+}
