@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CartComponent } from './components/cart/cart.component';
 import { FaqsComponent } from './components/faqs/faqs.component';
@@ -8,6 +8,7 @@ import { PaymentComponent } from './components/payment/payment.component';
 import { ProductComponent } from './components/product/product.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { SellComponent } from './components/sell/sell.component';
+import { HelpComponent } from './components/help/help.component';
 
 const routes: Routes = [
   { path: 'cart', component: CartComponent },
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'product', component: ProductComponent },
   { path: 'profile', component: ProfileComponent },
   { path: 'sell', component: SellComponent },
+  { path: 'help', component: HelpComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full'}
 ];
 
