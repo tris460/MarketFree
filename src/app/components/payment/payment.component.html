@@ -65,30 +65,24 @@
         </div>
       </div>
     </div>
-    <form class="form" autocomplete="off" novalidate>
-      <fieldset>
-        <label for="card-number">Número de Tarjeta</label>
-        <input type="num" class="input-cart-number" maxlength="4" />
-        <input type="num" class="input-cart-number" maxlength="4" />
-        <input type="num" class="input-cart-number" maxlength="4" />
-        <input type="num" class="input-cart-number" maxlength="4" />
-      </fieldset>
-      <fieldset>
-        <label for="card-holder">Nombre</label>
-        <input type="text" id="card-holder" />
-      </fieldset>
-      <fieldset class="fieldset-expiration">
-        <label>Fecha de Expiración</label>
-        <div>
-          <input type="num" class="input-exp-number" maxlength="2" />
-          <input type="num" class="input-exp-number" maxlength="2" />
+    <form class="form" autocomplete="on">
+        <div class="form-floating mb-3">
+        <input type="num" class="form-control" id="floatingNumber" placeholder="Numero de tarjeta">
+        <label for="floatingNumber">Numero de tarjeta</label>
         </div>
-      </fieldset>
-      <fieldset class="fieldset-ccv">
-        <label for="card-ccv">CCV</label>
-        <input type="text" id="card-ccv" maxlength="3" />
-      </fieldset>
-      <button class="btn"><i class="fa fa-lock"></i> Validar</button>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingName" placeholder="Nombre">
+        <label for="floatingName">Nombre</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="num" class="form-control" id="floatingDate" placeholder="Fecha de expiración">
+        <label for="floatingDate">Fecha de expiración</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="num" class="form-control" id="floatingCVV" placeholder="CVV">
+        <label for="floatingCVV">CVV</label>
+      </div>
+      <button class="btn">Pagar</button>
     </form>
   </div>
 
