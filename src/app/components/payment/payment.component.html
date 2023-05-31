@@ -1,3 +1,5 @@
+<app-header></app-header>
+
 <div class="checkout">
   <div class="credit-card-box">
     <div class="flip">
@@ -66,19 +68,21 @@
   <form class="form" autocomplete="off" novalidate>
     <fieldset>
       <label for="card-number">Número de Tarjeta</label>
-      <input type="num" id="card-number" class="input-cart-number" maxlength="4" />
-      <input type="num" id="card-number-1" class="input-cart-number" maxlength="4" />
-      <input type="num" id="card-number-2" class="input-cart-number" maxlength="4" />
-      <input type="num" id="card-number-3" class="input-cart-number" maxlength="4" />
+      <input type="num" class="input-cart-number" maxlength="4" />
+      <input type="num" class="input-cart-number" maxlength="4" />
+      <input type="num" class="input-cart-number" maxlength="4" />
+      <input type="num" class="input-cart-number" maxlength="4" />
     </fieldset>
     <fieldset>
       <label for="card-holder">Nombre</label>
       <input type="text" id="card-holder" />
     </fieldset>
     <fieldset class="fieldset-expiration">
-      <label for="card-ccv">Fecha de Expiración</label>
-      <input type="text" id="date-month" maxlength="2" />
-      <input type="text" id="date-year" maxlength="2" />
+      <label>Fecha de Expiración</label>
+      <div>
+        <input type="num" class="input-exp-number" maxlength="2" />
+        <input type="num" class="input-exp-number" maxlength="2" />
+      </div>
     </fieldset>
     <fieldset class="fieldset-ccv">
       <label for="card-ccv">CCV</label>
@@ -87,3 +91,5 @@
     <button class="btn"><i class="fa fa-lock"></i> Validar</button>
   </form>
 </div>
+
+<app-footer></app-footer>
