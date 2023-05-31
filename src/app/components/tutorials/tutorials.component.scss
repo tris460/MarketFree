@@ -1,0 +1,83 @@
+.tutorial-page {
+    text-align: center;
+    margin: 5%;
+  
+    h2 {
+      margin-bottom: 30px;
+    }
+  
+    .tutorial-container {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  
+    .tutorial {
+      width: 25%;
+      margin-bottom: 30px;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      text-align: left;
+  
+      h3 {
+        margin-top: 15px;
+        text-align: center;
+      }
+  
+      p {
+        margin-bottom: 15px;
+        text-align: justify;
+        padding-bottom: 5%;
+        padding-top: 5%;
+      }
+
+      .button {
+        display: flex;
+        justify-content: center; /* Alineación horizontal centrada */
+      }
+
+      .download-link {
+        text-align: center;
+        width: 30%;
+        background-color: #537bc5;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 4px;
+        text-decoration: none;
+        transition: background-color 0.3s;
+  
+        &:hover {
+          background-color: #333;
+        }
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      
+      .dropdown-btn {
+        background-color: #f1f1f1;
+        color: #333;
+        padding: 8px;
+        border: none;
+        cursor: pointer;
+      }
+      
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #fff;
+        min-width: 200px;
+        padding: 8px;
+        border: 1px solid #ccc;
+      }
+      
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      
+    }
+  }
+  
