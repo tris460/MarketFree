@@ -1,5 +1,204 @@
-<app-header></app-header>
+   <app-header></app-header>
+   <div class="container">
+        <div class="row">
+        <div class="col-4">
+        <div class="card custom-shadow color" style="width: 18rem;">
+            <div class="card-body">
+            <h5 class="card-title"><b>Mi cuenta</b></h5>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item color" (click)="toggleDiv('opcion1')"><button class="btn btn-outline-secondary"><img src="../../../assets/truck.svg" alt=""> Mis pedidos </button> </li>
+                <li class="list-group-item color" (click)="toggleDiv('opcion2')"><button class="btn btn-outline-secondary"><img src="../../../assets/geo-alt.svg" alt=""> Direccion </button>  </li>
+                <li class="list-group-item color" (click)="toggleDiv('opcion3')"><button class="btn btn-outline-secondary"><img src="../../../assets/credit-card.svg" alt=""> Mis pagos </button> </li>
+                <li class="list-group-item color" (click)="toggleDiv('opcion5')"><button class="btn btn-outline-secondary"><img src="../../../assets/rulers.svg" alt=""> Mis medidas </button> </li>
+                <li class="list-group-item color" (click)="toggleDiv('opcion6')"><button class="btn btn-outline-secondary"><img src="../../../assets/gift.svg" alt=""> Cupones de regalo </button> </li>
+              </ul>
+            </div>
+        </div>
+        </div>
+        <div class="col-4">
+            <div class="d-flex justify-content-center align-items-center"></div>
+            <div class="circle">
+              <img src="../../../assets/Sebas.jpg" alt="Descripción de la imagen">
+            </div>
+            <h2 style="text-align: center;"><b> Bienvenido Usuario</b></h2>
+          </div>
 
-<p>profile works!</p>
+        <div class="col-4">
+            <div class="d-flex justify-content-end align-items-center">
+                <div class="card custom-shadow color" style="width: 18rem;">
+                    <div class="card-body">
+                        <h5 class="card-title"><b>Mi Informacion</b> </h5>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item color" (click)="toggleDiv('opcion7')"><button class="btn btn-outline-secondary"><img src="../../../assets/person.svg" alt=""> Mis datos </button> </li>
+                            <li class="list-group-item color" (click)="toggleDiv('opcion11')"><button class="btn btn-outline-secondary"><img src="../../../assets/activity.svg" alt=""> Suscripciones </button> </li>
+                            <li class="list-group-item color" (click)="toggleDiv('opcion12')"><button class="btn btn-outline-secondary"><img src="../../../assets/receipt.svg" alt=""> Facturacion </button> </li>
+                          </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        </div>
+        <div class="container2">
+          <div *ngIf="MisPedidos">
+            <div class="pagos-lista">
+              <h2>Mis Pedidos</h2>
+              <ul>
+                <li>
+                  <div class="pago-item">
+                    <span class="pago-nombre">Laptop</span>
+                    <span class="pago-monto">25000$</span>
+                    <span class="pago-fecha">A contado</span>
+                  </div>
+                </li>
+                <li>
+                  <div class="pago-item">
+                    <span class="pago-nombre">Television</span>
+                    <span class="pago-monto">12000$</span>
+                    <span class="pago-fecha">A pagos de 12 meses</span>
+                  </div>
+                </li>
+              </ul>
+            </div>
+        </div>
+
+        <div *ngIf="Direccion">
+          <h1>123 Main Street, Anytown, USA</h1>
+        </div>
+
+        <div *ngIf="MisPagos">
+          <div class="pagos-lista">
+            <h2>Listado de Pagos</h2>
+            <ul>
+              <li>
+                <div class="pago-item">
+                  <span class="pago-nombre">Pago 1</span>
+                  <span class="pago-monto">$100</span>
+                  <span class="pago-fecha">15 de mayo de 2023</span>
+                </div>
+              </li>
+              <li>
+                <div class="pago-item">
+                  <span class="pago-nombre">Pago 2</span>
+                  <span class="pago-monto">$200</span>
+                  <span class="pago-fecha">20 de mayo de 2023</span>
+                </div>
+              </li>
+              <li>
+                <div class="pago-item">
+                  <span class="pago-nombre">Pago 3</span>
+                  <span class="pago-monto">$150</span>
+                  <span class="pago-fecha">25 de mayo de 2023</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+        <div *ngIf="MisMedidas">
+          <div class="pagos-lista">
+            <h2>Mis Medidas</h2>
+            <ul>
+              <li>
+                <div class="pago-item">
+                  <span class="pago-nombre">Fernanda Agilar Lopez</span>
+                  <span class="pago-monto">25</span>
+                  <span class="pago-fecha">1.60 cm</span>
+                </div>
+              </li>
+              <li>
+                <div class="pago-item">
+                  <span class="pago-nombre">Sebastian Guerra dias</span>
+                  <span class="pago-monto">32</span>
+                  <span class="pago-fecha">1.80 cm</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div *ngIf="Cupones">
+          <div class="pagos-lista">
+            <h2>Mis Medidas</h2>
+            <ul>
+              <li>
+                <div class="pago-item">
+                  <span class="pago-nombre">Cupon de 20% de descuento</span>
+                  <span class="pago-monto">Compra de contado</span>
+                  <span class="pago-fecha"><button class="btn btn-outline-secondary">Reclamar</button></span>
+                </div>
+              </li>
+              <li>
+                <div class="pago-item">
+                  <span class="pago-nombre">Cupon de 20% de descuento</span>
+                  <span class="pago-monto">Compra de contado</span>
+                  <span class="pago-fecha"><button class="btn btn-outline-secondary">Reclamar</button></span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div *ngIf="MisDatos">
+          <div class="pagos-lista">
+            <h2>Mis Datos</h2>
+            <ul>
+              <li>
+                <div class="pago-item">
+                  <span class="pago-nombre">Sexo: Masculino</span>
+                  <span class="pago-monto">Gustos: Futbool, Formula 1</span>
+                  <span class="pago-fecha">Tel: 4495245665</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div *ngIf="Suscripciones">
+          <div class="pagos-lista">
+            <h2>Mis Medidas</h2>
+          <ul>
+            <li>
+              <div class="pago-item">
+                <span class="pago-nombre">Promociones 1</span>
+                <span class="pago-monto">Aplica a todas las compras de contado</span>
+                <span class="pago-fecha"><button class="btn btn-outline-secondary">Suscribirse</button></span>
+              </div>
+            </li>
+            <li>
+              <div class="pago-item">
+                <span class="pago-nombre">Promociones 2</span>
+                <span class="pago-monto">Aplica a todas las compras</span>
+                <span class="pago-fecha"><button class="btn btn-outline-secondary">Suscribirse</button></span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        </div>
+
+        <div *ngIf="Facturacion">
+          <div class="pagos-lista">
+            <h2>Mis Medidas</h2>
+          <ul>
+            <li>
+              <div class="pago-item">
+                <span class="pago-nombre">Factura del pedido 1</span>
+                <span class="pago-monto">Compraste Laptop</span>
+                <span class="pago-fecha"><button class="btn btn-outline-secondary">Imprimir</button></span>
+              </div>
+            </li>
+            <li>
+              <div class="pago-item">
+                <span class="pago-nombre">Factura del pedido 2</span>
+                <span class="pago-monto">Compraste television</span>
+                <span class="pago-fecha"><button class="btn btn-outline-secondary">Imprimir</button></span>
+              </div>
+            </li>
+          </ul>
+        </div>
+        </div>
+        </div>
+
+    </div>
 
 <app-footer></app-footer>
+
