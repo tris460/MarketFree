@@ -10,8 +10,8 @@ Botones
 --------------------*/
 .btn {
   display: block;
-  background: hsl(86, 76%, 71%);
-  color: hsl(0, 0, 100);
+  background: rgba(189, 237, 125, 1);
+  color: rgba(255, 255, 255, 1);
   text-decoration: none;
   margin: 20px 0;
   padding: 15px 15px;
@@ -27,13 +27,13 @@ Botones
     width: 100%;
     height: 100%;
     transition: all .2s ease-in-out;
-    box-shadow: inset 0 3px 0 hsla(0, 0, 0, 0), 0 3px 3px hsla(0, 0, 0, .2);
+    box-shadow: inset 0 3px 0 rgba(0, 0, 0, 0), 0 3px 3px rgba(0, 0, 0, .2);
     border-radius: 5px;
   }
 
   &:hover::after {
-    background: hsla(0, 0, 0, 0.1);
-    box-shadow: inset 0 3px 0 hsla(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 3px 0 rgba(0, 0, 0, 0.2);
   }
 
 }
@@ -75,7 +75,7 @@ Formulario
       display: block;
       text-transform: uppercase;
       font-size: 11px;
-      color: hsla(0, 0, 0, .6);
+      color: rgba(0, 0, 0, .6);
       margin-bottom: 5px;
       font-weight: bold;
     }
@@ -91,8 +91,8 @@ Formulario
       border-top: none;
       font-size: 15px;
       outline: none!important;
-      border-bottom: 1px solid hsla(0, 0, 0, 0.3);
-      box-shadow: inset 0 1px 4px hsla(0, 0, 0, 0.2);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+      box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.2);
 
       &.input-cart-number {
         width: 82px;
@@ -178,7 +178,7 @@ Checkout
   background: white;
   border-radius: 15px;
   padding: 160px 45px 30px;
-  box-shadow: 0 10px 40px hsla(0, 0, 0, .1);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, .1);
 }
 
 /*--------------------
@@ -209,8 +209,8 @@ Tarjeta de Crédito
     color: #fff;
     top: 0;
     left: 0;
-    text-shadow: 0 1px 1px hsla(0, 0, 0, 0.3);
-    box-shadow: 0 1px 6px hsla(0, 0, 0, 0.3);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
 
     &::before {
       content: '';
@@ -264,7 +264,7 @@ Tarjeta de Crédito
     height: 45px;
     top: 20px;
     left: 20px;
-    background: linear-gradient(135deg, hsl(269,54%,87%) 0%,hsl(200,64%,89%) 44%,hsl(18,55%,94%) 100%);;
+    background: linear-gradient(135deg, rgba(221, 204, 240, 1) 0%,rgba(209, 233, 245, 1) 44%,rgba(248, 236, 231, 1) 100%);;
     border-radius: 8px;
 
     &::before {
@@ -275,7 +275,7 @@ Tarjeta de Crédito
       left: 0;
       right: 0;
       margin: auto;
-      border: 4px solid hsla(0, 0, 50, .1);
+      border: 4px solid rgba(0, 0, 50, .1);
       width: 80%;
       height: 70%;
       border-radius: 5px;
@@ -283,7 +283,7 @@ Tarjeta de Crédito
   }
 
   .strip {
-    background: linear-gradient(135deg, hsl(0, 0, 25%), hsl(0, 0, 10%));
+    background: linear-gradient(135deg, rgba(0, 0, 25%), rgba(0, 0, 10%));
     position: absolute;
     width: 100%;
     height: 50px;
