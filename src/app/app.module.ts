@@ -15,6 +15,9 @@ import { FaqsComponent } from './components/faqs/faqs.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { PaymentMethodComponent } from './components/payment-method/payment-method.component';
+import { ReturnsComponent } from './components/returns/returns.component';
+import { TutorialsComponent } from './components/tutorials/tutorials.component';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +32,10 @@ import { PaymentMethodComponent } from './components/payment-method/payment-meth
     FaqsComponent,
     HeaderComponent,
     FooterComponent,
-    PaymentMethodComponent
+    PaymentMethodComponent,
+    ReturnsComponent,
+    TutorialsComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
