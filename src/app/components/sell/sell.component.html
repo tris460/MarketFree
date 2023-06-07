@@ -1,1 +1,59 @@
-<p>sell works!</p>
+<app-header></app-header>
+
+<div id="sell" class="main">
+  <div class="title">
+    <p>Vende un producto</p>
+  </div>
+  <div class="sell">
+    <form class="sell__form">
+      <p class="sell__description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus veniam praesentium quibusdam ab eaque! Tenetur quos nemo vel. Velit facere perferendis et, neque deserunt quia pariatur! Sint itaque beatae quas assumenda explicabo dicta corporis tempora, ex possimus alias praesentium hic dolorum vero, minus aut? Assumenda maxime consequatur modi non unde: <a>¿Cómo vender?</a></p>
+      <div class="input-group mb-3">
+        <input type="file" class="form-control" id="inputImage" aria-label="Upload">
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingName" placeholder="Nombre">
+        <label for="floatingName">Nombre</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="number" class="form-control" id="floatingPrecio" placeholder="Precio">
+        <label for="floatingPrecio">Precio</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingDescription" placeholder="Descripción">
+        <label for="floatingDescription">Descripción</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingQuantity" placeholder="Cantidad">
+        <label for="floatingQuantity">Cantidad de productos</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="number" class="form-control" id="floatingDiscount" placeholder="Descuento">
+        <label for="floatingDiscount">Descuento</label>
+      </div>
+      <div class="subtitle">
+        <p>Elige las promociones que deseas aplicar:</p>
+      </div>
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" id="promotion1">
+        <label class="form-check-label" for="promotion1">Promocion</label>
+      </div>
+      <div class="subtitle">
+        <p>Elige las etiquetas que apliquen a tu producto:</p>
+      </div>
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" id="label1">
+        <label class="form-check-label" for="label1">Etiqueta</label>
+      </div>
+      <div class="subtitle">
+        <p>¿Qué visibilidad tendrá tu producto?</p>
+      </div>
+      <div class="form-check form-switch">
+        <input class="form-check-input" type="checkbox" role="switch" id="chVisible" checked>
+        <label class="form-check-label" for="chVisible">Visible</label>
+      </div>
+      <button type="button" class="btn btn-dark">Publicar producto</button>
+    </form>
+  </div>
+</div>
+
+<app-footer></app-footer>

@@ -1,1 +1,80 @@
-<p>cart works!</p>
+<app-header></app-header>
+<div class="container">
+    <div class="product-list">
+        <h2>Carrito de compras</h2>
+        <div class="row">
+            <div class="col-8">
+                <div class="row">
+              <div class="col-md-4">
+                <div class="card">
+                  <img src="https://via.placeholder.com/150" class="card-img-top" alt="Producto 1">
+                  <div class="card-body">
+                    <h5 class="card-title">Producto 5</h5>
+                    <p class="card-text">Precio: $10</p>
+                    <button type="button" class="btn btn-outline-primary btn-sm m-2">Guardar</button>
+                  <button type="button" class="btn btn-outline-danger btn-sm m-2">Eliminar</button>
+                  <div class="counter">
+                    <button class="btn btn-counter" (click)="decreaseQuantity1()">-</button>
+                    <span class="quantity">{{ quantity1 }}</span>
+                    <button class="btn btn-counter" (click)="increaseQuantity1()">+</button>
+                  </div>
+                  
+                  </div>
+                </div>
+              </div>
+          
+              <div class="col-md-4">
+                <div class="card">
+                  <img src="https://via.placeholder.com/150" class="card-img-top" alt="Producto 2">
+                  <div class="card-body">
+                    <h5 class="card-title">Producto 2</h5>
+                    <p class="card-text">Precio: $15</p>
+                    <button type="button" class="btn btn-outline-primary btn-sm m-2">Guardar</button>
+                  <button type="button" class="btn btn-outline-danger btn-sm m-2">Eliminar</button>
+                  <div class="counter">
+                    <button class="btn btn-counter" (click)="decreaseQuantity2()">-</button>
+                    <span class="quantity">{{ quantity2 }}</span>
+                    <button class="btn btn-counter" (click)="increaseQuantity2()">+</button>
+                  </div>
+                  
+                  </div>
+                </div>
+              </div>
+          
+              <div class="col-md-4">
+                <div class="card">
+                  <img src="https://via.placeholder.com/150" class="card-img-top" alt="Producto 3">
+                  <div class="card-body">
+                    <h5 class="card-title">Producto 3</h5>
+                    <p class="card-text">Precio: $20</p>
+                    <button type="button" class="btn btn-outline-primary btn-sm m-2">Guardar</button>
+                  <button type="button" class="btn btn-outline-danger btn-sm m-2">Eliminar</button>
+                  <div class="counter">
+                    <button class="btn btn-counter" (click)="decreaseQuantity3()">-</button>
+                    <span class="quantity">{{ quantity3 }}</span>
+                    <button class="btn btn-counter" (click)="increaseQuantity3()">+</button>
+                  </div>
+                  
+                  </div>
+                </div>
+              </div>
+            </div>
+            </div>
+            <div class="col-4 ">
+                <div class="d-flex justify-content-end align-items-center">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body">
+                      <h4 class="card-title">Resumen de compra</h4>
+                      <h6 class="card-subtitle mb-2 text-body-secondary">Producto:  45</h6>
+                      <h6 class="card-subtitle mb-2 text-body-secondary">Envio: 100</h6>
+                      <button type="button" class="btn btn-outline-primary btn-sm m-2">Continuar compra</button>
+                    </div>
+                  </div>
+                </div>
+            </div>
+        </div>
+        
+            
+          </div>
+</div>
+<app-footer></app-footer>
