@@ -15,6 +15,7 @@ import { FaqsComponent } from './components/faqs/faqs.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { TutorialsComponent } from './components/tutorials/tutorials.component';
+import { AboutComponent } from './components/about/about.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { TutorialsComponent } from './components/tutorials/tutorials.component';
     FaqsComponent,
     HeaderComponent,
     FooterComponent,
-    TutorialsComponent
+    TutorialsComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
