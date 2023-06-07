@@ -1,1 +1,69 @@
-<p>home works!</p>
+<app-header></app-header>
+
+<div id="home" class="main">
+  <!-- Banner -->
+  <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="4000">
+        <img src="../../../assets/Banner - Test.jpg" class="d-block w-100" alt="Banner image 1">
+      </div>
+      <div class="carousel-item" data-bs-interval="4000">
+        <img src="../../../assets/Banner - Test.jpg" class="d-block w-100" alt="Banner image 2">
+      </div>
+      <div class="carousel-item" data-bs-interval="4000">
+        <img src="../../../assets/Banner - Test.jpg" class="d-block w-100" alt="Banner image 3">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </button>
+  </div>
+
+  <!-- Benefits -->
+  <div id="benefits" class="benefits">
+    <div class="benefits__ind">
+      <img src="../../../assets/Benefit - Test.jpg" alt="Benefit 1">
+      <p>Bajos precios</p>
+    </div>
+  </div>
+
+  <!-- Categories -->
+  <div id="categories">
+    <div class="title">
+      <p>Compra por categoría</p>
+    </div>
+    <div class="categories">
+      <div class="categories__ind">
+        <p>Mascotas</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Products -->
+  <div id="products">
+    <div class="products">
+      <div class="title left">
+        <p>Categoría</p>
+      </div>
+      <div class="products__row">
+        <div class="products__row__card">
+          <img src="../../../assets/Product - Test.jpg" class="products__row__card--img" alt="Product 1">
+          <div class="products__row__card--text">
+            <p>Nombre del producto</p>
+            <p class="price-text">Precio</p>
+          </div>
+        </div>
+        <div class="products__more">
+          <div class="products__more--circle">
+            <img src="../../../assets/arrow-right.svg" alt="Flecha para ver más" title="Da click para ver más productos">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>
