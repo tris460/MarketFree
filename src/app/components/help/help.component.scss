@@ -1,0 +1,28 @@
+.main {
+  padding: 30px;
+}
+
+.flex {
+  display: flex;
+  align-items:  center;
+  justify-content: center;
+
+  &__whatsapp {
+    padding: 30px;
+    border-right: 4px double #000;
+    text-align: center;
+
+    &--img {
+      width: 100px;
+    }
+  }
+
+  &__info {
+    padding: 30px;
+
+    & > a {
+      display: block;
+      text-decoration: underline;
+    }
+  }
+}
