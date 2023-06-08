@@ -8,19 +8,18 @@
         <p>Conócenos</p>
       </div>
       <div class="footer__column--link">
-        <a>Acerca de MarketFree</a><br>
-        <a>Preguntas frecuentes</a><br>
-        <a>Información corporativa</a>
+        <a [routerLink]="'/about'" class="link">Acerca de los desarrolladores</a><br>
+        <a [routerLink]="'/faqs'" class="link">Preguntas frecuentes</a>
       </div>
     </div>
     <div class="footer__column">
       <div class="footer__column--title">
-        <p>Gana nosotros</p>
+        <p>Gana con nosotros</p>
       </div>
       <div class="footer__column--link">
-        <a>Vender en MarketFree</a><br>
-        <a>Anuncia tus productos</a><br>
-        <a>Beneficios al comprar</a>
+        <a [routerLink]="'/sell'" class="link">Vender en MarketFree</a><br>
+        <a [routerLink]="'/sell'" class="link">Anuncia tus productos</a><br>
+        <a [routerLink]="'/benefits'" class="link">Beneficios al comprar</a>
       </div>
     </div>
     <div class="footer__column">
@@ -28,9 +27,9 @@
         <p>Podemos ayudarte</p>
       </div>
       <div class="footer__column--link">
-        <a>Cómo comprar</a><br>
-        <a>Devolver productos</a><br>
-        <a>Ayuda</a>
+        <a [routerLink]="'/tutorials'" class="link">Cómo comprar</a><br>
+        <a [routerLink]="'/returns'" class="link">Devolver productos</a><br>
+        <a [routerLink]="'/help'" class="link">Ayuda</a>
       </div>
     </div>
     <div class="footer__column">
@@ -38,9 +37,11 @@
         <p>Métodos de pago</p>
       </div>
       <div class="footer__column--link">
-        <a>Tarjetas de crédito y débito</a><br>
-        <a>Tarjetas de regalo</a><br>
-        <a>Pago en efectivo</a>
+        <a [routerLink]="'/payment-method'" fragment="credit-card" class="link">Tarjetas de crédito</a><br>
+        <a [routerLink]="'/payment-method'" fragment="debit-card" class="link">Tarjetas de débito</a><br>
+        <a [routerLink]="'/payment-method'" fragment="gift-card" class="link">Tarjetas de regalo</a><br>
+        <a [routerLink]="'/payment-method'" fragment="atm" class="link">Pago en cajero</a><br>
+        <a [routerLink]="'/payment-method'" fragment="other" class="link">Pago en otros establecimientos</a><br>
       </div>
     </div>
   </div>
