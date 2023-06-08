@@ -14,7 +14,7 @@ export class ProfileComponent implements OnInit {
   MisMedidas: boolean = false;
   Cupones: boolean = false;
   MisDatos: boolean = false;
-  Suscripciones: boolean = false;
+  Promociones: boolean = false;
   Facturacion: boolean = false;
 
   toggleDiv(option: string) {
@@ -25,7 +25,7 @@ export class ProfileComponent implements OnInit {
     this.MisMedidas = option === 'opcion5';
     this.Cupones = option === 'opcion6';
     this.MisDatos = option === 'opcion7';
-    this.Suscripciones = option === 'opcion11';
+    this.Promociones = option === 'opcion11';
     this.Facturacion = option === 'opcion12';
   }
   ngOnInit(): void {

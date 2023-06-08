@@ -6,11 +6,36 @@
             <div class="card-body">
             <h5 class="card-title"><b>Mi cuenta</b></h5>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item color" (click)="toggleDiv('opcion1')"><button class="btn btn-outline-secondary"><img src="../../../assets/truck.svg" alt=""> Mis pedidos </button> </li>
-                <li class="list-group-item color" (click)="toggleDiv('opcion2')"><button class="btn btn-outline-secondary"><img src="../../../assets/geo-alt.svg" alt=""> Direccion </button>  </li>
-                <li class="list-group-item color" (click)="toggleDiv('opcion3')"><button class="btn btn-outline-secondary"><img src="../../../assets/credit-card.svg" alt=""> Mis pagos </button> </li>
-                <li class="list-group-item color" (click)="toggleDiv('opcion5')"><button class="btn btn-outline-secondary"><img src="../../../assets/rulers.svg" alt=""> Mis medidas </button> </li>
-                <li class="list-group-item color" (click)="toggleDiv('opcion6')"><button class="btn btn-outline-secondary"><img src="../../../assets/gift.svg" alt=""> Cupones de regalo </button> </li>
+                <li class="list-group-item color" (click)="toggleDiv('opcion1')">
+                  <button class="btn btn-outline-secondary">
+                    <img src="../../../assets/truck.svg" alt="Ir a mis pedidos">
+                    Mis pedidos
+                  </button>
+                </li>
+                <li class="list-group-item color" (click)="toggleDiv('opcion2')">
+                  <button class="btn btn-outline-secondary">
+                    <img src="../../../assets/geo-alt.svg" alt="Ver mi dirección" title="Ver mi dirección">
+                    Direccion
+                  </button>
+                </li>
+                <li class="list-group-item color" (click)="toggleDiv('opcion3')">
+                  <button class="btn btn-outline-secondary">
+                    <img src="../../../assets/credit-card.svg" alt="Ver mis pagos" title="Ver mis pagos">
+                    Mis pagos
+                  </button>
+                </li>
+                <li class="list-group-item color" (click)="toggleDiv('opcion5')">
+                  <button class="btn btn-outline-secondary">
+                    <img src="../../../assets/rulers.svg" alt="Ver mis medidas" title="Ver mis medidas">
+                    Mis medidas
+                  </button>
+                </li>
+                <li class="list-group-item color" (click)="toggleDiv('opcion6')">
+                  <button class="btn btn-outline-secondary">
+                    <img src="../../../assets/gift.svg" alt="Ver mis cupones" title="Ver mis cupones">
+                    Cupones de regalo
+                  </button>
+                </li>
               </ul>
             </div>
         </div>
@@ -29,9 +54,24 @@
                     <div class="card-body">
                         <h5 class="card-title"><b>Mi Informacion</b> </h5>
                         <ul class="list-group list-group-flush">
-                            <li class="list-group-item color" (click)="toggleDiv('opcion7')"><button class="btn btn-outline-secondary"><img src="../../../assets/person.svg" alt=""> Mis datos </button> </li>
-                            <li class="list-group-item color" (click)="toggleDiv('opcion11')"><button class="btn btn-outline-secondary"><img src="../../../assets/activity.svg" alt=""> Suscripciones </button> </li>
-                            <li class="list-group-item color" (click)="toggleDiv('opcion12')"><button class="btn btn-outline-secondary"><img src="../../../assets/receipt.svg" alt=""> Facturacion </button> </li>
+                            <li class="list-group-item color" (click)="toggleDiv('opcion7')">
+                              <button class="btn btn-outline-secondary">
+                              <img src="../../../assets/person.svg" alt="Ver mis datos" title="Ver mis datos">
+                              Mis datos
+                            </button>
+                            </li>
+                            <li class="list-group-item color" (click)="toggleDiv('opcion11')">
+                              <button class="btn btn-outline-secondary">
+                              <img src="../../../assets/activity.svg" alt="Mis suscripciones" title="Mis suscripciones">
+                              Promociones
+                            </button>
+                            </li>
+                            <li class="list-group-item color" (click)="toggleDiv('opcion12')">
+                              <button class="btn btn-outline-secondary">
+                              <img src="../../../assets/receipt.svg" alt="Facturación" title="Facturación">
+                              Facturacion
+                            </button>
+                            </li>
                           </ul>
                     </div>
                 </div>
@@ -42,7 +82,7 @@
         <div class="container2">
           <div *ngIf="MisPedidos">
             <div class="pagos-lista">
-              <h2>Mis Pedidos</h2>
+              <h2>Mis pedidos</h2>
               <ul>
                 <li>
                   <div class="pago-item">
@@ -68,7 +108,7 @@
 
         <div *ngIf="MisPagos">
           <div class="pagos-lista">
-            <h2>Listado de Pagos</h2>
+            <h2>Listado de pagos</h2>
             <ul>
               <li>
                 <div class="pago-item">
@@ -97,7 +137,7 @@
         </div>
         <div *ngIf="MisMedidas">
           <div class="pagos-lista">
-            <h2>Mis Medidas</h2>
+            <h2>Mis medidas</h2>
             <ul>
               <li>
                 <div class="pago-item">
@@ -119,7 +159,7 @@
 
         <div *ngIf="Cupones">
           <div class="pagos-lista">
-            <h2>Mis Medidas</h2>
+            <h2>Mis cupones</h2>
             <ul>
               <li>
                 <div class="pago-item">
@@ -140,7 +180,7 @@
         </div>
         <div *ngIf="MisDatos">
           <div class="pagos-lista">
-            <h2>Mis Datos</h2>
+            <h2>Mis datos</h2>
             <ul>
               <li>
                 <div class="pago-item">
@@ -153,9 +193,9 @@
           </div>
         </div>
 
-        <div *ngIf="Suscripciones">
+        <div *ngIf="Promociones">
           <div class="pagos-lista">
-            <h2>Mis Medidas</h2>
+            <h2>Mis promociones</h2>
           <ul>
             <li>
               <div class="pago-item">
@@ -177,7 +217,7 @@
 
         <div *ngIf="Facturacion">
           <div class="pagos-lista">
-            <h2>Mis Medidas</h2>
+            <h2>Mis facturas</h2>
           <ul>
             <li>
               <div class="pago-item">

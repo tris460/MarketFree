@@ -6,12 +6,9 @@
     </p>
 </div> <!-- Aqui va la barra roja -->
 <div id="product" class="main" >
-
         <div class="row" >
             <div class="col-6 flex">
-
                 <img src="../../../assets/One_Product-Test.jpg" alt="Producto1" title="Producto">
-
             </div> <!-- Es una seccion -->
             <div class="col-6">
                 <div class="info">
@@ -24,15 +21,16 @@
                         <option value="1">3</option>
                         <option value="1">4</option>
                     </select> </p>
-
-                    <button class="info_btn">Comprar Ahora</button>
-                    <button  class="info_btn">Agregar al Carrito</button>
+                    <a [routerLink]="'/payment'" class="link">
+                      <button class="info_btn">Comprar Ahora</button>
+                    </a>
+                    <button class="info_btn">Agregar al Carrito</button>
                 </div>
             </div>
         </div>
 
   <!-- Products -->
-  <div id="">
+  <div>
     <div class="products">
       <div class="title left">
         <p>Productos Relacionados</p>
