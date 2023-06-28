@@ -1,24 +1,30 @@
 <div id="header">
   <div class="main menu">
+    <!-- MarketFree logo -->
     <a [routerLink]="'/home'">
       <img src="../../../assets/Logo - Test.jpg" alt="MarketFree logo" title="MarketFree Logo">
     </a>
+    <!-- Search bar for products -->
       <form class="menu__form">
         <input class="form-control" type="search" placeholder="Busca entre nombres, códigos, marcas...">
         <button class="btn" type="submit">Buscar</button>
       </form>
+      <!-- Profile link -->
       <a [routerLink]="'/profile'" class="link">
         Mi perfil
       </a>
+      <!-- Notifications button -->
       <button type="button" class="btn position-relative">
         <img src="../../../assets/bell.svg" alt="Notificaciones" title="Notificaciones">
         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">10</span>
       </button>
+      <!-- Cart button -->
       <button [routerLink]="'/cart'" type="button" class="btn position-relative">
         <img src="../../../assets/cart.svg" alt="Carrito" title="Mi carrito">
         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">1</span>
       </button>
   </div>
+  <!-- Go to categories -->
   <div class="menu__categories">
     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
       Categorías
