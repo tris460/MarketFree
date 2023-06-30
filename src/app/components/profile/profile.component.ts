@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ProfileComponent implements OnInit {
 
   constructor() { }
+  // se crean variables para el mjstreo de los botones
   MisPedidos: boolean = false;
   Direccion: boolean = false;
   MisPagos: boolean = false;
