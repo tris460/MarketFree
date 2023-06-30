@@ -6,15 +6,47 @@
             <div class="card-body">
             <h5 class="card-title"><b>Mi cuenta</b></h5>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item color" (click)="toggleDiv('opcion1')"><button class="btn btn-outline-secondary"><img src="../../../assets/truck.svg" alt=""> Mis pedidos </button> </li>
-                <li class="list-group-item color" (click)="toggleDiv('opcion2')"><button class="btn btn-outline-secondary"><img src="../../../assets/geo-alt.svg" alt=""> Direccion </button>  </li>
-                <li class="list-group-item color" (click)="toggleDiv('opcion3')"><button class="btn btn-outline-secondary"><img src="../../../assets/credit-card.svg" alt=""> Mis pagos </button> </li>
-                <li class="list-group-item color" (click)="toggleDiv('opcion5')"><button class="btn btn-outline-secondary"><img src="../../../assets/rulers.svg" alt=""> Mis medidas </button> </li>
-                <li class="list-group-item color" (click)="toggleDiv('opcion6')"><button class="btn btn-outline-secondary"><img src="../../../assets/gift.svg" alt=""> Cupones de regalo </button> </li>
+              <!-- Se agrega un click para mostrar un codigo oculto "(click)="toggleDiv('')"-->
+                <li class="list-group-item color" (click)="toggleDiv('opcion1')">
+                  <!-- Este boton se utiliza para acceder a la funcion -->
+                  <button class="btn btn-outline-secondary">
+                    <img src="../../../assets/truck.svg" alt="Ir a mis pedidos">
+                    Mis pedidos
+                  </button>
+                </li>
+                <li class="list-group-item color" (click)="toggleDiv('opcion2')">
+                  <!-- Este boton se utiliza para acceder a la funcion -->
+                  <button class="btn btn-outline-secondary">
+                    <img src="../../../assets/geo-alt.svg" alt="Ver mi dirección" title="Ver mi dirección">
+                    Direccion
+                  </button>
+                </li>
+                <li class="list-group-item color" (click)="toggleDiv('opcion3')">
+                  <!-- Este boton se utiliza para acceder a la funcion -->
+                  <button class="btn btn-outline-secondary">
+                    <img src="../../../assets/credit-card.svg" alt="Ver mis pagos" title="Ver mis pagos">
+                    Mis pagos
+                  </button>
+                </li>
+                <li class="list-group-item color" (click)="toggleDiv('opcion5')">
+                  <!-- Este boton se utiliza para acceder a la funcion -->
+                  <button class="btn btn-outline-secondary">
+                    <img src="../../../assets/rulers.svg" alt="Ver mis medidas" title="Ver mis medidas">
+                    Mis medidas
+                  </button>
+                </li>
+                <li class="list-group-item color" (click)="toggleDiv('opcion6')">
+                  <!-- Este boton se utiliza para acceder a la funcion -->
+                  <button class="btn btn-outline-secondary">
+                    <img src="../../../assets/gift.svg" alt="Ver mis cupones" title="Ver mis cupones">
+                    Cupones de regalo
+                  </button>
+                </li>
               </ul>
             </div>
         </div>
         </div>
+        <!-- Se muestra la informacion del usuario -->
         <div class="col-4">
             <div class="d-flex justify-content-center align-items-center"></div>
             <div class="circle">
@@ -22,16 +54,36 @@
             </div>
             <h2 style="text-align: center;"><b> Bienvenido Usuario</b></h2>
           </div>
-
-        <div class="col-4">
+          <div class="col-4">
             <div class="d-flex justify-content-end align-items-center">
-                <div class="card custom-shadow color" style="width: 18rem;">
-                    <div class="card-body">
-                        <h5 class="card-title"><b>Mi Informacion</b> </h5>
-                        <ul class="list-group list-group-flush">
-                            <li class="list-group-item color" (click)="toggleDiv('opcion7')"><button class="btn btn-outline-secondary"><img src="../../../assets/person.svg" alt=""> Mis datos </button> </li>
-                            <li class="list-group-item color" (click)="toggleDiv('opcion11')"><button class="btn btn-outline-secondary"><img src="../../../assets/activity.svg" alt=""> Suscripciones </button> </li>
-                            <li class="list-group-item color" (click)="toggleDiv('opcion12')"><button class="btn btn-outline-secondary"><img src="../../../assets/receipt.svg" alt=""> Facturacion </button> </li>
+              <div class="card custom-shadow color" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title"><b>Mi Informacion</b> </h5>
+                  <ul class="list-group list-group-flush">
+                          <!-- Se agrega un click para mostrar un codigo oculto "(click)="toggleDiv('')"-->
+                            <li class="list-group-item color" (click)="toggleDiv('opcion7')">
+                              <!-- Este boton se utiliza para acceder a la funcion -->
+                              <button class="btn btn-outline-secondary">
+                              <img src="../../../assets/person.svg" alt="Ver mis datos" title="Ver mis datos">
+                              Mis datos
+                            </button>
+                            </li>
+                            <!-- Se agrega un click para mostrar un codigo oculto "(click)="toggleDiv('')"-->
+                            <li class="list-group-item color" (click)="toggleDiv('opcion11')">
+                              <!-- Este boton se utiliza para acceder a la funcion -->
+                              <button class="btn btn-outline-secondary">
+                              <img src="../../../assets/activity.svg" alt="Mis suscripciones" title="Mis suscripciones">
+                              Promociones
+                            </button>
+                            </li>
+                            <!-- Se agrega un click para mostrar un codigo oculto "(click)="toggleDiv('')"-->
+                            <li class="list-group-item color" (click)="toggleDiv('opcion12')">
+                              <!-- Este boton se utiliza para acceder a la funcion -->
+                              <button class="btn btn-outline-secondary">
+                              <img src="../../../assets/receipt.svg" alt="Facturación" title="Facturación">
+                              Facturacion
+                            </button>
+                            </li>
                           </ul>
                     </div>
                 </div>
@@ -39,10 +91,11 @@
 
         </div>
         </div>
+        <!-- Partes ocultas del codigo que se muestran con los botones de arriba -->
         <div class="container2">
           <div *ngIf="MisPedidos">
             <div class="pagos-lista">
-              <h2>Mis Pedidos</h2>
+              <h2>Mis pedidos</h2>
               <ul>
                 <li>
                   <div class="pago-item">
@@ -61,14 +114,14 @@
               </ul>
             </div>
         </div>
-
+        <!-- ngIf se utiliza esta condicional para mostrar el codigo solo si da click al boton correspondiente -->
         <div *ngIf="Direccion">
           <h1>123 Main Street, Anytown, USA</h1>
         </div>
-
+        <!-- ngIf se utiliza esta condicional para mostrar el codigo solo si da click al boton correspondiente -->
         <div *ngIf="MisPagos">
           <div class="pagos-lista">
-            <h2>Listado de Pagos</h2>
+            <h2>Listado de pagos</h2>
             <ul>
               <li>
                 <div class="pago-item">
@@ -95,9 +148,10 @@
           </div>
 
         </div>
+        <!-- ngIf se utiliza esta condicional para mostrar el codigo solo si da click al boton correspondiente -->
         <div *ngIf="MisMedidas">
           <div class="pagos-lista">
-            <h2>Mis Medidas</h2>
+            <h2>Mis medidas</h2>
             <ul>
               <li>
                 <div class="pago-item">
@@ -116,10 +170,10 @@
             </ul>
           </div>
         </div>
-
+        <!-- ngIf se utiliza esta condicional para mostrar el codigo solo si da click al boton correspondiente -->
         <div *ngIf="Cupones">
           <div class="pagos-lista">
-            <h2>Mis Medidas</h2>
+            <h2>Mis cupones</h2>
             <ul>
               <li>
                 <div class="pago-item">
@@ -138,9 +192,10 @@
             </ul>
           </div>
         </div>
+        <!-- ngIf se utiliza esta condicional para mostrar el codigo solo si da click al boton correspondiente -->
         <div *ngIf="MisDatos">
           <div class="pagos-lista">
-            <h2>Mis Datos</h2>
+            <h2>Mis datos</h2>
             <ul>
               <li>
                 <div class="pago-item">
@@ -152,10 +207,10 @@
             </ul>
           </div>
         </div>
-
-        <div *ngIf="Suscripciones">
+        <!-- ngIf se utiliza esta condicional para mostrar el codigo solo si da click al boton correspondiente -->
+        <div *ngIf="Promociones">
           <div class="pagos-lista">
-            <h2>Mis Medidas</h2>
+            <h2>Mis promociones</h2>
           <ul>
             <li>
               <div class="pago-item">
@@ -174,10 +229,10 @@
           </ul>
         </div>
         </div>
-
+        <!-- ngIf se utiliza esta condicional para mostrar el codigo solo si da click al boton correspondiente -->
         <div *ngIf="Facturacion">
           <div class="pagos-lista">
-            <h2>Mis Medidas</h2>
+            <h2>Mis facturas</h2>
           <ul>
             <li>
               <div class="pago-item">
