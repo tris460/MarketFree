@@ -1,21 +1,27 @@
 <div id="login" class="main">
   <div class="login">
+    <!-- MarketFree logo -->
     <div class="login__logo">
-      <a href="#">
+      <a  [routerLink]="'/'" class="link">
         <img src="../../../assets/Logo - Test.jpg" alt="MarketFree Logo" title="MarketFree logo">
       </a>
     </div>
+    <!-- Tabs for login/register -->
     <div class="login__tabs">
       <ul class="nav nav-tabs nav-fill">
+        <!-- Login tab -->
         <li class="nav-item">
           <a class="nav-link active" aria-current="page" data-bs-toggle="tab" href="#login-content">Iniciar sesión</a>
         </li>
+        <!-- Register tab -->
         <li class="nav-item">
           <a class="nav-link" data-bs-toggle="tab" href="#register-content">Registrarme</a>
         </li>
       </ul>
+      <!-- Login content -->
       <div class="tab-content">
         <div class="tab-pane fade show active" id="login-content">
+          <!-- Form for login -->
           <form>
             <div class="form-floating mb-3">
               <input type="email" class="form-control" id="floatingInput" placeholder="Correo">
@@ -27,6 +33,7 @@
             </div>
             <button type="button" class="btn">Iniciar Sesión</button>
           </form>
+          <!-- Links to login with other methods -->
           <div class="login__with">
             <p>O inicia sesión con:</p>
             <div class="login__with__icons">
@@ -41,7 +48,9 @@
             </div>
           </div>
         </div>
+        <!-- Register content -->
         <div class="tab-pane fade" id="register-content">
+          <!-- Form to register an user -->
           <form>
             <div class="form-floating mb-3">
               <input type="text" class="form-control" id="floatingName" placeholder="Nombre">
@@ -61,6 +70,7 @@
             </div>
             <button type="button" class="btn">Registrarme</button>
           </form>
+          <!-- Links to register by other methods -->
           <div class="login__with">
             <p>O regístrate con:</p>
             <div class="login__with__icons">
