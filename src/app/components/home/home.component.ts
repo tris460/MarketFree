@@ -8,16 +8,15 @@ import { CategoryService } from 'src/app/service/category.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  category: Category = new Category();
-  tabla: any = [];
+  categoriesData: Category[] = [];
+
   constructor(private categoryService: CategoryService) { }
 
   ngOnInit() {
     this.categoryService
       .getCategories()
       .then((data: any) => {
-        this.tabla = data.data;
-        console.log(this.tabla);
+        this.categoriesData = data.data.filter((obj: any) => obj.type === "products");
       })
       .catch((error) => {
         console.log(`Error getting categories: ${error}`);

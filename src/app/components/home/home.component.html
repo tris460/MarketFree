@@ -38,8 +38,8 @@
       <p>Compra por categoría</p>
     </div>
     <div class="categories">
-      <div class="categories__ind">
-        <p>Mascotas</p>
+      <div class="categories__ind" *ngFor="let category of categoriesData">
+        <p>{{category.name}}</p>
       </div>
     </div>
   </div>
