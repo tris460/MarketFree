@@ -5,28 +5,20 @@
     <p>Preguntas frecuentes</p>
   </div>
   <!-- FAQs container -->
-  <div class="faqs">
-    <p>
-      <!-- FAQs categories -->
-      <button class="btn faqs__category" type="button" data-bs-toggle="collapse" data-bs-target="#collapseCategory" aria-expanded="false" aria-controls="collapseExample">
-        Categoría de preguntas
-      </button>
-    </p>
+  <div class="faqs" *ngFor="let faqs of faqsByCategory">
+    <!-- FAQs categories -->
+    <div class="btn faqs__category">
+      {{faqs.categoryName}}
+    </div>
     <!-- FAQs questions container -->
-    <div class="collapse" id="collapseCategory">
-      <div class="faqs__question">
-        <p>
-          <!-- FAQs question -->
-          <button class="btn faqs__question--button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseQuestion" aria-expanded="false" aria-controls="collapseExample">
-            ¿Pregunta?
-          </button>
-        </p>
-        <!-- FAQs answer -->
-        <div class="collapse" id="collapseQuestion">
-          <div class="card card-body faqs__question--answer">
-            Respuesta
-          </div>
-        </div>
+    <div class="faqs__question" *ngFor="let question of faqs.questions">
+      <!-- FAQs question -->
+      <div class="btn faqs__question--button">
+        {{question.question}}
+      </div>
+    <!-- FAQs answer -->
+      <div class="card card-body faqs__question--answer">
+          {{question.answer}}
       </div>
     </div>
   </div>
