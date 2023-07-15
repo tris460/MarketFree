@@ -26,9 +26,9 @@
 
   <!-- Benefits -->
   <div id="benefits" class="benefits">
-    <div class="benefits__ind">
+    <div class="benefits__ind" *ngFor="let benefit of benefitsData">
       <img src="../../../assets/Benefit - Test.jpg" alt="Benefit 1">
-      <p>Bajos precios</p>
+      <p>{{benefit.name}}</p>
     </div>
   </div>
 

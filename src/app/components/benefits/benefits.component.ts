@@ -8,13 +8,14 @@ import { Benefits } from 'src/app/models/benefits';
   styleUrls: ['./benefits.component.scss']
 })
 export class BenefitsComponent implements OnInit {
-  benefits: Benefits = new Benefits();
+  benefitsData: Benefits[] = [];
 
-  constructor(private BenefitsServices: BenefitsServices) { }
+  constructor(private benefitsServices: BenefitsServices) { }
 
   ngOnInit() {
-    this.BenefitsServices.getBenefits().then((data: any) => {
-        console.log(data.data);
+    this.benefitsServices.getBenefits()
+      .then((data: any) => {
+        this.benefitsData = data.data;
       })
       .catch((error) => {
         console.log(`Error getting benefits: ${error}`);
