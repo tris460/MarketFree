@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BenefitsServices } from '../../service/benefits.service';
+import { Benefits } from 'src/app/models/benefits';
 
 @Component({
   selector: 'app-benefits',
@@ -6,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./benefits.component.scss']
 })
 export class BenefitsComponent implements OnInit {
+  benefits: Benefits = new Benefits();
 
-  constructor() { }
+  constructor(private BenefitsServices: BenefitsServices) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.BenefitsServices.getBenefits().then((data: any) => {
+        console.log(data.data);
+      })
+      .catch((error) => {
+        console.log(`Error getting benefits: ${error}`);
+      });
   }
 
 }
