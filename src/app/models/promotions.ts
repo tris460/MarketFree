@@ -3,7 +3,8 @@ export class promotions implements promotions {
   name: string;
   description: string;
 
-  constructor(){
+  constructor() {
+    // Initialize default values
     this.id='',
     this.name='',
     this.description=''

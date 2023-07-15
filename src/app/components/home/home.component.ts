@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { category } from 'src/app/models/category';
-import { CategoriaService } from 'src/app/service/categoria.service';
+import { Category } from 'src/app/models/category';
+import { CategoryService } from 'src/app/service/category.service';
 
 @Component({
   selector: 'app-home',
@@ -8,19 +8,19 @@ import { CategoriaService } from 'src/app/service/categoria.service';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
-  categoria: category = new category();
+  category: Category = new Category();
   tabla: any = [];
-  constructor(private CategoryaService: CategoriaService) { }
+  constructor(private categoryService: CategoryService) { }
 
   ngOnInit() {
-    this.CategoryaService
-      .obtenerCategorias()
+    this.categoryService
+      .getCategories()
       .then((data: any) => {
         this.tabla = data.data;
         console.log(this.tabla);
       })
       .catch((error) => {
-        console.log('pues falló');
+        console.log(`Error getting categories: ${error}`);
       });
   }
 

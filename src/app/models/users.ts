@@ -9,7 +9,8 @@ export class UsersModel implements UsersModel {
   shoppingCart: string[]; //TODO: Validar el tipo, en la BD es un ObjectID
   productsForSale: string[]; //TODO: Validar el tipo, en la BD es un ObjectID
 
-constructor(){
+constructor() {
+  // Initialize default values
   this.id= '';
   this.name = '';
   this.lastname = '';

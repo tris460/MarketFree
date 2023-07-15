@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UsuariosService } from 'src/app/service/usuarios.service';
+import { UserService } from 'src/app/service/user.service';
 import { UsersModel } from 'src/app/models/users';
 
 @Component({
@@ -8,12 +8,9 @@ import { UsersModel } from 'src/app/models/users';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
+  constructor(private userService: UserService) { }
 
-  productos: UsersModel = new UsersModel();
-  tabla: any = [];
-
-  constructor(private UsuariosService: UsuariosService) { }
-  // se crean variables para el mjstreo de los botones
+  // Variables to read option selected
   MisPedidos: boolean = false;
   Direccion: boolean = false;
   MisPagos: boolean = false;
@@ -24,7 +21,7 @@ export class ProfileComponent implements OnInit {
   Facturacion: boolean = false;
 
   toggleDiv(option: string) {
-    // Lógica para mostrar u ocultar los divs según la opción seleccionada
+    // Show/hide div with info
     this.MisPedidos = option === 'opcion1';
     this.Direccion = option === 'opcion2';
     this.MisPagos = option === 'opcion3';
@@ -34,15 +31,15 @@ export class ProfileComponent implements OnInit {
     this.Promociones = option === 'opcion11';
     this.Facturacion = option === 'opcion12';
   }
+
   ngOnInit() {
-    this.UsuariosService
-      .obtenerUsuarios()
+    this.userService
+      .getUsers()
       .then((data: any) => {
-        this.tabla = data.data;
-        console.log(this.tabla);
+        console.log(data.data);
       })
       .catch((error) => {
-        console.log('pues falló');
+        console.log(`Error getting users: ${error}`);
       });
   }
 

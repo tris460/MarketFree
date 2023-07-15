@@ -1,9 +1,10 @@
-export class benefits implements benefits {
+export class Benefits implements Benefits {
   id: string;  //TODO: Validar el tipo, en la BD es un ObjectID
   name: string;
   description: string;
 
-  constructor(){
+  constructor() {
+    // Initialize default values
     this.id = '';
     this.name = '';
     this.description = '';

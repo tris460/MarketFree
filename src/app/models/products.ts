@@ -15,7 +15,7 @@ export class Product implements Product {
   user: string;
 
   constructor() {
-    // Aquí puedes inicializar los valores por defecto de las propiedades si lo deseas
+    // Initialize default values
     this.id = '';
     this.name = '';
     this.price = 0;
