@@ -15,8 +15,8 @@ export class ProductsService {
   }
 
 
-  registarProducto( producto: Product) {
-    return this.http.post(`${this.url}/products`, producto).toPromise();
+  addProduct(product: Product) {
+    return this.http.post(`${this.url}/products`, product).toPromise();
   }
 
  /*actualizarProducto(id: string, usuario: Product) {
