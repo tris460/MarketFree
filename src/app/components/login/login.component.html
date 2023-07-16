@@ -28,7 +28,7 @@
               <label for="floatingInput">Correo</label>
             </div>
             <div class="form-floating">
-              <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña">
+              <input type="password" class="form-control" id="floatingPass" placeholder="Contraseña">
               <label for="floatingPassword">Contraseña</label>
             </div>
             <button type="button" class="btn">Iniciar Sesión</button>
@@ -51,24 +51,32 @@
         <!-- Register content -->
         <div class="tab-pane fade" id="register-content">
           <!-- Form to register an user -->
-          <form>
+          <form (ngSubmit)="registrar(forma)" #forma="ngForm" name="forma">
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="floatingName" placeholder="Nombre">
+              <input type="text" class="form-control" id="floatingName" name="nombre" [(ngModel)]="usuario.name" required placeholder="Nombre">
               <label for="floatingNamet">Nombre</label>
             </div>
             <div class="form-floating mb-3">
-              <input type="email" class="form-control" id="floatingEmail" placeholder="Correo">
+              <input type="text" class="form-control" id="floatingApellido" name="lastname" [(ngModel)]="usuario.lastname" required placeholder="Apellidos">
+              <label for="floatingNamet">Apellidos</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="floatingEmail" name="email" [(ngModel)]="usuario.email" required placeholder="Correo">
               <label for="floatingEmail">Correo</label>
             </div>
             <div class="form-floating mb-3">
-              <input type="password" class="form-control" id="floatingPassword" placeholder="Contraseña">
+              <input type="password" class="form-control" id="floatingImagen" name="password" [(ngModel)]="usuario.image" required placeholder="Imagen">
+              <label for="floatingPassword">Imagen</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control" id="floatingPassword" name="password" [(ngModel)]="usuario.password" required placeholder="Contraseña">
               <label for="floatingPassword">Contraseña</label>
             </div>
             <div class="form-floating mb-3">
               <input type="password" class="form-control" id="floatingConfirmPassword" placeholder="Confirmar contraseña">
               <label for="floatingConfirmPassword">Confirmar contraseña</label>
             </div>
-            <button type="button" class="btn">Registrarme</button>
+            <button type="submit" class="btn">Registrarme</button>
           </form>
           <!-- Links to register by other methods -->
           <div class="login__with">
