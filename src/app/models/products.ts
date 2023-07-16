@@ -16,6 +16,7 @@ export class Product implements Product {
   promotion: Promotions;
   tags: Tags;
   category: Category;
+  user: string = localStorage.getItem("userId") || "";
 
   constructor() {
     let date = new Date().toDateString();

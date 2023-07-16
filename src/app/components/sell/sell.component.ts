@@ -61,9 +61,10 @@ export class SellComponent implements OnInit {
     .then((product: any) => {
       form.reset();
       this.output.emit();
+      alert("Producto guardado exitosamente");
     })
     .catch((err: any) => {
-      console.log(err.console, '', 'error');
+      console.error(`Error registering product: ${JSON.stringify(err)}`);
     });
   }
 
