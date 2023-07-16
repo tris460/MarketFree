@@ -1,3 +1,7 @@
+import { Category } from "./category";
+import { Promotions } from "./promotions";
+import { Tags } from "./tags";
+
 export class Product implements Product {
   id: string;
   name: string;
@@ -9,9 +13,9 @@ export class Product implements Product {
   publishedDay: string;
   status: boolean;
   review: string[];
-  promotion: string[];
-  tags: string[];
-  category: string[];
+  promotion: Promotions;
+  tags: Tags;
+  category: Category;
 
   constructor() {
     let date = new Date().toDateString();
@@ -27,8 +31,8 @@ export class Product implements Product {
     this.publishedDay = date;
     this.status = false;
     this.review = [];
-    this.promotion = [];
-    this.tags = [];
-    this.category = [];
+    this.promotion = new Promotions();
+    this.tags = new Tags();
+    this.category = new Category();
   }
 }

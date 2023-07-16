@@ -55,7 +55,7 @@ export class SellComponent implements OnInit {
     });
   }
 
-  registrar(form: NgForm) {
+  register(form: NgForm) {
     this.productsService
     .addProduct(this.product)
     .then((product: any) => {
