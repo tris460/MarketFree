@@ -1,5 +1,5 @@
 export class UsersModel implements UsersModel {
-  id: string;
+  _id: string;
   name: string;
   lastname: string;
   email: string;
@@ -11,7 +11,7 @@ export class UsersModel implements UsersModel {
 
   constructor() {
     // Initialize default values
-    this.id= '';
+    this._id= '';
     this.name = '';
     this.lastname = '';
     this.email = '';
