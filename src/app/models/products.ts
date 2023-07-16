@@ -14,6 +14,8 @@ export class Product implements Product {
   category: string[];
 
   constructor() {
+    let date = new Date().toDateString();
+
     // Initialize default values
     this.id = '';
     this.name = '';
@@ -22,7 +24,7 @@ export class Product implements Product {
     this.discount = 0;
     this.image = '';
     this.quantity = 0;
-    this.publishedDay = '';
+    this.publishedDay = date;
     this.status = false;
     this.review = [];
     this.promotion = [];

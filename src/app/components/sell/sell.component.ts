@@ -16,11 +16,9 @@ export class SellComponent implements OnInit {
 
   ngOnInit(): void {}
     registrar(forma: NgForm) {
-      console.log(this.producto);
       this.ProductsService
       .registarProducto(this.producto)
       .then((producto: any) => {
-          console.log(producto);
           forma.reset();
           this.salida.emit();
         })

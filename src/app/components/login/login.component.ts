@@ -17,16 +17,14 @@ export class LoginComponent implements OnInit {
   ngOnInit(): void {}
 
   registrar(forma: NgForm) {
-    console.log(this.usuario);
     this.userService
       .registarUsuario(this.usuario)
       .then((usuario: any) => {
-        console.log(usuario);
         forma.reset();
         this.salida.emit();
       })
       .catch((err: any) => {
-        console.log(err.console, '', 'error');        
+        console.log(err.console, '', 'error');
       });
   }
 }
