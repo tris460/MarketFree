@@ -2,7 +2,7 @@
   <div class="main menu">
     <!-- MarketFree logo -->
     <a [routerLink]="'/home'">
-      <img src="../../../assets/Logo - Test.jpg" alt="MarketFree logo" title="MarketFree Logo">
+      <img src="../../../assets/LogoMF.png" alt="MarketFree logo" title="MarketFree Logo">
     </a>
     <!-- Search bar for products -->
       <form class="menu__form">
@@ -32,9 +32,6 @@
     <ul class="dropdown-menu">
       <li *ngFor="let category of categoriesData"><a class="dropdown-item" href="#">{{category.name}}</a></li>
     </ul>
-    <a>Ofertas</a>
-    <a>Promociones</a>
-    <a>Lo más nuevo</a>
     <a [routerLink]="'/sell'" class="link">Vender</a>
     <a [routerLink]="'/help'" class="link">Ayuda</a>
   </div>
