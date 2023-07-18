@@ -5,6 +5,7 @@ import { Product } from 'src/app/models/products';
 import { BenefitsServices } from 'src/app/service/benefits.service';
 import { CategoryService } from 'src/app/service/category.service';
 import { ProductsService } from 'src/app/service/products.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -17,7 +18,11 @@ export class HomeComponent implements OnInit {
   productsData: Product[] = [];
   productsByCategory: any;
 
-  constructor(private categoryService: CategoryService, private benefitsServices: BenefitsServices, private productsService: ProductsService) { }
+  constructor(
+    private categoryService: CategoryService,
+    private benefitsServices: BenefitsServices,
+    private productsService: ProductsService,
+    private router: Router) { }
 
   ngOnInit() {
     // Get categories
@@ -60,10 +65,18 @@ export class HomeComponent implements OnInit {
           categoryName,
           products
         }));
+
+        console.log(this.productsByCategory)
       })
       .catch((error) => {
         console.log(`Error getting products: ${error}`);
       });
+  }
+
+  navigateToCategory(id: string) {
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate(['/category'], { queryParams: { category: id } });
+    });
   }
 
 }

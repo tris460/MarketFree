@@ -39,7 +39,7 @@
     </div>
     <div class="categories">
       <div class="categories__ind" *ngFor="let category of categoriesData">
-        <p>{{category.name}}</p>
+        <a class="link" (click)="navigateToCategory(category._id)">{{category.name}}</a>
       </div>
     </div>
   </div>
@@ -61,7 +61,9 @@
         </div>
         <div class="products__more">
           <div class="products__more--circle">
-            <img src="../../../assets/arrow-right.svg" alt="Flecha para ver más" title="Da click para ver más productos">
+            <a (click)="navigateToCategory(product.products[0].category[0]._id)">
+              <img src="../../../assets/arrow-right.svg" alt="Flecha para ver más" title="Da click para ver más productos">
+            </a>
           </div>
         </div>
       </div>
