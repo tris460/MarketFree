@@ -39,7 +39,7 @@
     </div>
     <div class="categories">
       <div class="categories__ind" *ngFor="let category of categoriesData">
-        <p>{{category.name}}</p>
+        <a class="link" (click)="navigateToCategory(category._id)">{{category.name}}</a>
       </div>
     </div>
   </div>
