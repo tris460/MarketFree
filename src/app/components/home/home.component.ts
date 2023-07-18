@@ -54,15 +54,13 @@ export class HomeComponent implements OnInit {
           return accumulator;
         }, {});
 
-        this.productsByCategory = Object.entries(productsGroup).map(([categoryName, questions]) => ({
+        this.productsByCategory = Object.entries(productsGroup).map(([categoryName, products]) => ({
           categoryName,
-          questions
+          products
         }));
-
-        console.log(this.productsByCategory)
       })
       .catch((error) => {
-        console.log(`Error getting benefits: ${error}`);
+        console.log(`Error getting products: ${error}`);
       });
   }
 
