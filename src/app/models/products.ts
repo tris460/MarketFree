@@ -1,5 +1,5 @@
 export class Product implements Product {
-  _id: string;
+  id: string;
   name: string;
   price: number;
   description: string;
@@ -15,7 +15,7 @@ export class Product implements Product {
 
   constructor() {
     // Initialize default values
-    this._id = '';
+    this.id = '';
     this.name = '';
     this.price = 0;
     this.description = '';
