@@ -15,6 +15,7 @@ import { PaymentMethodComponent } from './components/payment-method/payment-meth
 import { ReturnsComponent } from './components/returns/returns.component';
 import { TutorialsComponent } from './components/tutorials/tutorials.component';
 import { AboutComponent } from './components/about/about.component';
+import { FormComponent } from './components/form/form.component';
 
 const routes: Routes = [
   { path: 'cart', component: CartComponent },
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'returns', component: ReturnsComponent },
   { path: 'tutorials', component: TutorialsComponent },
   { path: 'about', component: AboutComponent},
+  { path: 'form', component: FormComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full'}
 ];
 

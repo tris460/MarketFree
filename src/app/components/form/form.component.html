@@ -1,0 +1,33 @@
+<app-header></app-header>
+
+
+<!-- Register content -->
+<div class="container m-5">
+    <h4>Actualizar usuario</h4>
+    <!-- Form to register an user -->
+    <form  #form="ngForm" name="form">
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingName" name="nombre"  required placeholder="Nombre">
+        <label for="floatingNamet">Nombre</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingApellido" name="lastname"  required placeholder="Apellidos">
+        <label for="floatingNamet">Apellidos</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="floatingEmail" name="email"  required placeholder="Correo">
+        <label for="floatingEmail">Correo</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="password" class="form-control" id="floatingPassword" name="password"  required placeholder="Contraseña">
+        <label for="floatingPassword">Contraseña</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="password" class="form-control" id="floatingConfirmPassword" placeholder="Confirmar contraseña">
+        <label for="floatingConfirmPassword">Confirmar contraseña</label>
+      </div>
+      <button type="submit" class="btn">Registrarme</button>
+    </form>
+  </div>
+
+<app-footer></app-footer>
