@@ -61,7 +61,9 @@
         </div>
         <div class="products__more">
           <div class="products__more--circle">
-            <img src="../../../assets/arrow-right.svg" alt="Flecha para ver más" title="Da click para ver más productos">
+            <a (click)="navigateToCategory(product.products[0].category[0]._id)">
+              <img src="../../../assets/arrow-right.svg" alt="Flecha para ver más" title="Da click para ver más productos">
+            </a>
           </div>
         </div>
       </div>
