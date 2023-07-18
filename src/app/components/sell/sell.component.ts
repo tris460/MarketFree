@@ -69,7 +69,7 @@ export class SellComponent implements OnInit {
       this.output.emit();
 
       const id = product.data._id;
-      this.router.navigate(['/product'], { queryParams: { id: id } })
+      this.router.navigate(['/product'], { queryParams: { id: id } });
     })
     .catch((err: any) => {
       console.error(`Error registering product: ${JSON.stringify(err)}`);
