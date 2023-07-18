@@ -6,14 +6,8 @@
   </div>
   <div class="sell">
     <!-- Form to sell a product -->
-<<<<<<< HEAD
-    <form class="sell__form">
+    <form class="sell__form" (ngSubmit)="registrar(forma)" #forma="ngForm">
       <p class="sell__description">Carga fotografías de alta calidad de tus productos y proporciona descripciones detalladas y atractivas. Incluye información sobre características, especificaciones técnicas, tamaños, colores y cualquier otra información relevante.</p>
-=======
-      <form class="sell__form" (ngSubmit)="registrar(forma)" #forma="ngForm">
-
-      <p class="sell__description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus veniam praesentium quibusdam ab eaque! Tenetur quos nemo vel. Velit facere perferendis et, neque deserunt quia pariatur! Sint itaque beatae quas assumenda explicabo dicta corporis tempora, ex possimus alias praesentium hic dolorum vero, minus aut? Assumenda maxime consequatur modi non unde: <a>¿Cómo vender?</a></p>
->>>>>>> 30b4bb47376409a58ae582121eb66f6b05520cf3
       <!-- Image -->
       <div class="input-group mb-3">
         <input type="text" class="form-control" id="inputImage" name="image" [(ngModel)]="producto.image" required aria-label="Upload">
