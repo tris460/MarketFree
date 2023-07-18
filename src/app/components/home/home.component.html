@@ -6,13 +6,13 @@
     <div class="carousel-inner">
       <!-- Carousel images -->
       <div class="carousel-item active" data-bs-interval="4000">
-        <img src="../../../assets/Banner - Test.jpg" class="d-block w-100" alt="Banner image 1">
+        <img src="../../../assets/Banner - Test1.png" class="d-block w-100" alt="Banner image 1">
       </div>
       <div class="carousel-item" data-bs-interval="4000">
-        <img src="../../../assets/Banner - Test.jpg" class="d-block w-100" alt="Banner image 2">
+        <img src="../../../assets/Banner - Test2.png" class="d-block w-100" alt="Banner image 2">
       </div>
       <div class="carousel-item" data-bs-interval="4000">
-        <img src="../../../assets/Banner - Test.jpg" class="d-block w-100" alt="Banner image 3">
+        <img src="../../../assets/Banner - Test3.png" class="d-block w-100" alt="Banner image 3">
       </div>
     </div>
     <!-- Buttons to navigate in the banner -->
@@ -27,7 +27,7 @@
   <!-- Benefits -->
   <div id="benefits" class="benefits">
     <div class="benefits__ind" *ngFor="let benefit of benefitsData">
-      <img src="../../../assets/Benefit - Test.jpg" alt="Benefit 1">
+      <img [src]="benefit.image" class="benefits__img" alt="Benefit 1">
       <p>{{benefit.name}}</p>
     </div>
   </div>

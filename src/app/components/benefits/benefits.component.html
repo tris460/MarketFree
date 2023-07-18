@@ -6,7 +6,7 @@
   <!-- Benefit area -->
   <div class="flex" *ngFor="let benefit of benefitsData">
     <!-- Benefit image -->
-    <img src="../../../assets/Benefits - Test.jpg" alt="Benefit 1" title="Beneficio 1">
+    <img [src]="benefit.image" alt="Benefit 1" title="Beneficio 1">
     <!-- Benefit info -->
     <div class="data">
       <p class="subtitle">{{benefit.name}}</p>
