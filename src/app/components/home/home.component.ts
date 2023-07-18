@@ -77,4 +77,8 @@ export class HomeComponent implements OnInit {
     });
   }
 
+  navigateToProduct(id: string) {
+    this.router.navigate(['/product'], { queryParams: { id: id } })
+  }
+
 }

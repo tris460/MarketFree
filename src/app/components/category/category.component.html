@@ -6,7 +6,7 @@
 
   <div class="flex">
     <div class="products__row">
-      <div class="products__row__card" *ngFor="let p of products">
+      <div class="products__row__card" *ngFor="let p of products" (click)="navigateToProduct(p._id)">
         <img [src]="p.image" class="products__row__card--img" [alt]="p.name" [title]="p.name">
         <div class="products__row__card--text">
           <p>{{p.name}}</p>

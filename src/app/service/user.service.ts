@@ -13,8 +13,8 @@ export class UserService {
     return this.http.get(`${this.url}/users`).toPromise();
   }
 
-  registarUsuario(usuario: UsersModel) {
-    return this.http.post(`${this.url}/users`, usuario).toPromise();
+  registerUser(user: UsersModel) {
+    return this.http.post(`${this.url}/users`, user).toPromise();
   }
 
   /*actualizarUsuario(id: string, usuario: UsersModel) {

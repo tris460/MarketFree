@@ -1,5 +1,5 @@
 export class UsersModel implements UsersModel {
-  id: string;
+  _id: string;
   name: string;
   lastname: string;
   email: string;
@@ -9,17 +9,16 @@ export class UsersModel implements UsersModel {
   shoppingCart: string[]; //TODO: Validar el tipo, en la BD es un ObjectID
   productsForSale: string[]; //TODO: Validar el tipo, en la BD es un ObjectID
 
-constructor() {
-  // Initialize default values
-  this.id= '';
-  this.name = '';
-  this.lastname = '';
-  this.email = '';
-  this.password = '';
-  this.image = '';
-  this.purchasedProducts = []; //TODO: Validar el tipo, en la BD es un ObjectID
-  this.shoppingCart = []; //TODO: Validar el tipo, en la BD es un ObjectID
-  this.productsForSale = []; //TODO: Validar el tipo, en la BD es un ObjectID
-
-}
+  constructor() {
+    // Initialize default values
+    this._id= '';
+    this.name = '';
+    this.lastname = '';
+    this.email = '';
+    this.password = '';
+    this.image = 'https://www.pngmart.com/es/image/326841';
+    this.purchasedProducts = []; //TODO: Validar el tipo, en la BD es un ObjectID
+    this.shoppingCart = []; //TODO: Validar el tipo, en la BD es un ObjectID
+    this.productsForSale = []; //TODO: Validar el tipo, en la BD es un ObjectID
+  }
 }
