@@ -24,6 +24,7 @@ import { AboutComponent } from './components/about/about.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { FormComponent } from './components/form/form.component';
+import { CategoryComponent } from './components/category/category.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +46,8 @@ import { FormComponent } from './components/form/form.component';
     ReturnsComponent,
     TutorialsComponent,
     AboutComponent,
-    FormComponent
+    FormComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,

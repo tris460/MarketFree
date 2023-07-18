@@ -1,42 +1,5 @@
-@mixin flex-center-wrap {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-#benefits, #categories, #products {
+#category {
   padding: 20px;
-}
-
-.benefits {
-  @include flex-center-wrap;
-  justify-content: space-evenly;
-
-  &__ind {
-    text-align: center;
-    margin: 3px 15px;
-  }
-
-  &__img {
-    width: 70px;
-  }
-}
-
-.categories {
-  @include flex-center-wrap;
-
-  &__ind {
-    background-color: #000;
-    padding: 6px 10px;
-    margin: 8px;
-    border-radius: 30px;
-
-    & > p {
-      margin: 0;
-      color: #fff;
-    }
-  }
 }
 
 .products {
@@ -46,15 +9,15 @@
   &__row {
     display: flex;
     padding: 15px 0;
-    overflow-x: hidden;
+    flex-wrap: wrap;
+    justify-content: center;
 
     &__card {
       border-radius: 10px;
-      margin: 0 15px;
+      margin: 0 15px 20px;
       box-shadow: 0px 0px 20px 0px #00000048;
       overflow: hidden;
-      min-width: 200px;
-      cursor: pointer;
+      width: 200px;
 
       &--img {
         border-top-left-radius: 10px;
@@ -91,7 +54,7 @@
       position: relative;
       top: 37%;
 
-      & > a > img {
+      & > img {
         width: 30px;
         height: 30px;
       }

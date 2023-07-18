@@ -38,29 +38,32 @@
       <p>Compra por categoría</p>
     </div>
     <div class="categories">
-      <div class="categories__ind">
-        <p>Mascotas</p>
+      <div class="categories__ind" *ngFor="let category of categoriesData">
+        <a class="link" (click)="navigateToCategory(category._id)">{{category.name}}</a>
       </div>
     </div>
   </div>
 
   <!-- Products -->
   <div id="products">
-    <div class="products">
+    <div class="products" *ngFor="let product of productsByCategory">
       <div class="title left">
-        <p>Categoría</p>
+        <p>{{product.categoryName}}</p>
       </div>
       <div class="products__row">
-        <div class="products__row__card">
-          <img src="../../../assets/Product - Test.jpg" class="products__row__card--img" alt="Product 1">
+        <!-- Individual product -->
+        <div class="products__row__card" *ngFor="let p of product.products" (click)="navigateToProduct(p._id)">
+          <img [src]="p.image" class="products__row__card--img" [alt]="p.name" [title]="p.name">
           <div class="products__row__card--text">
-            <p>Nombre del producto</p>
-            <p class="price-text">Precio</p>
+            <p>{{p.name}}</p>
+            <p class="price-text">${{p.price}}</p>
           </div>
         </div>
         <div class="products__more">
           <div class="products__more--circle">
-            <img src="../../../assets/arrow-right.svg" alt="Flecha para ver más" title="Da click para ver más productos">
+            <a (click)="navigateToCategory(product.products[0].category[0]._id)">
+              <img src="../../../assets/arrow-right.svg" alt="Flecha para ver más" title="Da click para ver más productos">
+            </a>
           </div>
         </div>
       </div>

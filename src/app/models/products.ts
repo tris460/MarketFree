@@ -3,7 +3,7 @@ import { Promotions } from "./promotions";
 import { Tags } from "./tags";
 
 export class Product implements Product {
-  id: string;
+  _id: string;
   name: string;
   price: number;
   description: string;
@@ -16,12 +16,13 @@ export class Product implements Product {
   promotion: Promotions;
   tags: Tags;
   category: Category;
+  user: string = localStorage.getItem("userId") || "";
 
   constructor() {
     let date = new Date().toDateString();
 
     // Initialize default values
-    this.id = '';
+    this._id = '';
     this.name = '';
     this.price = 0;
     this.description = '';

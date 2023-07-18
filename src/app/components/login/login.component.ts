@@ -15,7 +15,13 @@ export class LoginComponent implements OnInit {
 
   constructor(private userService: UserService, private router: Router) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const userId = localStorage.getItem('userId');
+
+    if (userId) {
+      this.router.navigateByUrl('/home');
+    }
+  }
 
   register(form: NgForm) {
     this.userService
