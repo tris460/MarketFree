@@ -15,9 +15,11 @@ import { PaymentMethodComponent } from './components/payment-method/payment-meth
 import { ReturnsComponent } from './components/returns/returns.component';
 import { TutorialsComponent } from './components/tutorials/tutorials.component';
 import { AboutComponent } from './components/about/about.component';
+import { CategoryComponent } from './components/category/category.component';
 
 const routes: Routes = [
   { path: 'cart', component: CartComponent },
+  { path: 'category', component: CategoryComponent},
   { path: 'faqs', component: FaqsComponent },
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },

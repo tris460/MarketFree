@@ -6,13 +6,13 @@
     <div class="carousel-inner">
       <!-- Carousel images -->
       <div class="carousel-item active" data-bs-interval="4000">
-        <img src="../../../assets/Banner - Test.jpg" class="d-block w-100" alt="Banner image 1">
+        <img src="../../../assets/Banner - Test1.png" class="d-block w-100" alt="Banner image 1">
       </div>
       <div class="carousel-item" data-bs-interval="4000">
-        <img src="../../../assets/Banner - Test.jpg" class="d-block w-100" alt="Banner image 2">
+        <img src="../../../assets/Banner - Test2.png" class="d-block w-100" alt="Banner image 2">
       </div>
       <div class="carousel-item" data-bs-interval="4000">
-        <img src="../../../assets/Banner - Test.jpg" class="d-block w-100" alt="Banner image 3">
+        <img src="../../../assets/Banner - Test3.png" class="d-block w-100" alt="Banner image 3">
       </div>
     </div>
     <!-- Buttons to navigate in the banner -->
@@ -27,7 +27,7 @@
   <!-- Benefits -->
   <div id="benefits" class="benefits">
     <div class="benefits__ind" *ngFor="let benefit of benefitsData">
-      <img src="../../../assets/Benefit - Test.jpg" alt="Benefit 1">
+      <img [src]="benefit.image" class="benefits__img" alt="Benefit 1">
       <p>{{benefit.name}}</p>
     </div>
   </div>
@@ -46,16 +46,17 @@
 
   <!-- Products -->
   <div id="products">
-    <div class="products">
+    <div class="products" *ngFor="let product of productsByCategory">
       <div class="title left">
-        <p>Categoría</p>
+        <p>{{product.categoryName}}</p>
       </div>
       <div class="products__row">
-        <div class="products__row__card">
-          <img src="../../../assets/Product - Test.jpg" class="products__row__card--img" alt="Product 1">
+        <!-- Individual product -->
+        <div class="products__row__card" *ngFor="let p of product.products">
+          <img [src]="p.image" class="products__row__card--img" [alt]="p.name" [title]="p.name">
           <div class="products__row__card--text">
-            <p>Nombre del producto</p>
-            <p class="price-text">Precio</p>
+            <p>{{p.name}}</p>
+            <p class="price-text">${{p.price}}</p>
           </div>
         </div>
         <div class="products__more">
