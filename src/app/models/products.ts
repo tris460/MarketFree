@@ -12,7 +12,6 @@ export class Product implements Product {
   promotion: string[];
   tags: string[];
   category: string[];
-  user: string;
 
   constructor() {
     // Initialize default values
@@ -29,6 +28,5 @@ export class Product implements Product {
     this.promotion = [];
     this.tags = [];
     this.category = [];
-    this.user = '';
   }
 }

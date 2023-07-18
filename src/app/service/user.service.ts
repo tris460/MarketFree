@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { UsersModel } from '../models/users';
 
 @Injectable({
   providedIn: 'root',
@@ -12,11 +13,11 @@ export class UserService {
     return this.http.get(`${this.url}/users`).toPromise();
   }
 
-  /*registarUsuario(usuario: UsersModel) {
-    return this.http.post(`${this.url}/usuario`, usuario).toPromise();
+  registarUsuario(usuario: UsersModel) {
+    return this.http.post(`${this.url}/users`, usuario).toPromise();
   }
 
-  actualizarUsuario(id: string, usuario: UsersModel) {
+  /*actualizarUsuario(id: string, usuario: UsersModel) {
     return this.http.put(`${this.url}/usuario/${id}`, usuario).toPromise();
   }
 

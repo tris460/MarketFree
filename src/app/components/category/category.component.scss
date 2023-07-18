@@ -1,42 +1,5 @@
-@mixin flex-center-wrap {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-}
-
-#benefits, #categories, #products {
+#category {
   padding: 20px;
-}
-
-.benefits {
-  @include flex-center-wrap;
-  justify-content: space-evenly;
-
-  &__ind {
-    text-align: center;
-    margin: 3px 15px;
-  }
-
-  &__img {
-    width: 70px;
-  }
-}
-
-.categories {
-  @include flex-center-wrap;
-
-  &__ind {
-    background-color: #000;
-    padding: 6px 10px;
-    margin: 8px;
-    border-radius: 30px;
-
-    & > p {
-      margin: 0;
-      color: #fff;
-    }
-  }
 }
 
 .products {
