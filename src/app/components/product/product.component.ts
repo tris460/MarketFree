@@ -3,7 +3,7 @@ import { ProductsService } from '../../service/products.service';
 import { PromotionServices } from '../../service/promotions.service';
 import { TagsService } from 'src/app/service/tags.service';
 import { Product } from '../../models/products';
-
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product',
@@ -12,37 +12,27 @@ import { Product } from '../../models/products';
 })
 export class ProductComponent implements OnInit {
   products: Product = new Product();
+  productId: any = '';
+  productInfo: any;
 
-  constructor(private productsService: ProductsService, private promotionServices: PromotionServices, private tagsService: TagsService ) { }
+  constructor(
+    private productsService: ProductsService,
+    private route: ActivatedRoute) { }
 
-  ngOnInit() {
-    //Get for products
-    this.productsService
-      .getProducts()
-      .then((data: any) => {
-        console.log(data.data);
-      })
-      .catch((error) => {
-        console.log(`Error getting products: ${error}`);
+  async ngOnInit() {
+    try {
+      this.route.queryParams.subscribe(params => {
+        this.productId = params['id'];
       });
-    //Get for promotions
-    this.promotionServices
-      .getPromotions()
-      .then((data: any) => {
-        console.log(data.data);
-      })
-      .catch((error) => {
-        console.log(`Error getting promotions: ${error}`);
-      });
-    // Get for tags
-    this.tagsService
-      .getTags()
-      .then((data: any) => {
-        console.log(data.data);
-      })
-      .catch((error) => {
-        console.log(`Error getting tags: ${error}`);
-      });
+
+      //Get for one product
+      this.productInfo = await this.productsService.getProductById(this.productId);
+      console.log(this.productInfo)
+
+      //Get for products
+      const products = await this.productsService.getProducts();
+    } catch(err) {
+      console.error(`Error: ${err}`);
+    }
   }
-
 }

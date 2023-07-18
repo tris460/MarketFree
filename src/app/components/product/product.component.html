@@ -6,19 +6,20 @@
         COMPRA
     </p>
 </div>
+
 <!-- Product data -->
 <div id="product" class="main" >
         <div class="row" >
           <!-- Product image -->
             <div class="col-6 flex">
-                <img src="../../../assets/One_Product-Test.jpg" alt="Producto1" title="Producto">
+                <img [src]="productInfo.image" [alt]="productInfo.name" [title]="productInfo.name">
             </div>
             <!-- Product info -->
             <div class="col-6">
                 <div class="info">
-                    <p class="info_nombre">Nombre del Producto:</p>
-                    <p class="info_precio">$$</p>
-                    <p class="info_des">Descripcion:</p>
+                    <p class="info_nombre">{{productInfo.name}}</p>
+                    <p class="info_precio">${{productInfo.price}} - {{productInfo.tags[0].name}}</p>
+                    <p class="info_des">Descripción: {{productInfo.description}}</p>
                     <p class="info_cant">Cantidad: <select name="" id="">
                         <option value="1">1</option>
                         <option value="1">2</option>
@@ -57,49 +58,5 @@
     </div>
   </div>
 </div>
-<!-- <table class="table col-xs-12">
-  <thead class="bg-light">
-      <tr style="color: rgb(3, 3, 3);">
-          <th scope="col">ID</th>
-          <th scope="col">producto</th>
-          <th scope="col">Precio</th>
-          <th scope="col">descripcion</th>
-          <th scope="col">contador</th>
-          <th scope="col">imagen</th>
-          <th scope="col">cantidad</th>
-          <th scope="col">Dia de publicacion</th>
-          <th scope="col">estatus</th>
-          <th scope="col">revisado</th>
-          <th scope="col">promocion</th>
-          <th scope="col">tag</th>
-          <th scope="col">Categoria</th>
-          <th scope="col">Usuario</th>
-      </tr>
-  </thead>
-  <tbody class="table-secondary">
-      <tr *ngFor="let tab of tabla; let i = index">
-          <th scope="row">{{tab._id}}</th>
-          <td>{{tab.name}}</td>
-          <td>{{tab.price}}</td>
-          <td>{{tab.description}}</td>
-          <td>{{tab.discount}}</td>
-          <td>{{tab.image}}</td>
-          <td>{{tab.quantity}}</td>
-          <td>{{tab.publishedDay}}</td>
-          <td>{{tab.status}}</td>
-          <td>{{tab.review}}</td>
-          <td>{{tab.promotion}}</td>
-          <td>{{tab.tags}}</td>
-          <td>{{tab.category}}</td>
-          <td>{{tab.user}}</td>
-          <td>
-            <button type="button" class="btn btn-success" (click)="dispararActualizar(tab._id)" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              Actualizar
-            </button>
-              <button class="btn btn-danger ml-3" (click)="elimiar(tab._id)">Eliminar</button> 
-            </td>
-      </tr>
-  </tbody>
-</table>-->
 
 <app-footer> </app-footer>

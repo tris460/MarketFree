@@ -8,6 +8,7 @@ import { TagsService } from 'src/app/service/tags.service';
 import { Tags } from 'src/app/models/tags';
 import { PromotionServices } from 'src/app/service/promotions.service';
 import { Promotions } from 'src/app/models/promotions';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sell',
@@ -21,7 +22,12 @@ export class SellComponent implements OnInit {
   tagsData: Tags[] = [];
   promotionsData: Promotions[] = [];
 
-  constructor( private productsService: ProductsService, private categoryService: CategoryService, private tagsService: TagsService, private promotionService: PromotionServices) { }
+  constructor(
+    private productsService: ProductsService,
+    private categoryService: CategoryService,
+    private tagsService: TagsService,
+    private promotionService: PromotionServices,
+    private router: Router) { }
 
   ngOnInit(): void {
     // Get categories
@@ -61,7 +67,9 @@ export class SellComponent implements OnInit {
     .then((product: any) => {
       form.reset();
       this.output.emit();
-      alert("Producto guardado exitosamente");
+
+      const id = product.data._id;
+      this.router.navigate(['/product'], { queryParams: { id: id } })
     })
     .catch((err: any) => {
       console.error(`Error registering product: ${JSON.stringify(err)}`);
