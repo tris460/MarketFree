@@ -1,9 +1,9 @@
 <app-header> </app-header>
 
 <!-- Promotion bar -->
-<div class="barra">
+<div class="barra" *ngIf="promotionId !== '64b43d0dc767f6cba2e2963e'">
     <p class="barra__txt">
-        COMPRA
+        {{promotionName}}
     </p>
 </div>
 
@@ -35,12 +35,12 @@
         </div>
 
   <!-- Related products -->
-  <div>
+  <!-- <div>
     <div class="products">
       <div class="title left">
         <p>Productos Relacionados</p>
       </div>
-      <!-- List of products -->
+      List of products
       <div class="products__row">
         <div class="products__row__card">
           <img src="../../../assets/Product - Test.jpg" class="products__row__card--img" alt="Product 1">
@@ -56,7 +56,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 </div>
 
 <app-footer> </app-footer>

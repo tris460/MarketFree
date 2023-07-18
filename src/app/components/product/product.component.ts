@@ -14,6 +14,8 @@ export class ProductComponent implements OnInit {
   products: Product = new Product();
   productId: any = '';
   productInfo: any;
+  promotionId: string = '';
+  promotionName: string = '';
 
   constructor(
     private productsService: ProductsService,
@@ -27,7 +29,9 @@ export class ProductComponent implements OnInit {
 
       //Get for one product
       this.productInfo = await this.productsService.getProductById(this.productId);
-      console.log(this.productInfo)
+      this.promotionId = this.productInfo.promotion[0]._id;
+      this.promotionName = this.productInfo.promotion[0].name;
+      console.log(this.promotionId)
 
       //Get for products
       const products = await this.productsService.getProducts();
