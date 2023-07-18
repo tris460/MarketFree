@@ -65,8 +65,6 @@ export class HomeComponent implements OnInit {
           categoryName,
           products
         }));
-
-        console.log(this.productsByCategory)
       })
       .catch((error) => {
         console.log(`Error getting products: ${error}`);
