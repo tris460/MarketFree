@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Product } from '../models/products';
 
 @Injectable({
   providedIn: 'root'
@@ -14,11 +15,11 @@ export class ProductsService {
   }
 
 
- /* registarProducto( usuario: Product) {
-    return this.http.post(`${this.url}/producto`, usuario).toPromise();
+  registarProducto( producto: Product) {
+    return this.http.post(`${this.url}/products`, producto).toPromise();
   }
 
- actualizarProducto(id: string, usuario: Product) {
+ /*actualizarProducto(id: string, usuario: Product) {
   return this.http.put(`${this.url}/producto/${id}`, usuario).toPromise();
  }
 
