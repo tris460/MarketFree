@@ -7,8 +7,12 @@
     </p>
 </div>
 
+<div class="no-data" *ngIf="!productInfo">
+  <p>No tenemos este producto disponible en este momento</p>
+</div>
+
 <!-- Product data -->
-<div id="product" class="main" >
+<div id="product" class="main" *ngIf="productInfo">
         <div class="row" >
           <!-- Product image -->
             <div class="col-6 flex">

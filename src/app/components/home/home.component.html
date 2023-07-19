@@ -44,6 +44,10 @@
     </div>
   </div>
 
+  <div class="no-data" *ngIf="productsByCategory.length == 0">
+    <p>No hay productos disponibles en este momento</p>
+  </div>
+
   <!-- Products -->
   <div id="products">
     <div class="products" *ngFor="let product of productsByCategory">
