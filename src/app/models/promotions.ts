@@ -1,11 +1,11 @@
-export class promotions implements promotions {
-  id: string;  //TODO: Validar el tipo, en la BD es un ObjectID
+export class Promotions implements Promotions {
+  _id: string;  //TODO: Validar el tipo, en la BD es un ObjectID
   name: string;
   description: string;
 
   constructor() {
     // Initialize default values
-    this.id='',
+    this._id='',
     this.name='',
     this.description=''
   }
