@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
   categoriesData: Category[] = [];
   benefitsData: Benefits[] = [];
   productsData: Product[] = [];
-  productsByCategory: any;
+  productsByCategory: any = [];
 
   constructor(
     private categoryService: CategoryService,

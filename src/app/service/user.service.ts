@@ -17,6 +17,14 @@ export class UserService {
     return this.http.post(`${this.url}/users`, user).toPromise();
   }
 
+  getUserById(id: string) {
+    return this.http.get(`${this.url}/users`).toPromise()
+      .then((users: any) => {
+        const user = users.data.filter((u:any) => u._id === id)[0];
+        return user;
+      });
+  }
+
   /*actualizarUsuario(id: string, usuario: UsersModel) {
     return this.http.put(`${this.url}/usuario/${id}`, usuario).toPromise();
   }

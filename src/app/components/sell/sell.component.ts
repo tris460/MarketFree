@@ -30,6 +30,12 @@ export class SellComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit(): void {
+    const userId = localStorage.getItem('userId');
+
+    if(!userId) {
+      this.router.navigateByUrl('/login');
+    }
+
     // Get categories
     this.categoryService
       .getCategories()
