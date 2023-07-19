@@ -2,13 +2,10 @@
   padding: 30px;
 }
 
-.title {
-  margin-bottom: 30px;
-}
-
 .faqs {
   &__category {
     font-size: 23px;
+    margin-top: 30px;
 
     &:active {
       border-color: transparent;
@@ -16,6 +13,8 @@
   }
 
   &__question {
+    margin-left: 30px;
+
     &--button {
       font-size: 20px;
       font-weight: bold;

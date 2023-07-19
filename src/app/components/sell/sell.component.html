@@ -5,53 +5,72 @@
     <p>Vende un producto</p>
   </div>
   <div class="sell">
-    <form class="sell__form">
+    <!-- Form to sell a product -->
+    <form class="sell__form" (ngSubmit)="register(form)" #form="ngForm">
       <p class="sell__description">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus veniam praesentium quibusdam ab eaque! Tenetur quos nemo vel. Velit facere perferendis et, neque deserunt quia pariatur! Sint itaque beatae quas assumenda explicabo dicta corporis tempora, ex possimus alias praesentium hic dolorum vero, minus aut? Assumenda maxime consequatur modi non unde: <a>¿Cómo vender?</a></p>
+      <!-- Image -->
       <div class="input-group mb-3">
-        <input type="file" class="form-control" id="inputImage" aria-label="Upload">
+        <input type="text" class="form-control" name="image" [(ngModel)]="product.image" required  id="inputImage" aria-label="Upload" placeholder="URL de la imagen de tu producto">
       </div>
+      <!-- Name -->
       <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="floatingName" placeholder="Nombre">
+        <input type="text" class="form-control" name="nombre" [(ngModel)]="product.name" required id="floatingName" placeholder="Nombre">
         <label for="floatingName">Nombre</label>
       </div>
+      <!-- Price -->
       <div class="form-floating mb-3">
-        <input type="number" class="form-control" id="floatingPrecio" placeholder="Precio">
+        <input type="number" class="form-control" id="floatingPrecio" name="Precio" [(ngModel)]="product.price" required placeholder="Precio">
         <label for="floatingPrecio">Precio</label>
       </div>
+      <!-- Description -->
       <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="floatingDescription" placeholder="Descripción">
+        <input type="text" class="form-control" id="floatingDescription" name="Descripcion" [(ngModel)]="product.description" required placeholder="Descripción">
         <label for="floatingDescription">Descripción</label>
       </div>
+      <!-- Quantity -->
       <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="floatingQuantity" placeholder="Cantidad">
+        <input type="text" class="form-control" id="floatingQuantity" name="quantity" [(ngModel)]="product.quantity" required  placeholder="Cantidad">
         <label for="floatingQuantity">Cantidad de productos</label>
       </div>
+      <!-- Discount -->
       <div class="form-floating mb-3">
-        <input type="number" class="form-control" id="floatingDiscount" placeholder="Descuento">
+        <input type="number" class="form-control" id="floatingDiscount" name="discount" [(ngModel)]="product.discount" required placeholder="Descuento">
         <label for="floatingDiscount">Descuento</label>
       </div>
+      <!-- Promotions -->
       <div class="subtitle">
-        <p>Elige las promociones que deseas aplicar:</p>
+        <p>Elige la promoción que deseas aplicar:</p>
       </div>
-      <div class="form-check form-switch">
-        <input class="form-check-input" type="checkbox" role="switch" id="promotion1">
-        <label class="form-check-label" for="promotion1">Promocion</label>
+      <div class="form-check form-switch" *ngFor="let promotion of promotionsData">
+        <input class="form-check-input radio" type="radio" [name]=promotion.name [id]=promotion._id (change)="product.promotion = promotion" [(ngModel)]="product.promotion">
+        <label class="form-check-label" [for]=promotion._id>{{promotion.name}}</label>
       </div>
+      <!-- Category -->
       <div class="subtitle">
-        <p>Elige las etiquetas que apliquen a tu producto:</p>
+        <p>Elige las categorías de tu producto:</p>
       </div>
-      <div class="form-check form-switch">
-        <input class="form-check-input" type="checkbox" role="switch" id="label1">
-        <label class="form-check-label" for="label1">Etiqueta</label>
+      <div class="form-check form-switch" *ngFor="let category of categoriesData">
+        <input class="form-check-input radio" type="radio" [name]=category.name [id]=category._id (change)="product.category = category" [(ngModel)]="product.category">
+        <label class="form-check-label" [for]=category._id>{{category.name}}</label><br>
       </div>
+      <!-- Tags -->
+      <div class="subtitle">
+        <p>Elige la etiqueta que aplique a tu producto:</p>
+      </div>
+      <div class="form-check form-switch" *ngFor="let tag of tagsData">
+        <input class="form-check-input radio" type="radio" [name]=tag.name [id]=tag._id (change)="product.tags = tag" [(ngModel)]="product.tags">
+        <label class="form-check-label" [for]=tag._id>{{tag.name}}</label>
+      </div>
+      <!-- Product visibility -->
       <div class="subtitle">
         <p>¿Qué visibilidad tendrá tu producto?</p>
       </div>
       <div class="form-check form-switch">
-        <input class="form-check-input" type="checkbox" role="switch" id="chVisible" checked>
+        <input class="form-check-input" type="checkbox" name="status" [(ngModel)]="product.status" required role="switch" id="chVisible" checked>
         <label class="form-check-label" for="chVisible">Visible</label>
       </div>
-      <button type="button" class="btn btn-dark">Publicar producto</button>
+      <!-- Publish/save button -->
+      <button type="submit" class="btn btn-dark">Publicar producto</button>
     </form>
   </div>
 </div>

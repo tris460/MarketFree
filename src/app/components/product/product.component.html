@@ -1,42 +1,50 @@
 <app-header> </app-header>
 
-<div class="barra">
+<!-- Promotion bar -->
+<div class="barra" *ngIf="promotionId !== '64b43d0dc767f6cba2e2963e'">
     <p class="barra__txt">
-        COMPRA
+        {{promotionName}}
     </p>
-</div> <!-- Aqui va la barra roja -->
-<div id="product" class="main" >
+</div>
 
+<div class="no-data" *ngIf="!productInfo">
+  <p>No tenemos este producto disponible en este momento</p>
+</div>
+
+<!-- Product data -->
+<div id="product" class="main" *ngIf="productInfo">
         <div class="row" >
+          <!-- Product image -->
             <div class="col-6 flex">
-
-                <img src="../../../assets/One_Product-Test.jpg" alt="Producto1" title="Producto">
-
-            </div> <!-- Es una seccion -->
+                <img [src]="productInfo.image" [alt]="productInfo.name" [title]="productInfo.name">
+            </div>
+            <!-- Product info -->
             <div class="col-6">
                 <div class="info">
-                    <p class="info_nombre">Nombre del Producto:</p>
-                    <p class="info_precio">$$</p>
-                    <p class="info_des">Descripcion:</p>
+                    <p class="info_nombre">{{productInfo.name}}</p>
+                    <p class="info_precio">${{productInfo.price}} - {{productInfo.tags[0].name}}</p>
+                    <p class="info_des">Descripción: {{productInfo.description}}</p>
                     <p class="info_cant">Cantidad: <select name="" id="">
                         <option value="1">1</option>
                         <option value="1">2</option>
                         <option value="1">3</option>
                         <option value="1">4</option>
                     </select> </p>
-
-                    <button class="info_btn">Comprar Ahora</button>
-                    <button  class="info_btn">Agregar al Carrito</button>
+                    <a [routerLink]="'/payment'" class="link">
+                      <button class="info_btn">Comprar Ahora</button>
+                    </a>
+                    <button class="info_btn">Agregar al Carrito</button>
                 </div>
             </div>
         </div>
 
-  <!-- Products -->
-  <div id="">
+  <!-- Related products -->
+  <!-- <div>
     <div class="products">
       <div class="title left">
         <p>Productos Relacionados</p>
       </div>
+      List of products
       <div class="products__row">
         <div class="products__row__card">
           <img src="../../../assets/Product - Test.jpg" class="products__row__card--img" alt="Product 1">
@@ -52,7 +60,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 </div>
 
-        <app-footer> </app-footer>
+<app-footer> </app-footer>

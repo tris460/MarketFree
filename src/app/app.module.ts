@@ -21,6 +21,9 @@ import { PaymentMethodComponent } from './components/payment-method/payment-meth
 import { ReturnsComponent } from './components/returns/returns.component';
 import { TutorialsComponent } from './components/tutorials/tutorials.component';
 import { AboutComponent } from './components/about/about.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { CategoryComponent } from './components/category/category.component';
 
 @NgModule({
   declarations: [
@@ -41,12 +44,15 @@ import { AboutComponent } from './components/about/about.component';
     PaymentMethodComponent,
     ReturnsComponent,
     TutorialsComponent,
-    AboutComponent
+    AboutComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

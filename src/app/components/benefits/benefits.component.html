@@ -3,11 +3,19 @@
   <div class="title">
     <p>Beneficios</p>
   </div>
-  <div class="flex">
-    <img src="../../../assets/Benefits - Test.jpg" alt="Benefit 1" title="Beneficio 1">
+
+  <div class="no-data" *ngIf="benefitsData.length == 0">
+    <p>No hay beneficios disponibles en este momento</p>
+  </div>
+
+  <!-- Benefit area -->
+  <div class="flex" *ngFor="let benefit of benefitsData">
+    <!-- Benefit image -->
+    <img [src]="benefit.image" [alt]="benefit.name" [title]="benefit.name" width="100" height="100">
+    <!-- Benefit info -->
     <div class="data">
-      <p class="subtitle">Beneficio</p>
-      <p>Lorem, ipsum dolor sit amet cons uasi hic provident ullam iure quia qui! Ullam autem eveniet inventore praesentium, odit harum culpa molestias aspernatur quo ea blanditiis, impedit consectetur tempora veniam ipsum accusantium fugiat provident. Quis, illum suscipit. Molestias, veritatis voluptatem. In itaque laboriosam placeat consequuntur voluptatum magnam similique, vero neque ad voluptates nesciunt ex rerum ab illo doloremque dicta repellendus quam magni praesentium? Labore repudiandae laudantium repellendus eligendi quis rerum minus quo eius assumenda? Tempore inventore excepturi vitae sequi, distinctio minus iure, voluptas at dolorum laudantium quam sit ad exercitationem ab. Quisquam iure, atque minus beatae fuga totam architecto sapiente placeat. Quisquam hic optio placeat temporibus vel voluptatem laborum dignissimos, aliquid, illum natus exercitationem tempore!</p>
+      <p class="subtitle">{{benefit.name}}</p>
+      <p>{{benefit.description}}</p>
     </div>
   </div>
 </div>
