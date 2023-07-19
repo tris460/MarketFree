@@ -10,10 +10,14 @@ import { Router } from '@angular/router';
 })
 export class HeaderComponent implements OnInit {
   categoriesData: Category[] = [];
+  userId:any = '';
 
   constructor(private categoryService: CategoryService, private router: Router) { }
 
   ngOnInit(): void {
+    this.userId = localStorage.getItem('userId');
+    console.log(this.userId)
+
     this.categoryService
       .getCategories()
       .then((data: any) => {
@@ -30,5 +34,8 @@ export class HeaderComponent implements OnInit {
     });
   }
 
-
+  logout() {
+    localStorage.removeItem('userId');
+    location.reload();
+  }
 }
