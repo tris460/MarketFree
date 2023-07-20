@@ -16,6 +16,8 @@ export class ProductComponent implements OnInit {
   productInfo: any = '';
   promotionId: string = '';
   promotionName: string = '';
+  productQuantity = 0;
+  productArray: string[] = [];
 
   constructor(
     private productsService: ProductsService,
@@ -36,11 +38,11 @@ export class ProductComponent implements OnInit {
       this.productInfo = await this.productsService.getProductById(this.productId);
       this.promotionId = this.productInfo.promotion[0]._id;
       this.promotionName = this.productInfo.promotion[0].name;
+      this.productQuantity = this.productInfo.quantity;
 
-      console.log(this.productInfo)
-
-      //Get for products
-      const products = await this.productsService.getProducts();
+      for (let i = 1; i <= this.productQuantity; i++) {
+        this.productArray.push(`${i}`)
+      }
     } catch(err) {
       console.error(`Error: ${err}`);
     }
