@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/app/service/user.service';
-import { UsersModel } from 'src/app/models/users';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-profile',
@@ -8,7 +8,9 @@ import { UsersModel } from 'src/app/models/users';
   styleUrls: ['./profile.component.scss']
 })
 export class ProfileComponent implements OnInit {
-  constructor(private userService: UserService) { }
+  userInfo: any = '';
+
+  constructor(private userService: UserService, private router: Router) { }
 
   // Variables to read option selected
   MisPedidos: boolean = false;
@@ -24,19 +26,22 @@ export class ProfileComponent implements OnInit {
     // Show/hide div with info
     this.MisPedidos = option === 'opcion1';
     this.Direccion = option === 'opcion2';
-    this.MisPagos = option === 'opcion3';
-    this.MisMedidas = option === 'opcion5';
-    this.Cupones = option === 'opcion6';
     this.MisDatos = option === 'opcion7';
-    this.Promociones = option === 'opcion11';
     this.Facturacion = option === 'opcion12';
   }
 
   ngOnInit() {
+    const userId = localStorage.getItem('userId');
+
+    if(!userId) {
+      this.router.navigateByUrl('/home');
+    }
+
     this.userService
-      .getUsers()
+      .getUserById(userId!)
       .then((data: any) => {
-        console.log(data.data);
+        this.userInfo = data;
+        console.log(data); // TODO: Mostrar la información del usuario
       })
       .catch((error) => {
         console.log(`Error getting users: ${error}`);

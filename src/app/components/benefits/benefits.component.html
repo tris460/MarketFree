@@ -3,10 +3,15 @@
   <div class="title">
     <p>Beneficios</p>
   </div>
+
+  <div class="no-data" *ngIf="benefitsData.length == 0">
+    <p>No hay beneficios disponibles en este momento</p>
+  </div>
+
   <!-- Benefit area -->
   <div class="flex" *ngFor="let benefit of benefitsData">
     <!-- Benefit image -->
-    <img [src]="benefit.image" alt="Benefit 1" title="Beneficio 1">
+    <img [src]="benefit.image" [alt]="benefit.name" [title]="benefit.name" width="100" height="100">
     <!-- Benefit info -->
     <div class="data">
       <p class="subtitle">{{benefit.name}}</p>

@@ -3,6 +3,7 @@ export class UsersModel implements UsersModel {
   name: string;
   lastname: string;
   email: string;
+  address: string;
   password: string;
   image: string;
   purchasedProducts: string[]; //TODO: Validar el tipo, en la BD es un ObjectID
@@ -15,6 +16,7 @@ export class UsersModel implements UsersModel {
     this.name = '';
     this.lastname = '';
     this.email = '';
+    this.address = '';
     this.password = '';
     this.image = 'https://www.pngmart.com/es/image/326841';
     this.purchasedProducts = []; //TODO: Validar el tipo, en la BD es un ObjectID

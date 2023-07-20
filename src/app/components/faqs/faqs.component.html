@@ -4,6 +4,11 @@
   <div class="title">
     <p>Preguntas frecuentes</p>
   </div>
+
+  <div class="no-data" *ngIf="faqsByCategory.length == 0">
+    <p>No hay productos disponibles en este momento</p>
+  </div>
+
   <!-- FAQs container -->
   <div class="faqs" *ngFor="let faqs of faqsByCategory">
     <!-- FAQs categories -->

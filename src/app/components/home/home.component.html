@@ -27,7 +27,7 @@
   <!-- Benefits -->
   <div id="benefits" class="benefits">
     <div class="benefits__ind" *ngFor="let benefit of benefitsData">
-      <img [src]="benefit.image" class="benefits__img" alt="Benefit 1">
+      <img [src]="benefit.image" class="benefits__img" alt="" [title]="benefit.name">
       <p>{{benefit.name}}</p>
     </div>
   </div>
@@ -42,6 +42,10 @@
         <p>Mascotas</p>
       </div>
     </div>
+  </div>
+
+  <div class="no-data" *ngIf="productsByCategory.length == 0">
+    <p>No hay productos disponibles en este momento</p>
   </div>
 
   <!-- Products -->

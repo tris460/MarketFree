@@ -9,20 +9,28 @@
         <input class="form-control" type="search" placeholder="Busca entre nombres, códigos, marcas...">
         <button class="btn" type="submit">Buscar</button>
       </form>
-      <!-- Profile link -->
-      <a [routerLink]="'/profile'" class="link">
-        Mi perfil
-      </a>
       <!-- Notifications button -->
-      <button type="button" class="btn position-relative">
+      <!-- <button type="button" class="btn position-relative">
         <img src="../../../assets/bell.svg" alt="Notificaciones" title="Notificaciones">
         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">10</span>
-      </button>
+      </button> -->
       <!-- Cart button -->
-      <button [routerLink]="'/cart'" type="button" class="btn position-relative">
+      <button [routerLink]="'/cart'" type="button" class="btn position-relative" *ngIf="userId">
         <img src="../../../assets/cart.svg" alt="Carrito" title="Mi carrito">
         <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">1</span>
       </button>
+      <!-- Profile link -->
+      <a [routerLink]="'/profile'" class="link" *ngIf="userId">
+        Mi perfil
+      </a>
+      <!-- Login link -->
+      <a [routerLink]="'/login'" class="link" *ngIf="!userId">
+        Login
+      </a>
+      <!-- Logout button -->
+      <p class="link" (click)="logout()" style="margin: 20px 10px" *ngIf="userId">
+        Logout
+      </p>
   </div>
   <!-- Go to categories -->
   <div class="menu__categories">

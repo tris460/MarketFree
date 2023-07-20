@@ -14,7 +14,7 @@ import { ProductsService } from 'src/app/service/products.service';
 export class HomeComponent implements OnInit {
   benefitsData: Benefits[] = [];
   productsData: Product[] = [];
-  productsByCategory: any;
+  productsByCategory: any = [];
 
   constructor(private categoryService: CategoryService, private benefitsServices: BenefitsServices, private productsService: ProductsService, private router: Router) { }
 
