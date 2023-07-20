@@ -7,7 +7,7 @@ import { HttpClient } from '@angular/common/http';
 export class PaymentService {
 
   constructor(private http: HttpClient) { }
-  url = `Http://127.0.0.1:3000`;
+  url = 'Http://127.0.0.1:3000';
 
   async validatePayment(formData: any) {
     try {
@@ -15,7 +15,8 @@ export class PaymentService {
       return response;
     } catch (error) {
       console.error('Error al enviar la solicitud:', error);
+      console.error('Error response:', error); // Agrega esta línea para imprimir el contenido del objeto 'error'
       throw error;
     }
-  }
+  }  
 }
