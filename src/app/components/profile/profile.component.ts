@@ -48,4 +48,8 @@ export class ProfileComponent implements OnInit {
       });
   }
 
+  goToForm() {
+    this.router.navigateByUrl('/form');
+  }
+
 }

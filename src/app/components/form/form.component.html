@@ -7,26 +7,22 @@
     <!-- Form to register an user -->
     <form  #form="ngForm" name="form">
       <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="floatingName" name="nombre"  required placeholder="Nombre">
+        <input type="text" class="form-control" id="floatingName" name="nombre"  required placeholder="Nombre" value={{userUpdated.name}} [(ngModel)]="userUpdated.name">
         <label for="floatingNamet">Nombre</label>
       </div>
       <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="floatingApellido" name="lastname"  required placeholder="Apellidos">
+        <input type="text" class="form-control" id="floatingApellido" name="lastname"  required placeholder="Apellidos" value={{userUpdated.lastname}} [(ngModel)]="userUpdated.lastname">
         <label for="floatingNamet">Apellidos</label>
       </div>
       <div class="form-floating mb-3">
-        <input type="email" class="form-control" id="floatingEmail" name="email"  required placeholder="Correo">
+        <input type="email" class="form-control" id="floatingEmail" name="email"  required placeholder="Correo" value={{userUpdated.email}} [(ngModel)]="userUpdated.email">
         <label for="floatingEmail">Correo</label>
       </div>
       <div class="form-floating mb-3">
-        <input type="password" class="form-control" id="floatingPassword" name="password"  required placeholder="Contraseña">
+        <input type="password" class="form-control" id="floatingPassword" name="password"  required placeholder="Contraseña" value={{userUpdated.password}} [(ngModel)]="userUpdated.password">
         <label for="floatingPassword">Contraseña</label>
       </div>
-      <div class="form-floating mb-3">
-        <input type="password" class="form-control" id="floatingConfirmPassword" placeholder="Confirmar contraseña">
-        <label for="floatingConfirmPassword">Confirmar contraseña</label>
-      </div>
-      <button type="submit" class="btn">Registrarme</button>
+      <button type="submit" class="btn" (click)="updateUser()">Registrarme</button>
     </form>
   </div>
 
