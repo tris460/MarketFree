@@ -6,24 +6,21 @@
     </div>
     <div class="row">
       <div class="col-8">
-        <div class="row">
-          <div class="col-md-4">
+        <div class="row" style="justify-content: center;">
+          <!-- <div class="col-md-4"> -->
+            <div class="no-data" *ngIf="productData.length == 0">
+              <p>No tienes productos agregados este momento</p>
+            </div>
             <!-- Dev card -->
-            <div class="card">
-              <img src="https://via.placeholder.com/150" class="card-img-top" alt="Producto 1">
+            <div class="card" *ngFor="let p of productData" style="width: 220px; margin: 5px;">
+              <img [src]="p.image" class="card-img-top" [alt]="p.name">
               <div class="card-body">
-                <h5 class="card-title">Producto 5</h5>
-                <p class="card-text">Precio: $10</p>
+                <h5 class="card-title">{{p.name}}</h5>
+                <p class="card-text">Precio: ${{p.price}}</p>
                 <button type="button" class="btn btn-danger btn-sm mb-2">Eliminar</button>
-                <div class="counter">
-                  <!-- Dev Button -->
-                  <button class="btn btn-counter" (click)="decreaseQuantity()">-</button>
-                  <span class="quantity">{{ quantity1 }}</span>
-                  <button class="btn btn-counter" (click)="increaseQuantity()">+</button>
-                </div>
               </div>
             </div>
-          </div>
+          <!-- </div> -->
         </div>
       </div>
       <div class="col-4 ">
@@ -32,10 +29,10 @@
             <!-- Resumen de Compra -->
             <div class="card-body">
               <h4 class="card-title">Resumen de compra</h4>
-              <h6 class="card-subtitle mb-2 text-body-secondary">Producto:  45</h6>
-              <h6 class="card-subtitle mb-2 text-body-secondary">Envio: 100</h6>
+              <h6 class="card-subtitle mb-2 text-body-secondary">Productos: {{productData.length}}</h6>
+              <h6 class="card-subtitle mb-2 text-body-secondary">Total: <b>${{total}}</b></h6>
               <a [routerLink]="'/payment'" class="link">
-                <button type="button" class="btn btn-dark btn-sm m-2">
+                <button type="button" class="btn btn-dark btn-sm m-2" *ngIf="productData.length != 0">
                   Continuar compra
                 </button>
               </a>

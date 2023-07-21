@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ProductsService } from 'src/app/service/products.service';
 import { UserService } from 'src/app/service/user.service';
 
 @Component({
@@ -9,19 +10,11 @@ import { UserService } from 'src/app/service/user.service';
 })
 export class CartComponent implements OnInit {
   userInfo: any = '';
+  cart: any = [];
+  productData: any = [];
+  total: number = 0;
 
-  constructor(private userService: UserService, private router: Router) { }
-  quantity1: number = 1;
-
-  increaseQuantity() {
-    this.quantity1++;
-  }
-
-  decreaseQuantity() {
-    if (this.quantity1 > 1) {
-      this.quantity1--;
-    }
-  }
+  constructor(private productsService: ProductsService, private userService: UserService, private router: Router) { }
 
   ngOnInit(): void {
     const userId = localStorage.getItem('userId');
@@ -34,11 +27,28 @@ export class CartComponent implements OnInit {
       .getUserById(userId!)
       .then((data: any) => {
         this.userInfo = data;
-        console.log(data); // TODO: Mostrar la información del usuario
+        this.cart = this.userInfo.shoppingCart;
+
+        for (let i = 0; i < this.cart.length; i++) {
+          this.getProductInfo(this.cart[i]._id);
+        }
+        this.getTotal();
       })
       .catch((error) => {
         console.log(`Error getting users: ${error}`);
       });
   }
 
+  async getProductInfo(id: string) {
+    let product = await this.productsService.getProductById(id)
+    this.productData.push(product);
+    this.total += product.price;
+    console.log(this.total)
+  }
+
+  getTotal() {
+    for (let i = 0; i < this.productData.length; i++) {
+      console.log(this.productData[i])
+    }
+  }
 }
