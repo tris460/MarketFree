@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { UserService } from 'src/app/service/user.service';
 import { UsersModel } from 'src/app/models/users';
 import { NgForm } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -9,24 +10,33 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  @Output() salida = new EventEmitter();
-  usuario: UsersModel = new UsersModel();
+  @Output() output = new EventEmitter();
+  user: UsersModel = new UsersModel();
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private router: Router) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    const userId = localStorage.getItem('userId');
 
-  registrar(forma: NgForm) {
-    console.log(this.usuario);
+    if (userId) {
+      this.router.navigateByUrl('/home');
+    }
+  }
+
+  register(form: NgForm) {
     this.userService
-      .registarUsuario(this.usuario)
-      .then((usuario: any) => {
-        console.log(usuario);
-        forma.reset();
-        this.salida.emit();
+      .registerUser(this.user)
+      .then((user: any) => {
+        form.reset();
+        this.output.emit();
+
+        const userId = user.data._id;
+        localStorage.setItem('userId', userId);
+
+        this.router.navigateByUrl('/home');
       })
       .catch((err: any) => {
-        console.log(err.console, '', 'error');        
+        console.log(err.console, '', 'error');
       });
   }
 }

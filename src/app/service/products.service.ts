@@ -14,9 +14,16 @@ export class ProductsService {
     return this.http.get(`${this.url}/products`).toPromise();
   }
 
+  addProduct(product: Product) {
+    return this.http.post(`${this.url}/products`, product).toPromise();
+  }
 
-  registarProducto( producto: Product) {
-    return this.http.post(`${this.url}/products`, producto).toPromise();
+  getProductById(id: string) {
+    return this.http.get(`${this.url}/products`).toPromise()
+      .then((products: any) => {
+        const product = products.data.filter((p:any) => p._id === id)[0];
+        return product;
+      });
   }
 
  /*actualizarProducto(id: string, usuario: Product) {

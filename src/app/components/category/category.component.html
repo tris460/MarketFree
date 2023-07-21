@@ -1,16 +1,21 @@
 <app-header></app-header>
 <div id="category" class="main">
-  <div class="title">
-    <p>Category</p>
+  <div class="no-data" *ngIf="products.length == 0">
+    <p>No hay productos disponibles en este momento</p>
   </div>
+
+  <div class="title">
+    <p>{{products[0].category[0].name}}</p>
+  </div>
+
 
   <div class="flex">
     <div class="products__row">
-      <div class="products__row__card">
-        <img src="../../../assets/Product - Test.jpg" class="products__row__card--img" alt="Product 1">
+      <div class="products__row__card" *ngFor="let p of products" (click)="navigateToProduct(p._id)">
+        <img [src]="p.image" class="products__row__card--img" [alt]="p.name" [title]="p.name">
         <div class="products__row__card--text">
-          <p>Nombre del producto</p>
-          <p class="price-text">Precio</p>
+          <p>{{p.name}}</p>
+          <p class="price-text">${{p.price}}</p>
         </div>
       </div>
     </div>

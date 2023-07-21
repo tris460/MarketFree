@@ -7,19 +7,11 @@
             <h5 class="card-title"><b>Mi cuenta</b></h5>
             <ul class="list-group list-group-flush">
               <!-- Se agrega un click para mostrar un codigo oculto "(click)="toggleDiv('')"-->
-                
                 <li class="list-group-item color" (click)="toggleDiv('opcion2')">
                   <!-- Este boton se utiliza para acceder a la funcion -->
                   <button class="btn btn-outline-secondary">
                     <img src="../../../assets/geo-alt.svg" alt="Ver mi dirección" title="Ver mi dirección">
                     Direccion
-                  </button>
-                </li>
-                <li class="list-group-item color" (click)="toggleDiv('opcion3')">
-                  <!-- Este boton se utiliza para acceder a la funcion -->
-                  <button class="btn btn-outline-secondary">
-                    <img src="../../../assets/credit-card.svg" alt="Ver mis pagos" title="Ver mis pagos">
-                    Mis pagos
                   </button>
                 </li>
                 <!-- Se agrega un click para mostrar un codigo oculto "(click)="toggleDiv('')"-->
@@ -28,14 +20,6 @@
                   <button class="btn btn-outline-secondary">
                   <img src="../../../assets/person.svg" alt="Ver mis datos" title="Ver mis datos">
                   Mis datos
-                </button>
-                </li>
-                <!-- Se agrega un click para mostrar un codigo oculto "(click)="toggleDiv('')"-->
-                <li class="list-group-item color" (click)="toggleDiv('opcion11')">
-                  <!-- Este boton se utiliza para acceder a la funcion -->
-                  <button class="btn btn-outline-secondary">
-                  <img src="../../../assets/activity.svg" alt="Mis suscripciones" title="Mis suscripciones">
-                  Promociones
                 </button>
                 </li>
                 <!-- Se agrega un click para mostrar un codigo oculto "(click)="toggleDiv('')"-->
@@ -56,112 +40,15 @@
             <div class="circle">
               <img src="../../../assets/Sebas.jpg" alt="Descripción de la imagen">
             </div>
-            <h2 style="text-align: center;"><b> Bienvenido Usuario</b></h2>
+            <h2 style="text-align: center;"><b>Bienvenido {{userInfo.name}}</b></h2>
             <button class="btn btn-outline-secondary">
               Actualizar informacion
             </button>
           </div>
         </div>
-        <!-- Partes ocultas del codigo que se muestran con los botones de arriba -->
-        <div class="container2">
-          <div *ngIf="MisPedidos">
-            <div class="pagos-lista">
-              <h2>Mis pedidos</h2>
-              <ul>
-                <li>
-                  <div class="pago-item">
-                    <span class="pago-nombre">Laptop</span>
-                    <span class="pago-monto">25000$</span>
-                    <span class="pago-fecha">A contado</span>
-                  </div>
-                </li>
-                <li>
-                  <div class="pago-item">
-                    <span class="pago-nombre">Television</span>
-                    <span class="pago-monto">12000$</span>
-                    <span class="pago-fecha">A pagos de 12 meses</span>
-                  </div>
-                </li>
-              </ul>
-            </div>
-        </div>
         <!-- ngIf se utiliza esta condicional para mostrar el codigo solo si da click al boton correspondiente -->
         <div *ngIf="Direccion">
-          <h1>123 Main Street, Anytown, USA</h1>
-        </div>
-        <!-- ngIf se utiliza esta condicional para mostrar el codigo solo si da click al boton correspondiente -->
-        <div *ngIf="MisPagos">
-          <div class="pagos-lista">
-            <h2>Listado de pagos</h2>
-            <ul>
-              <li>
-                <div class="pago-item">
-                  <span class="pago-nombre">Pago 1</span>
-                  <span class="pago-monto">$100</span>
-                  <span class="pago-fecha">15 de mayo de 2023</span>
-                </div>
-              </li>
-              <li>
-                <div class="pago-item">
-                  <span class="pago-nombre">Pago 2</span>
-                  <span class="pago-monto">$200</span>
-                  <span class="pago-fecha">20 de mayo de 2023</span>
-                </div>
-              </li>
-              <li>
-                <div class="pago-item">
-                  <span class="pago-nombre">Pago 3</span>
-                  <span class="pago-monto">$150</span>
-                  <span class="pago-fecha">25 de mayo de 2023</span>
-                </div>
-              </li>
-            </ul>
-          </div>
-
-        </div>
-        <!-- ngIf se utiliza esta condicional para mostrar el codigo solo si da click al boton correspondiente -->
-        <div *ngIf="MisMedidas">
-          <div class="pagos-lista">
-            <h2>Mis medidas</h2>
-            <ul>
-              <li>
-                <div class="pago-item">
-                  <span class="pago-nombre">Fernanda Agilar Lopez</span>
-                  <span class="pago-monto">25</span>
-                  <span class="pago-fecha">1.60 cm</span>
-                </div>
-              </li>
-              <li>
-                <div class="pago-item">
-                  <span class="pago-nombre">Sebastian Guerra dias</span>
-                  <span class="pago-monto">32</span>
-                  <span class="pago-fecha">1.80 cm</span>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <!-- ngIf se utiliza esta condicional para mostrar el codigo solo si da click al boton correspondiente -->
-        <div *ngIf="Cupones">
-          <div class="pagos-lista">
-            <h2>Mis cupones</h2>
-            <ul>
-              <li>
-                <div class="pago-item">
-                  <span class="pago-nombre">Cupon de 20% de descuento</span>
-                  <span class="pago-monto">Compra de contado</span>
-                  <span class="pago-fecha"><button class="btn btn-outline-secondary">Reclamar</button></span>
-                </div>
-              </li>
-              <li>
-                <div class="pago-item">
-                  <span class="pago-nombre">Cupon de 20% de descuento</span>
-                  <span class="pago-monto">Compra de contado</span>
-                  <span class="pago-fecha"><button class="btn btn-outline-secondary">Reclamar</button></span>
-                </div>
-              </li>
-            </ul>
-          </div>
+          <h1>{{userInfo.address}}</h1>
         </div>
         <!-- ngIf se utiliza esta condicional para mostrar el codigo solo si da click al boton correspondiente -->
         <div *ngIf="MisDatos">
@@ -170,35 +57,11 @@
             <ul>
               <li>
                 <div class="pago-item">
-                  <span class="pago-nombre">Sexo: Masculino</span>
-                  <span class="pago-monto">Gustos: Futbool, Formula 1</span>
-                  <span class="pago-fecha">Tel: 4495245665</span>
+                  <span class="pago-nombre">Correo: {{userInfo.email}}</span>
                 </div>
               </li>
             </ul>
           </div>
-        </div>
-        <!-- ngIf se utiliza esta condicional para mostrar el codigo solo si da click al boton correspondiente -->
-        <div *ngIf="Promociones">
-          <div class="pagos-lista">
-            <h2>Mis promociones</h2>
-          <ul>
-            <li>
-              <div class="pago-item">
-                <span class="pago-nombre">Promociones 1</span>
-                <span class="pago-monto">Aplica a todas las compras de contado</span>
-                <span class="pago-fecha"><button class="btn btn-outline-secondary">Suscribirse</button></span>
-              </div>
-            </li>
-            <li>
-              <div class="pago-item">
-                <span class="pago-nombre">Promociones 2</span>
-                <span class="pago-monto">Aplica a todas las compras</span>
-                <span class="pago-fecha"><button class="btn btn-outline-secondary">Suscribirse</button></span>
-              </div>
-            </li>
-          </ul>
-        </div>
         </div>
         <!-- ngIf se utiliza esta condicional para mostrar el codigo solo si da click al boton correspondiente -->
         <div *ngIf="Facturacion">
@@ -223,8 +86,6 @@
         </div>
         </div>
         </div>
-
-    </div>
 
 <app-footer></app-footer>
 
