@@ -1,0 +1,38 @@
+<app-header></app-header>
+
+<div class="main" id="return">
+    <div class="return-form">
+        <div class="title">
+            Devoluciones
+        </div>
+        <!-- Returns form -->
+        <form>
+          <!-- Order ID -->
+            <div class="form-floating mb-3">
+                <input type="number" class="form-control" id="floatingOrder" placeholder="Numero de orden">
+                <label for="floatingOrder">Numero de orden</label>
+            </div>
+            <!-- Return reason -->
+            <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingMotive" placeholder="Motivo de devolución">
+                <label for="floatingMotive">Motivo de devolución</label>
+            </div>
+            <!-- Return method -->
+            <div class="form-group">
+                <label for="refund-method">Método de Reembolso:</label>
+                <select id="refund-method" name="refund-method" required>
+                <option value="">Seleccione un método de reembolso</option>
+                <option value="paypal">PayPal</option>
+                <option value="credit-card">Tarjeta de Crédito</option>
+                <option value="bank-transfer">Transferencia Bancaria</option>
+                </select>
+            </div>
+            <!-- Submit return -->
+            <div class="flex">
+                <button type="submit">Enviar Devolución</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<app-footer></app-footer>

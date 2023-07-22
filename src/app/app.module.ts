@@ -14,6 +14,17 @@ import { SellComponent } from './components/sell/sell.component';
 import { FaqsComponent } from './components/faqs/faqs.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { BenefitsComponent } from './components/benefits/benefits.component';
+import { HelpComponent } from './components/help/help.component';
+import { HistoryComponent } from './components/history/history.component';
+import { PaymentMethodComponent } from './components/payment-method/payment-method.component';
+import { ReturnsComponent } from './components/returns/returns.component';
+import { TutorialsComponent } from './components/tutorials/tutorials.component';
+import { AboutComponent } from './components/about/about.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { FormComponent } from './components/form/form.component';
+import { CategoryComponent } from './components/category/category.component';
 
 @NgModule({
   declarations: [
@@ -27,12 +38,23 @@ import { FooterComponent } from './components/footer/footer.component';
     SellComponent,
     FaqsComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    BenefitsComponent,
+    HelpComponent,
+    HistoryComponent,
+    PaymentMethodComponent,
+    ReturnsComponent,
+    TutorialsComponent,
+    AboutComponent,
+    FormComponent,
+    CategoryComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

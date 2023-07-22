@@ -1,1 +1,33 @@
-<p>faqs works!</p>
+<app-header></app-header>
+
+<div id="faqs" class="main">
+  <div class="title">
+    <p>Preguntas frecuentes</p>
+  </div>
+
+  <div class="no-data" *ngIf="faqsByCategory.length == 0">
+    <p>No hay productos disponibles en este momento</p>
+  </div>
+
+  <!-- FAQs container -->
+  <div class="faqs" *ngFor="let faqs of faqsByCategory">
+    <!-- FAQs categories -->
+    <div class="btn faqs__category">
+      {{faqs.categoryName}}
+    </div>
+    <!-- FAQs questions container -->
+    <div class="faqs__question" *ngFor="let question of faqs.questions">
+      <!-- FAQs question -->
+      <div class="btn faqs__question--button">
+        {{question.question}}
+      </div>
+    <!-- FAQs answer -->
+      <div class="card card-body faqs__question--answer">
+          {{question.answer}}
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<app-footer></app-footer>

@@ -1,0 +1,126 @@
+.custom-shadow {
+    box-shadow: 0 10px 14px rgba(0, 0, 0, 0.1);
+  }
+
+  .container{
+    margin: 50px 0px 50px 120px;
+  }
+
+  .container2{
+    margin: 5%;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  label {
+    margin-bottom: 10px;
+  }
+  
+  input[type="file"] {
+    margin-bottom: 20px;
+  }
+  
+  button[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  .image-container {
+    width: 300px; 
+    height: 200px; 
+    overflow: hidden; 
+  }
+  
+  .image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  a{
+    text-decoration: none;
+    color: black;
+  }
+  a:hover {
+    color: blue;
+    text-decoration: none;
+  }
+  .color{
+    background-color: #f1f1f1;
+  }
+  .circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 20%;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+  
+  .circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .pedido {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: max-content;
+  
+    .id {
+      font-weight: bold;
+    }
+  
+    .fecha {
+      color: gray;
+    }
+  
+    .total {
+      font-size: 18px;
+      color: green;
+    }
+  }
+  
+  .pagos-lista {
+    h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+  
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+  
+      li {
+        margin-bottom: 10px;
+  
+        .pago-item {
+          display: flex;
+          justify-content: space-between;
+          background-color: #f2f2f2;
+          padding: 10px;
+  
+          .pago-nombre {
+            font-weight: bold;
+          }
+  
+          .pago-monto {
+            color: #27ae60;
+          }
+        }
+      }
+    }
+  }
+  

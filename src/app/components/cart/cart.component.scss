@@ -1,0 +1,51 @@
+.container{
+    margin: 50px 0px 50px 120px;
+  }
+
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+  }
+  
+  .btn-action {
+    flex-grow: 1;
+    margin-right: 10px;
+  }
+  .card-img-top {
+    object-fit: cover;
+    height: 200px;
+  }
+  .counter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 120px;
+    height: 40px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    overflow: hidden;
+  }
+  
+  .btn-counter {
+    width: 40px;
+    height: 100%;
+    background-color: #f8f8f8;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+  
+  .btn-counter:hover {
+    background-color: #eaeaea;
+  }
+  
+  .quantity {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 1;
+    font-size: 16px;
+    font-weight: bold;
+  }
+    

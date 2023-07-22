@@ -1,1 +1,97 @@
-<p>login works!</p>
+<div id="login" class="main">
+  <div class="login">
+    <!-- MarketFree logo -->
+    <div class="login__logo">
+      <a  [routerLink]="'/'" class="link">
+        <img src="../../../assets/LogoMF.png" alt="MarketFree Logo" title="MarketFree logo">
+      </a>
+    </div>
+    <!-- Tabs for login/register -->
+    <div class="login__tabs">
+      <ul class="nav nav-tabs nav-fill">
+        <!-- Login tab -->
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" data-bs-toggle="tab" href="#login-content">Iniciar sesión</a>
+        </li>
+        <!-- Register tab -->
+        <li class="nav-item">
+          <a class="nav-link" data-bs-toggle="tab" href="#register-content">Registrarme</a>
+        </li>
+      </ul>
+      <!-- Login content -->
+      <div class="tab-content">
+        <div class="tab-pane fade show active" id="login-content">
+          <!-- Form for login -->
+          <form>
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="floatingInput" placeholder="Correo">
+              <label for="floatingInput">Correo</label>
+            </div>
+            <div class="form-floating">
+              <input type="password" class="form-control" id="floatingPass" placeholder="Contraseña">
+              <label for="floatingPassword">Contraseña</label>
+            </div>
+            <button type="button" class="btn">Iniciar Sesión</button>
+          </form>
+          <!-- Links to login with other methods -->
+          <!-- <div class="login__with">
+            <p>O inicia sesión con:</p>
+            <div class="login__with__icons">
+              <div class="login__with__icons--ind">
+                <img src="../../../assets/logo_facebook.png" alt="Iniciar sesión con Facebook" title="Iniciar sesión con Facebook">
+                <p>Iniciar sesión con Facebook</p>
+              </div>
+              <div class="login__with__icons--ind">
+                <img src="../../../assets/logo_google.png" alt="Iniciar sesión con Google" title="Iniciar sesión con Google">
+                <p>Iniciar sesión con Google</p>
+              </div>
+            </div>
+          </div> -->
+        </div>
+        <!-- Register content -->
+        <div class="tab-pane fade" id="register-content">
+          <!-- Form to register an user -->
+          <form (ngSubmit)="register(form)" #form="ngForm" name="form">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="floatingName" name="nombre" [(ngModel)]="user.name" required placeholder="Nombre">
+              <label for="floatingNamet">Nombre</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="floatingApellido" name="lastname" [(ngModel)]="user.lastname" required placeholder="Apellidos">
+              <label for="floatingNamet">Apellidos</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="floatingEmail" name="email" [(ngModel)]="user.email" required placeholder="Correo">
+              <label for="floatingEmail">Correo</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control" id="floatingPassword" name="password" [(ngModel)]="user.password" required placeholder="Contraseña">
+              <label for="floatingPassword">Contraseña</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control" id="floatingConfirmPassword" placeholder="Confirmar contraseña">
+              <label for="floatingConfirmPassword">Confirmar contraseña</label>
+            </div>
+            <button type="submit" class="btn">Registrarme</button>
+          </form>
+          <!-- Links to register by other methods -->
+          <!-- <div class="login__with">
+            <p>O regístrate con:</p>
+            <div class="login__with__icons">
+              <div class="login__with__icons--ind">
+                <img src="../../../assets/logo_facebook.png" alt="Regístrate con Facebook" title="Regístrate con Facebook">
+                <p>Regístrate con Facebook</p>
+              </div>
+              <div class="login__with__icons--ind">
+                <img src="../../../assets/logo_google.png" alt="Regístrate con Google" title="Regístrate con Google">
+                <p>Regístrate con Google</p>
+              </div>
+            </div>
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer></app-footer>

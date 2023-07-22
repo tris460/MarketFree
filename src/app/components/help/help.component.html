@@ -1,0 +1,23 @@
+<app-header></app-header>
+<div class="main" id="help">
+  <div class="title">
+    <p>Ayuda</p>
+  </div>
+  <div class="flex">
+    <!-- Help by WhatsApp -->
+    <div class="flex__whatsapp">
+      <p>Ponte en contacto con uno de nuestros trabajadores vía WhatsApp</p>
+      <a href="https://wa.me/524495245222" target="_blank"> <img  src="../../../assets/WhatsApp.png"  alt="WhatsApp logo" title="Ponte en contacto" class="flex__whatsapp--img"> </a>
+      
+    </div>
+    <!-- Links for more help -->
+    <div class="flex__info">
+      <p>Otros enlaces:</p>
+      <a [routerLink]="'/tutorials'" class="link">¿Cómo vender?</a>
+      <a [routerLink]="'/tutorials'" class="link">¿Cómo comprar?</a>
+      <a [routerLink]="'/returns'" class="link">Devoluciones</a>
+      <a [routerLink]="'/about'" class="link">Conoce a los desarrolladores</a>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>

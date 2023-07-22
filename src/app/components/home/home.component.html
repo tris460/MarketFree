@@ -1,17 +1,21 @@
+<app-header></app-header>
+
 <div id="home" class="main">
   <!-- Banner -->
   <div id="carousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
+      <!-- Carousel images -->
       <div class="carousel-item active" data-bs-interval="4000">
-        <img src="../../../assets/Banner - Test.jpg" class="d-block w-100" alt="Banner image 1">
+        <img src="../../../assets/Banner - Test1.png" class="d-block w-100" alt="Banner image 1">
       </div>
       <div class="carousel-item" data-bs-interval="4000">
-        <img src="../../../assets/Banner - Test.jpg" class="d-block w-100" alt="Banner image 2">
+        <img src="../../../assets/Banner - Test2.png" class="d-block w-100" alt="Banner image 2">
       </div>
       <div class="carousel-item" data-bs-interval="4000">
-        <img src="../../../assets/Banner - Test.jpg" class="d-block w-100" alt="Banner image 3">
+        <img src="../../../assets/Banner - Test3.png" class="d-block w-100" alt="Banner image 3">
       </div>
     </div>
+    <!-- Buttons to navigate in the banner -->
     <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     </button>
@@ -22,9 +26,9 @@
 
   <!-- Benefits -->
   <div id="benefits" class="benefits">
-    <div class="benefits__ind">
-      <img src="../../../assets/Benefit - Test.jpg" alt="Benefit 1">
-      <p>Bajos precios</p>
+    <div class="benefits__ind" *ngFor="let benefit of benefitsData">
+      <img [src]="benefit.image" class="benefits__img" alt="" [title]="benefit.name">
+      <p>{{benefit.name}}</p>
     </div>
   </div>
 
@@ -34,32 +38,41 @@
       <p>Compra por categoría</p>
     </div>
     <div class="categories">
-      <div class="categories__ind">
-        <p>Mascotas</p>
+      <div class="categories__ind" *ngFor="let category of categoriesData">
+        <a class="link" (click)="navigateToCategory(category._id)">{{category.name}}</a>
       </div>
     </div>
   </div>
 
+  <div class="no-data" *ngIf="productsByCategory.length == 0">
+    <p>No hay productos disponibles en este momento</p>
+  </div>
+
   <!-- Products -->
   <div id="products">
-    <div class="products">
+    <div class="products" *ngFor="let product of productsByCategory">
       <div class="title left">
-        <p>Categoría</p>
+        <p>{{product.categoryName}}</p>
       </div>
       <div class="products__row">
-        <div class="products__row__card">
-          <img src="../../../assets/Product - Test.jpg" class="products__row__card--img" alt="Product 1">
+        <!-- Individual product -->
+        <div class="products__row__card" *ngFor="let p of product.products" (click)="navigateToProduct(p._id)">
+          <img [src]="p.image" class="products__row__card--img" [alt]="p.name" [title]="p.name">
           <div class="products__row__card--text">
-            <p>Nombre del producto</p>
-            <p class="price-text">Precio</p>
+            <p>{{p.name}}</p>
+            <p class="price-text">${{p.price}}</p>
           </div>
         </div>
         <div class="products__more">
           <div class="products__more--circle">
-            <img src="../../../assets/arrow-right.svg" alt="Flecha para ver más" title="Da click para ver más productos">
+            <a (click)="navigateToCategory(product.products[0].category[0]._id)">
+              <img src="../../../assets/arrow-right.svg" alt="Flecha para ver más" title="Da click para ver más productos">
+            </a>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<app-footer></app-footer>
