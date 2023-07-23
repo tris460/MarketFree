@@ -19,6 +19,10 @@
         <label for="floatingEmail">Correo</label>
       </div>
       <div class="form-floating mb-3">
+        <input type="address" class="form-control" id="floatingAdress" name="address"  required placeholder="Direccion" value={{userUpdated.address}} [(ngModel)]="userUpdated.address">
+        <label for="floatingAdress">Direccion</label>
+      </div>
+      <div class="form-floating mb-3">
         <input type="password" class="form-control" id="floatingPassword" name="password"  required placeholder="Contraseña" value={{userUpdated.password}} [(ngModel)]="userUpdated.password">
         <label for="floatingPassword">Contraseña</label>
       </div>

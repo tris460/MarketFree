@@ -25,9 +25,9 @@
                 <!-- Se agrega un click para mostrar un codigo oculto "(click)="toggleDiv('')"-->
                 <li class="list-group-item color" (click)="toggleDiv('opcion12')">
                   <!-- Este boton se utiliza para acceder a la funcion -->
-                  <button class="btn btn-outline-secondary">
+                  <button (click)="goToHistory()" class="btn btn-outline-secondary">
                   <img src="../../../assets/receipt.svg" alt="Facturación" title="Facturación">
-                  Facturacion
+                  Historial
                 </button>
                 </li>
               </ul>
@@ -37,8 +37,8 @@
         <!-- Se muestra la informacion del usuario -->
         <div class="col-6 d-flex align-items-center justify-content-center">
             <div class="d-flex justify-content-center align-items-center"></div>
-            <div class="circle">
-              <img src="../../../assets/Sebas.jpg" alt="Descripción de la imagen">
+            <div style="border-color: gray; border-width: 1px; border-style: dotted;" class="circle">
+              <img src="https://i.pinimg.com/736x/8d/ff/c8/8dffc810ac2226282085257e73a60761--darth-vader-avatar.jpg" alt="Descripción de la imagen">
             </div>
             <h2 style="text-align: center;"><b>Bienvenido {{userInfo.name}}</b></h2>
             <button class="btn btn-outline-secondary" (click)="goToForm()">
@@ -46,9 +46,19 @@
             </button>
           </div>
         </div>
+        <br>  
         <!-- ngIf se utiliza esta condicional para mostrar el codigo solo si da click al boton correspondiente -->
         <div *ngIf="Direccion">
-          <h1>{{userInfo.address}}</h1>
+          <div class="pagos-lista">
+            <h2>Mi Direccion</h2>
+            <ul>
+              <li>
+                <div class="pago-item">
+                  <span class="pago-nombre">Direccion: {{userInfo.address}}</span>
+                </div>
+              </li>
+            </ul>
+          </div>
         </div>
         <!-- ngIf se utiliza esta condicional para mostrar el codigo solo si da click al boton correspondiente -->
         <div *ngIf="MisDatos">
@@ -59,31 +69,12 @@
                 <div class="pago-item">
                   <span class="pago-nombre">Correo: {{userInfo.email}}</span>
                 </div>
+                <div class="pago-item">
+                  <span class="pago-nombre">Apellidos: {{userInfo.lastname}}</span>
+                </div>
               </li>
             </ul>
           </div>
-        </div>
-        <!-- ngIf se utiliza esta condicional para mostrar el codigo solo si da click al boton correspondiente -->
-        <div *ngIf="Facturacion">
-          <div class="pagos-lista">
-            <h2>Mis facturas</h2>
-          <ul>
-            <li>
-              <div class="pago-item">
-                <span class="pago-nombre">Factura del pedido 1</span>
-                <span class="pago-monto">Compraste Laptop</span>
-                <span class="pago-fecha"><button class="btn btn-outline-secondary">Imprimir</button></span>
-              </div>
-            </li>
-            <li>
-              <div class="pago-item">
-                <span class="pago-nombre">Factura del pedido 2</span>
-                <span class="pago-monto">Compraste television</span>
-                <span class="pago-fecha"><button class="btn btn-outline-secondary">Imprimir</button></span>
-              </div>
-            </li>
-          </ul>
-        </div>
         </div>
         </div>
 

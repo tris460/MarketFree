@@ -13,21 +13,14 @@ export class ProfileComponent implements OnInit {
   constructor(private userService: UserService, private router: Router) { }
 
   // Variables to read option selected
-  MisPedidos: boolean = false;
   Direccion: boolean = false;
-  MisPagos: boolean = false;
-  MisMedidas: boolean = false;
-  Cupones: boolean = false;
   MisDatos: boolean = false;
   Promociones: boolean = false;
-  Facturacion: boolean = false;
 
   toggleDiv(option: string) {
     // Show/hide div with info
-    this.MisPedidos = option === 'opcion1';
     this.Direccion = option === 'opcion2';
     this.MisDatos = option === 'opcion7';
-    this.Facturacion = option === 'opcion12';
   }
 
   ngOnInit() {
@@ -50,6 +43,9 @@ export class ProfileComponent implements OnInit {
 
   goToForm() {
     this.router.navigateByUrl('/form');
+  }
+  goToHistory() {
+    this.router.navigateByUrl('/history');
   }
 
 }
