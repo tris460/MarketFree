@@ -36,11 +36,7 @@ export class UserService {
     }
   }
 
-  /*actualizarUsuario(id: string, usuario: UsersModel) {
-    return this.http.put(`${this.url}/usuario/${id}`, usuario).toPromise();
+  updateUser(id: string, updatedUser: UsersModel) {
+    return this.http.put(`${this.url}/users/${id}`, updatedUser).toPromise();
   }
-
-  eliminarUsuario(id: string) {
-    return this.http.delete(`${this.url}/usuario/${id}`).toPromise();
-  }*/
 }

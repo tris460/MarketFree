@@ -23,6 +23,7 @@ import { TutorialsComponent } from './components/tutorials/tutorials.component';
 import { AboutComponent } from './components/about/about.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { FormComponent } from './components/form/form.component';
 import { CategoryComponent } from './components/category/category.component';
 
 @NgModule({
@@ -45,6 +46,7 @@ import { CategoryComponent } from './components/category/category.component';
     ReturnsComponent,
     TutorialsComponent,
     AboutComponent,
+    FormComponent,
     CategoryComponent
   ],
   imports: [
