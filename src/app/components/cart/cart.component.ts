@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { UserService } from 'src/app/service/user.service';
 
 @Component({
   selector: 'app-cart',
@@ -6,41 +8,37 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./cart.component.scss']
 })
 export class CartComponent implements OnInit {
+  userInfo: any = '';
 
-  constructor() { }
+  constructor(private userService: UserService, private router: Router) { }
   quantity1: number = 1;
 
-  increaseQuantity1() {
+  increaseQuantity() {
     this.quantity1++;
   }
 
-  decreaseQuantity1() {
+  decreaseQuantity() {
     if (this.quantity1 > 1) {
       this.quantity1--;
     }
   }
-  quantity2: number = 1;
 
-  increaseQuantity2() {
-    this.quantity2++;
-  }
-
-  decreaseQuantity2() {
-    if (this.quantity2 > 1) {
-      this.quantity2--;
-    }
-  }
-  quantity3: number = 1;
-
-  increaseQuantity3() {
-    this.quantity3++;
-  }
-
-  decreaseQuantity3() {
-    if (this.quantity3 > 1) {
-      this.quantity3--;
-    }
-  }
   ngOnInit(): void {
+    const userId = localStorage.getItem('userId');
+
+    if(!userId) {
+      this.router.navigateByUrl('/home');
+    }
+
+    this.userService
+      .getUserById(userId!)
+      .then((data: any) => {
+        this.userInfo = data;
+        console.log(data); // TODO: Mostrar la información del usuario
+      })
+      .catch((error) => {
+        console.log(`Error getting users: ${error}`);
+      });
   }
+
 }
