@@ -25,6 +25,17 @@ export class UserService {
       });
   }
 
+  async loginUser(email: string, password: string): Promise<string> { // Actualizamos el tipo de retorno a 'string'
+    try {
+      const loginData = { email, password };
+      const response = await this.http.post<any>(`${this.url}/login`, loginData).toPromise();
+      return response.accessToken; // Obtenemos el token de acceso desde la respuesta
+    } catch (error) {
+      // Si hay un error en la API, se captura aquí y se lanza una excepción para manejarlo en el componente
+      throw error;
+    }
+  }
+
   /*actualizarUsuario(id: string, usuario: UsersModel) {
     return this.http.put(`${this.url}/usuario/${id}`, usuario).toPromise();
   }
