@@ -2,7 +2,7 @@
   <div class="login">
     <!-- MarketFree logo -->
     <div class="login__logo">
-      <a  [routerLink]="'/'" class="link">
+      <a [routerLink]="'/'" class="link">
         <img src="../../../assets/LogoMF.png" alt="MarketFree Logo" title="MarketFree logo">
       </a>
     </div>
@@ -22,16 +22,16 @@
       <div class="tab-content">
         <div class="tab-pane fade show active" id="login-content">
           <!-- Form for login -->
-          <form>
+          <form (ngSubmit)="login()" #form="ngForm" name="form">
             <div class="form-floating mb-3">
-              <input type="email" class="form-control" id="floatingInput" placeholder="Correo">
+              <input type="email" class="form-control" id="floatingInput" name="email" [(ngModel)]="user.email" placeholder="Correo">
               <label for="floatingInput">Correo</label>
             </div>
             <div class="form-floating">
-              <input type="password" class="form-control" id="floatingPass" placeholder="Contraseña">
+              <input type="password" class="form-control" id="floatingPass" name="password" [(ngModel)]="user.password" placeholder="Contraseña">
               <label for="floatingPassword">Contraseña</label>
             </div>
-            <button type="button" class="btn">Iniciar Sesión</button>
+            <button type="submit" class="btn">Iniciar Sesión</button>
           </form>
           <!-- Links to login with other methods -->
           <!-- <div class="login__with">
@@ -53,23 +53,23 @@
           <!-- Form to register an user -->
           <form (ngSubmit)="register(form)" #form="ngForm" name="form">
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="floatingName" name="nombre" [(ngModel)]="user.name" required placeholder="Nombre">
+              <input type="text" class="form-control" id="floatingName" name="nombre" [(ngModel)]="user.name" placeholder="Nombre">
               <label for="floatingNamet">Nombre</label>
             </div>
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="floatingApellido" name="lastname" [(ngModel)]="user.lastname" required placeholder="Apellidos">
+              <input type="text" class="form-control" id="floatingApellido" name="lastname" [(ngModel)]="user.lastname" placeholder="Apellidos">
               <label for="floatingNamet">Apellidos</label>
             </div>
             <div class="form-floating mb-3">
-              <input type="email" class="form-control" id="floatingEmail" name="email" [(ngModel)]="user.email" required placeholder="Correo">
+              <input type="email" class="form-control" id="floatingEmail" name="email" [(ngModel)]="user.email" placeholder="Correo">
               <label for="floatingEmail">Correo</label>
             </div>
             <div class="form-floating mb-3">
-              <input type="password" class="form-control" id="floatingPassword" name="password" [(ngModel)]="user.password" required placeholder="Contraseña">
+              <input type="password" class="form-control" id="floatingPassword" name="password" [(ngModel)]="user.password" placeholder="Contraseña">
               <label for="floatingPassword">Contraseña</label>
             </div>
             <div class="form-floating mb-3">
-              <input type="password" class="form-control" id="floatingConfirmPassword" placeholder="Confirmar contraseña">
+              <input type="password" class="form-control" id="floatingConfirmPassword" required placeholder="Confirmar contraseña">
               <label for="floatingConfirmPassword">Confirmar contraseña</label>
             </div>
             <button type="submit" class="btn">Registrarme</button>

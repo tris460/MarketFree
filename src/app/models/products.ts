@@ -3,7 +3,7 @@ import { Promotions } from "./promotions";
 import { Tags } from "./tags";
 
 export class Product implements Product {
-  _id: string;
+  id: string;
   name: string;
   price: number;
   description: string;
@@ -22,7 +22,7 @@ export class Product implements Product {
     let date = new Date().toDateString();
 
     // Initialize default values
-    this._id = '';
+    this.id = '';
     this.name = '';
     this.price = 0;
     this.description = '';

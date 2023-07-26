@@ -1,7 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Category } from 'src/app/models/category';
-import { CategoryService } from 'src/app/service/category.service';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -11,8 +9,10 @@ import { Router } from '@angular/router';
 export class HeaderComponent implements OnInit {
   categoriesData: Category[] = [];
   userId:any = '';
+  categoryService: any;
+  router: any;
 
-  constructor(private categoryService: CategoryService, private router: Router) { }
+  constructor() { }
 
   ngOnInit(): void {
     this.userId = localStorage.getItem('userId');
@@ -22,7 +22,7 @@ export class HeaderComponent implements OnInit {
       .then((data: any) => {
         this.categoriesData = data.data.filter((obj: any) => obj.type === "products");
       })
-      .catch((error) => {
+      .catch((error: any) => {
         console.log(`Error getting categories: ${error}`);
       });
   }
