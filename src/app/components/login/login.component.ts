@@ -23,6 +23,23 @@ export class LoginComponent implements OnInit {
     }
   }
 
+
+  async login() {
+    try {
+      const user = await this.userService.loginUser(this.user.email, this.user.password);
+      
+      // Check if the user exists and the credentials are correct
+      if (user) {
+        console.log('Login successful!');
+        // Store the user ID in localStorage or perform any other login-related actions
+      } else {
+        console.log('Invalid credentials. Please try again.');
+      }
+    } catch (error) {
+      console.log('Error occurred during login:', error);
+    }
+  }
+
   register(form: NgForm) {
     this.userService
       .registerUser(this.user)
