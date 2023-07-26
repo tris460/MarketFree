@@ -16,7 +16,6 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.userId = localStorage.getItem('userId');
-    console.log(this.userId)
 
     this.categoryService
       .getCategories()
