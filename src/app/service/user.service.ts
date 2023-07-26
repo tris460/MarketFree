@@ -30,12 +30,12 @@ export class UserService {
     try {
       const loginData = { email, password };
       const response = await this.http.post<any>(`${this.url}/login`, loginData).toPromise();
-      if (!response.accessToken){
+      if (!response){
         return ("Invalid Token")
       } else {
         this.router.navigateByUrl('/home');
       }
-      return response.accessToken; // Obtenemos el token de acceso desde la respuesta
+      return response; // Obtenemos el token de acceso desde la respuesta
     } catch (error) {
       // Si hay un error en la API, se captura aquí y se lanza una excepción para manejarlo en el componente
       throw error;
