@@ -8,8 +8,8 @@ import { ProductsService } from 'src/app/service/products.service';
   styleUrls: ['./category.component.scss']
 })
 export class CategoryComponent implements OnInit {
-  categoryId = '';
-  products:any[] = [];
+  products: any[] = []; // Declare the 'products' property
+  categoryId: string | null = null;
 
   constructor(private route: ActivatedRoute, private productsService: ProductsService, private router: Router) { }
 
