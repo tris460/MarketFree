@@ -9,7 +9,7 @@ import { FaqsService } from 'src/app/service/faqs.service';
 })
 export class FaqsComponent implements OnInit {
   faqsData: Faqs[] = [];
-  faqsByCategory: any;
+  faqsByCategory: any = [];
 
   constructor(private FaqsService: FaqsService) { }
 

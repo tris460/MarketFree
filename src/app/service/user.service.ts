@@ -13,15 +13,19 @@ export class UserService {
     return this.http.get(`${this.url}/users`).toPromise();
   }
 
-  registarUsuario(usuario: UsersModel) {
-    return this.http.post(`${this.url}/users`, usuario).toPromise();
+  registerUser(user: UsersModel) {
+    return this.http.post(`${this.url}/users`, user).toPromise();
   }
 
-  /*actualizarUsuario(id: string, usuario: UsersModel) {
-    return this.http.put(`${this.url}/usuario/${id}`, usuario).toPromise();
+  getUserById(id: string) {
+    return this.http.get(`${this.url}/users`).toPromise()
+      .then((users: any) => {
+        const user = users.data.filter((u:any) => u._id === id)[0];
+        return user;
+      });
   }
 
-  eliminarUsuario(id: string) {
-    return this.http.delete(`${this.url}/usuario/${id}`).toPromise();
-  }*/
+  updateUser(id: string, updatedUser: UsersModel) {
+    return this.http.put(`${this.url}/users/${id}`, updatedUser).toPromise();
+  }
 }
