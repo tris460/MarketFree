@@ -2,7 +2,7 @@
   <div class="login">
     <!-- MarketFree logo -->
     <div class="login__logo">
-      <a  [routerLink]="'/'" class="link">
+      <a [routerLink]="'/'" class="link">
         <img src="../../../assets/LogoMF.png" alt="MarketFree Logo" title="MarketFree logo">
       </a>
     </div>
@@ -69,7 +69,7 @@
               <label for="floatingPassword">Contraseña</label>
             </div>
             <div class="form-floating mb-3">
-              <input type="password" class="form-control" id="floatingConfirmPassword" placeholder="Confirmar contraseña">
+              <input type="password" class="form-control" id="floatingConfirmPassword" required placeholder="Confirmar contraseña">
               <label for="floatingConfirmPassword">Confirmar contraseña</label>
             </div>
             <button type="submit" class="btn">Registrarme</button>

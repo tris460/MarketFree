@@ -76,3 +76,15 @@
 </div>
 
 <app-footer></app-footer>
+
+<script>
+  // JavaScript code to check if at least one file is selected before submitting the form
+  document.getElementById('productForm').addEventListener('submit', function (event) {
+    const fileInput = document.getElementById('inputImage');
+    const files = fileInput.files;
+    if (files.length === 0) {
+      event.preventDefault(); // Prevent form submission
+      alert('Por favor, selecciona al menos un archivo.');
+    }
+  });
+</script>
