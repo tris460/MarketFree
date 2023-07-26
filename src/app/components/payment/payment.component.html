@@ -69,24 +69,24 @@
       </div>
     </div>
     <!-- Credit Card Info Form -->
-    <form class="form" autocomplete="on">
+    <form class="form" autocomplete="on" (ngSubmit)="submitForm()">
         <div class="form-floating mb-3">
-        <input type="num" class="form-control" id="floatingNumber" placeholder="Numero de tarjeta">
-        <label for="floatingNumber">Numero de tarjeta</label>
+          <input type="num" class="form-control" id="floatingNumber" [(ngModel)]="cardNumber" placeholder="Numero de tarjeta" name="cardNumber" required>
+          <label for="floatingNumber">Card Number</label>
         </div>
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="floatingName" placeholder="Nombre">
-        <label for="floatingName">Nombre</label>
-      </div>
-      <div class="form-floating mb-3">
-        <input type="num" class="form-control" id="floatingDate" placeholder="Fecha de expiración">
-        <label for="floatingDate">Fecha de expiración</label>
-      </div>
-      <div class="form-floating mb-3">
-        <input type="num" class="form-control" id="floatingCVV" placeholder="CVV">
-        <label for="floatingCVV">CVV</label>
-      </div>
-      <button class="btn">Pagar</button>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="floatingName" [(ngModel)]="cardHolder" placeholder="Nombre" name="cardHolder" required>
+          <label for="floatingName">Name</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="floatingDate" [(ngModel)]="expirationDate" placeholder="Fecha de expiración" name="expirationDate" required>
+          <label for="floatingDate">Expiration Date</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="number" class="form-control" id="floatingCVV" [(ngModel)]="cvv" placeholder="CVV" name="cvv" required>
+          <label for="floatingCVV">CVV</label>
+        </div>
+      <button class="btn" type="submit">Pagar</button>
     </form>
   </div>
 
