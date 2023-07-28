@@ -23,24 +23,6 @@ export class LoginComponent implements OnInit {
     }
   }
 
-
-  /*async login() {
-    try {
-      const user = await this.userService.loginUser(this.user.email, this.user.password);
-      // Check if the user exists and the credentials are correct
-      if (user) {
-        console.log('Login successful!');
-        const userId = user.data._id;
-        localStorage.setItem('userId', userId);
-        // Store the user ID in localStorage or perform any other login-related actions
-      } else {
-        console.log('Invalid credentials. Please try again.');
-      }
-    } catch (error) {
-      console.log('Error occurred during login:', error);
-    }
-  }*/
-
   login() {
     this.userService
       .loginUser(this.user.email, this.user.password)
