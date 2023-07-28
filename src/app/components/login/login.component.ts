@@ -13,46 +13,45 @@ export class LoginComponent implements OnInit {
   @Output() output = new EventEmitter();
   user: UsersModel = new UsersModel();
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private userService: UserService, private router: Router) {}
 
   ngOnInit(): void {
     const userId = localStorage.getItem('userId');
-
     if (userId) {
       this.router.navigateByUrl('/home');
     }
   }
 
-  login() {
-    this.userService
-      .loginUser(this.user.email, this.user.password)
-      .then((user: any) => {
-        this.output.emit();
-
-        const userId = user.data._id;
-        localStorage.setItem('userId', userId);
-
+  async login() {
+    try {
+      const response = await this.userService.loginUser(this.user.email, this.user.password);
+      
+      if (response.ok) {
+        console.log('Login successful!');
+        localStorage.setItem('userId', response.token); // Store the token in localStorage or perform any other login-related actions
         this.router.navigateByUrl('/home');
-      })
-      .catch((err: any) => {
-        console.log(err.console, '', 'error');
-      });
+      } else {
+        console.log('Invalid credentials. Please try again.');
+      }
+    } catch (error) {
+      console.log('Error occurred during login:', error);
+    }
   }
 
   register(form: NgForm) {
     this.userService
       .registerUser(this.user)
-      .then((user: any) => {
-        form.reset();
+      .then((response: any) => {
+        form.resetForm();
         this.output.emit();
 
-        const userId = user.data._id;
+        const userId = response.data._id;
         localStorage.setItem('userId', userId);
 
         this.router.navigateByUrl('/home');
       })
       .catch((err: any) => {
-        console.log(err.console, '', 'error');
+        console.log(err, 'error');
       });
   }
 }

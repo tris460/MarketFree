@@ -7,42 +7,37 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class UserService {
-  url = `Http://127.0.0.1:3000`;
+  private apiUrl = 'http://127.0.0.1:3000'; // Replace this URL with your server's API URL
 
   constructor(private http: HttpClient, private router: Router) {}
+
   getUsers() {
-    return this.http.get(`${this.url}/users`).toPromise();
+    return this.http.get(`${this.apiUrl}/users`).toPromise();
   }
 
   registerUser(user: UsersModel) {
-    return this.http.post(`${this.url}/users`, user).toPromise();
+    return this.http.post(`${this.apiUrl}/users`, user).toPromise();
   }
 
-  getUserById(id: string) {
-    return this.http.get(`${this.url}/users`).toPromise()
-      .then((users: any) => {
-        const user = users.data.filter((u:any) => u._id === id)[0];
-        return user;
-      });
-  }
-
-  async loginUser(email: string, password: string): Promise<string> { // Actualizamos el tipo de retorno a 'string'
+  async loginUser(email: string, password: string): Promise<any> {
     try {
       const loginData = { email, password };
-      const response = await this.http.post<any>(`${this.url}/login`, loginData).toPromise();
-      if (!response){
-        return ("Invalid Token")
-      } else {
-        this.router.navigateByUrl('/home');
-      }
-      return response; // Obtenemos el token de acceso desde la respuesta
+      const response = await this.http.post<any>(`${this.apiUrl}/users/login`, loginData).toPromise();
+      return response;
     } catch (error) {
-      // Si hay un error en la API, se captura aquí y se lanza una excepción para manejarlo en el componente
       throw error;
     }
   }
 
   updateUser(id: string, updatedUser: UsersModel) {
-    return this.http.put(`${this.url}/users/${id}`, updatedUser).toPromise();
+    return this.http.put(`${this.apiUrl}/users/${id}`, updatedUser).toPromise();
+  }
+
+  getUserById(id: string) {
+    return this.http.get(`${this.apiUrl}/users`).toPromise()
+      .then((users: any) => {
+        const user = users.data.filter((u:any) => u._id === id)[0];
+        return user;
+      });
   }
 }
