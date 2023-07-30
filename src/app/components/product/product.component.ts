@@ -4,6 +4,7 @@ import { PromotionServices } from '../../service/promotions.service';
 import { TagsService } from 'src/app/service/tags.service';
 import { Product } from '../../models/products';
 import { ActivatedRoute, Router } from '@angular/router';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-product',
@@ -20,6 +21,7 @@ export class ProductComponent implements OnInit {
   constructor(
     private productsService: ProductsService,
     private route: ActivatedRoute,
+    private http : HttpClient,
     private router: Router) { }
 
   async ngOnInit() {
@@ -43,6 +45,28 @@ export class ProductComponent implements OnInit {
       const products = await this.productsService.getProducts();
     } catch(err) {
       console.error(`Error: ${err}`);
+    }
+  }
+  async addToCart(){
+
+    const userId = localStorage.getItem('userId');
+    try {
+      this.route.queryParams.subscribe(params => {
+        this.productId = params['id'];
+
+        if(this.productId == '' || this.productId == undefined) {
+          this.router.navigate(['/']);
+        }
+      });
+      const productId= this.productId
+
+      const addedProduct:any = await this.http.post(`http://localhost:3000/users/${userId}/add-to-cart`,{productId}).toPromise()
+      if(!addedProduct.ok){
+        this.router.navigate(['/']);
+      }
+      this.router.navigate(['/cart'])
+    } catch(error:any) {
+      console.error(error.message)
     }
   }
 }
