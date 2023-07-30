@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/service/user.service';
+
 
 @Component({
   selector: 'app-cart',
@@ -13,41 +15,38 @@ export class CartComponent implements OnInit {
   constructor(
     private router:Router,
     private http:HttpClient,
-
   ) { }
+
   quantity1: number = 1;
 
-  increaseQuantity1() {
+  increaseQuantity() {
     this.quantity1++;
   }
 
-  decreaseQuantity1() {
+  decreaseQuantity() {
     if (this.quantity1 > 1) {
       this.quantity1--;
     }
   }
-  quantity2: number = 1;
 
-  increaseQuantity2() {
-    this.quantity2++;
-  }
+  ngOnInit(): void {
+    const userId = localStorage.getItem('userId');
 
-  decreaseQuantity2() {
-    if (this.quantity2 > 1) {
-      this.quantity2--;
+    if(!userId) {
+      this.router.navigateByUrl('/home');
     }
-  }
-  quantity3: number = 1;
 
-  increaseQuantity3() {
-    this.quantity3++;
+    this.userService
+      .getUserById(userId!)
+      .then((data: any) => {
+        this.userInfo = data;
+        console.log(data); // TODO: Mostrar la información del usuario
+      })
+      .catch((error) => {
+        console.log(`Error getting users: ${error}`);
+      });
   }
 
-  decreaseQuantity3() {
-    if (this.quantity3 > 1) {
-      this.quantity3--;
-    }
-  }
   async ngOnInit() {
     try {
       const userId = localStorage.getItem('userId')
@@ -58,7 +57,7 @@ export class CartComponent implements OnInit {
       console.log(error.message)
     }
   }
-  //El Dylan Ya me tiene hasta la vrga
+  
   calculateTotal() {
     // Verificamos que haya productos en el carrito antes de sumar los precios
     if (this.shoppingCartProducts && this.shoppingCartProducts.length > 0) {
