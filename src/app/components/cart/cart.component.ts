@@ -29,27 +29,12 @@ export class CartComponent implements OnInit {
     }
   }
 
-  ngOnInit(): void {
-    const userId = localStorage.getItem('userId');
-
-    if(!userId) {
-      this.router.navigateByUrl('/home');
-    }
-
-    this.userService
-      .getUserById(userId!)
-      .then((data: any) => {
-        this.userInfo = data;
-        console.log(data); // TODO: Mostrar la información del usuario
-      })
-      .catch((error) => {
-        console.log(`Error getting users: ${error}`);
-      });
-  }
-
   async ngOnInit() {
     try {
       const userId = localStorage.getItem('userId')
+      if(!userId) {
+        this.router.navigateByUrl('/home');
+      }
       const products : any = await this.http.get(`http://localhost:3000/users/products-in-cart/${userId}`).toPromise()
       this.shoppingCartProducts = products.shoppingCartProducts;
       console.log(this.shoppingCartProducts)
