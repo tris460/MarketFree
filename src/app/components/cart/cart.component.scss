@@ -1,13 +1,13 @@
-.container{
-    margin: 50px 0px 50px 120px;
-  }
+.main {
+  padding: 30px 50px;
+}
 
   .button-group {
     display: flex;
     justify-content: space-between;
     margin-top: 10px;
   }
-  
+
   .btn-action {
     flex-grow: 1;
     margin-right: 10px;
@@ -26,7 +26,7 @@
     border-radius: 4px;
     overflow: hidden;
   }
-  
+
   .btn-counter {
     width: 40px;
     height: 100%;
@@ -35,11 +35,11 @@
     outline: none;
     cursor: pointer;
   }
-  
+
   .btn-counter:hover {
     background-color: #eaeaea;
   }
-  
+
   .quantity {
     display: flex;
     align-items: center;
@@ -48,4 +48,27 @@
     font-size: 16px;
     font-weight: bold;
   }
-    
+
+@media (max-width: 650px) {
+  .main {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .main {
+    padding: 30px;
+  }
+
+  .container-products-data {
+    flex-direction: column-reverse;
+  }
+
+  .card {
+    width: 100%;
+  }
+
+  .col-4, .col-8 {
+    width: 100%;
+  }
+}
