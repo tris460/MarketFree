@@ -24,11 +24,11 @@
                     <p class="info_nombre">{{productInfo.name}}</p>
                     <p class="info_precio">${{productInfo.price}} - {{productInfo.tags[0].name}}</p>
                     <p class="info_des">Descripción: {{productInfo.description}}</p>
-                    <p class="info_cant">Cantidad:
+                    <!-- <p class="info_cant">Cantidad:
                       <select name="" id="">
                         <option *ngFor="let i of productArray" [value]="i">{{ i }}</option>
                       </select>
-                    </p>
+                    </p> -->
                     <a [routerLink]="'/payment'" class="link">
                       <button class="info_btn">Comprar Ahora</button>
                     </a>

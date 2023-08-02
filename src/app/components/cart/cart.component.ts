@@ -32,7 +32,6 @@ export class CartComponent implements OnInit {
         for (let i = 0; i < this.cart.length; i++) {
           this.getProductInfo(this.cart[i]._id);
         }
-        this.getTotal();
       })
       .catch((error) => {
         console.log(`Error getting users: ${error}`);
@@ -43,12 +42,6 @@ export class CartComponent implements OnInit {
     let product = await this.productsService.getProductById(id)
     this.productData.push(product);
     this.total += product.price;
-    console.log(this.total)
   }
 
-  getTotal() {
-    for (let i = 0; i < this.productData.length; i++) {
-      console.log(this.productData[i])
-    }
-  }
 }
