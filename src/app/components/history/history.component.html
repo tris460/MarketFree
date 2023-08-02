@@ -4,10 +4,6 @@
     <p>Historial de compras</p>
   </div>
 
-  <!-- TODO: Agregar la validación de productos
-  <div class="no-data" *ngIf="faqsByCategory.length == 0">
-    <p>No hay productos disponibles en este momento</p>
-  </div> -->
 
   <!-- Table titles -->
   <div class="row">
@@ -17,8 +13,11 @@
     <p class="col-1">Precio</p>
     <p class="col-1">Fecha</p>
   </div>
+  <div class="no-data" *ngIf="userProducts.length == 0">
+    <p>No hay productos disponibles en este momento</p>
+  </div>
   <!-- Table data, with info of the products bought -->
-  <div class="row black">
+  <div class="row black" *ngIf="userProducts.length != 0">
     <img class="col-1" src="../../../assets/Benefit - Test.jpg" alt="Producto1" title="Producto1">
     <p class="col-5">Nombre del producto</p>
     <p class="col-4">Descripción del producto</p>
