@@ -1,15 +1,15 @@
    <app-header></app-header>
    <div class="container">
-        <div class="row">
-        <div class="col-6">
-        <div class="card custom-shadow color" style="width: 18rem;">
-            <div class="card-body">
-            <h5 class="card-title"><b>Mi cuenta</b></h5>
+    <div class="row">
+      <div class="col-6">
+        <div class="card custom-shadow color">
+          <div class="card-body">
+            <h5 class="card-title" style="text-align: center;"><b>Mi cuenta</b></h5>
             <ul class="list-group list-group-flush">
               <!-- Se agrega un click para mostrar un codigo oculto "(click)="toggleDiv('')"-->
                 <li class="list-group-item color" (click)="toggleDiv('opcion2')">
                   <!-- Este boton se utiliza para acceder a la funcion -->
-                  <button class="btn btn-outline-secondary">
+                  <button class="btn btn-outline-secondary" style="width: 100%;">
                     <img src="../../../assets/geo-alt.svg" alt="Ver mi dirección" title="Ver mi dirección">
                     Direccion
                   </button>
@@ -17,7 +17,7 @@
                 <!-- Se agrega un click para mostrar un codigo oculto "(click)="toggleDiv('')"-->
                 <li class="list-group-item color" (click)="toggleDiv('opcion7')">
                   <!-- Este boton se utiliza para acceder a la funcion -->
-                  <button class="btn btn-outline-secondary">
+                  <button class="btn btn-outline-secondary" style="width: 100%;">
                   <img src="../../../assets/person.svg" alt="Ver mis datos" title="Ver mis datos">
                   Mis datos
                 </button>
@@ -25,9 +25,15 @@
                 <!-- Se agrega un click para mostrar un codigo oculto "(click)="toggleDiv('')"-->
                 <li class="list-group-item color" (click)="router.navigate(['/history'])">
                   <!-- Este boton se utiliza para acceder a la funcion -->
-                  <button class="btn btn-outline-secondary">
+                  <button class="btn btn-outline-secondary" style="width: 100%;">
                   <img src="../../../assets/receipt.svg" alt="Facturación" title="Facturación">
                   Facturacion
+                </button>
+                </li>
+                <li class="list-group-item color" (click)="goToForm()">
+                  <!-- Este boton se utiliza para acceder a la funcion -->
+                  <button class="btn btn-outline-secondary" style="width: 100%;">
+                  Actualizar información
                 </button>
                 </li>
               </ul>
@@ -35,15 +41,11 @@
         </div>
         </div>
         <!-- Se muestra la informacion del usuario -->
-        <div class="col-6 d-flex align-items-center justify-content-center">
-            <div class="d-flex justify-content-center align-items-center"></div>
+        <div class="col-6 d-flex align-items-center justify-content-center" style="flex-direction: column;">
             <div class="circle">
               <img src="../../../assets/Sebas.jpg" alt="Descripción de la imagen">
             </div>
-            <h2 style="text-align: center;"><b>Bienvenido {{userInfo.name}}</b></h2>
-            <button class="btn btn-outline-secondary" (click)="goToForm()">
-              Actualizar informacion
-            </button>
+            <h2 style="text-align: center;"><b>Bienvenid@ {{userInfo.name}}</b></h2>
           </div>
         </div>
         <!-- ngIf se utiliza esta condicional para mostrar el codigo solo si da click al boton correspondiente -->
