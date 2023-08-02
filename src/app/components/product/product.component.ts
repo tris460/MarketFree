@@ -1,7 +1,7 @@
 import {  Component, OnInit } from '@angular/core';
 import { ProductsService } from '../../service/products.service';
 import { Product } from '../../models/products';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { UserService } from 'src/app/service/user.service';
 
 @Component({
@@ -61,9 +61,10 @@ export class ProductComponent implements OnInit {
       alert('Inicia sesión para agregarlo a tu carrito');
       return;
     }
+
     this.userInfo.shoppingCart = [...this.userInfo.shoppingCart, this.productInfo];
     this.userService.updateUser(this.userId, this.userInfo)
-      .then((user) => alert('Producto agregado al carrito'))
+      .then((product) => alert('Producto agregado al carrito'))
       .catch((err) => console.error(`Error adding product to cart: ${err}`));
   }
 }

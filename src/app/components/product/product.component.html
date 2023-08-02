@@ -29,9 +29,9 @@
                         <option *ngFor="let i of productArray" [value]="i">{{ i }}</option>
                       </select>
                     </p> -->
-                    <a [routerLink]="'/payment'" class="link">
+                    <!-- <a (click)="buyNow()" class="link">
                       <button class="info_btn">Comprar Ahora</button>
-                    </a>
+                    </a> -->
                     <button class="info_btn" (click)="addToCart()">Agregar al Carrito</button>
                 </div>
             </div>
