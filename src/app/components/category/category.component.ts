@@ -8,8 +8,8 @@ import { ProductsService } from 'src/app/service/products.service';
   styleUrls: ['./category.component.scss']
 })
 export class CategoryComponent implements OnInit {
-  products: any[] = []; // Declare the 'products' property
-  categoryId: string | null = null;
+  categoryId = '';
+  products:any[] = [];
 
   constructor(private route: ActivatedRoute, private productsService: ProductsService, private router: Router) { }
 
@@ -26,7 +26,7 @@ export class CategoryComponent implements OnInit {
         });
       })
       .catch((error) => {
-        console.error(`Error getting products: ${error}`);
+        console.error("Error getting products: ", error);
       });
   }
 

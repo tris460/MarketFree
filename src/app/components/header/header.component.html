@@ -38,7 +38,9 @@
       Categorías
     </a>
     <ul class="dropdown-menu">
-      <li><a class="dropdown-item" href="#">Mascotas</a></li>
+      <li *ngFor="let category of categoriesData">
+        <a class="dropdown-item" (click)="navigateToCategory(category._id)">{{category.name}}</a>
+      </li>
     </ul>
     <a [routerLink]="'/sell'" class="link">Vender</a>
     <a [routerLink]="'/help'" class="link">Ayuda</a>
