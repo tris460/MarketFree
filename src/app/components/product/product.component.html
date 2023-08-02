@@ -13,53 +13,19 @@
 
 <!-- Product data -->
 <div id="product" class="main" *ngIf="productInfo">
-        <div class="row" >
-          <!-- Product image -->
-            <div class="col-6 flex">
-                <img [src]="productInfo.image" [alt]="productInfo.name" [title]="productInfo.name">
-            </div>
-            <!-- Product info -->
-            <div class="col-6">
-                <div class="info">
-                    <p class="info_nombre">{{productInfo.name}}</p>
-                    <p class="info_precio">${{productInfo.price}} - {{productInfo.tags[0].name}}</p>
-                    <p class="info_des">Descripción: {{productInfo.description}}</p>
-                    <!-- <p class="info_cant">Cantidad:
-                      <select name="" id="">
-                        <option *ngFor="let i of productArray" [value]="i">{{ i }}</option>
-                      </select>
-                    </p> -->
-                    <!-- <a (click)="buyNow()" class="link">
-                      <button class="info_btn">Comprar Ahora</button>
-                    </a> -->
-                    <button class="info_btn" (click)="addToCart()">Agregar al Carrito</button>
-                </div>
-            </div>
-        </div>
-
-  <!-- Related products -->
-  <!-- <div>
-    <div class="products">
-      <div class="title left">
-        <p>Productos Relacionados</p>
-      </div>
-      List of products
-      <div class="products__row">
-        <div class="products__row__card">
-          <img src="../../../assets/Product - Test.jpg" class="products__row__card--img" alt="Product 1">
-          <div class="products__row__card--text">
-            <p>Nombre del producto</p>
-            <p class="price-text">Precio</p>
-          </div>
-        </div>
-        <div class="products__more">
-          <div class="products__more--circle">
-            <img src="../../../assets/arrow-right.svg" alt="Flecha para ver más" title="Da click para ver más productos">
-          </div>
-        </div>
-      </div>
+  <div class="flex-row">
+    <!-- Product image -->
+    <div class="image">
+      <img [src]="productInfo.image" [alt]="productInfo.name" [title]="productInfo.name">
     </div>
-  </div> -->
+    <!-- Product info -->
+    <div class="info">
+      <p class="info_nombre">{{productInfo.name}}</p>
+      <p class="info_precio">${{productInfo.price}} - {{productInfo.tags[0].name}}</p>
+      <p class="info_des">Descripción: {{productInfo.description}}</p>
+      <button class="info_btn" (click)="addToCart()">Agregar al Carrito</button>
+    </div>
+  </div>
 </div>
 
 <app-footer> </app-footer>
