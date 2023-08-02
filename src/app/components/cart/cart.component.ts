@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, NavigationExtras } from '@angular/router';
 import { ProductsService } from 'src/app/service/products.service';
 import { UserService } from 'src/app/service/user.service';
 
@@ -42,6 +42,15 @@ export class CartComponent implements OnInit {
     let product = await this.productsService.getProductById(id)
     this.productData.push(product);
     this.total += product.price;
+  }
+
+  continueToPayment() {
+    const navigationExtras: NavigationExtras = {
+      state: {
+        total: this.total
+      }
+    };
+    this.router.navigate(['/payment'], navigationExtras);
   }
 
 }

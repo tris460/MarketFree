@@ -17,7 +17,7 @@
               <div class="card-body">
                 <h5 class="card-title">{{p.name}}</h5>
                 <p class="card-text">Precio: ${{p.price}}</p>
-                <button type="button" class="btn btn-danger btn-sm mb-2">Eliminar</button>
+                <!-- <button type="button" class="btn btn-danger btn-sm mb-2">Eliminar</button> -->
               </div>
             </div>
           <!-- </div> -->
@@ -31,7 +31,7 @@
               <h4 class="card-title">Resumen de compra</h4>
               <h6 class="card-subtitle mb-2 text-body-secondary">Productos: {{productData.length}}</h6>
               <h6 class="card-subtitle mb-2 text-body-secondary">Total: <b>${{total}}</b></h6>
-              <a [routerLink]="'/payment'" class="link">
+              <a (click)="continueToPayment()" class="link">
                 <button type="button" class="btn btn-dark btn-sm m-2" *ngIf="productData.length != 0">
                   Continuar compra
                 </button>
