@@ -13,6 +13,7 @@
 }
 
 .image {
+  padding: 30px;
   width: 50%;
 
   & > img {
@@ -21,7 +22,7 @@
 }
 
 .info{
-    padding: 10px;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;

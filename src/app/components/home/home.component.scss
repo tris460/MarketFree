@@ -98,3 +98,39 @@
     }
   }
 }
+
+@media (max-width: 1025px) {
+  .products__more {
+    left: 94%;
+  }
+}
+
+@media (max-width: 725px) {
+  .products__more {
+    left: 92%;
+  }
+}
+
+@media (max-width: 615px) {
+  .products__more {
+    left: 90%;
+  }
+}
+
+@media (max-width: 470px) {
+  .products__more {
+    left: 88%;
+  }
+}
+
+@media (max-width: 380px) {
+  .products__more {
+    left: 86%;
+  }
+}
+
+@media (max-width: 330px) {
+  .products__more {
+    left: 80%;
+  }
+}
