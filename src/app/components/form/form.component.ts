@@ -37,6 +37,8 @@ export class FormComponent implements OnInit {
       .updateUser(this.userId, this.userUpdated)
       .then((user) => {
         alert('Datos actualizados correctamente');
+        console.log(this.userUpdated);
+        
         this.router.navigateByUrl('/profile');
       })
       .catch((err) => {

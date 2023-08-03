@@ -15,6 +15,10 @@
         <label for="floatingNamet">Apellidos</label>
       </div>
       <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="floatingDireccion" name="address"  required placeholder="Direccion" value={{userUpdated.address}} [(ngModel)]="userUpdated.address">
+        <label for="floatingNamet">Direccion</label>
+      </div>
+      <div class="form-floating mb-3">
         <input type="email" class="form-control" id="floatingEmail" name="email"  required placeholder="Correo" value={{userUpdated.email}} [(ngModel)]="userUpdated.email">
         <label for="floatingEmail">Correo</label>
       </div>
