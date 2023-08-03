@@ -34,7 +34,8 @@ export class LoginComponent implements OnInit {
         this.router.navigateByUrl('/home');
       })
       .catch((err: any) => {
-        console.log(err);
+        console.error(err);
+        alert("Credenciales incorrectas intenta otra vez")
         // Manejar el error de inicio de sesión (credenciales inválidas, error del servidor, etc.)
       });
   }

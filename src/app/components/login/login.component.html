@@ -54,13 +54,14 @@
               <label for="floatingEmail">Correo</label>
             </div>
             <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="floatingDireccion" name="address" [(ngModel)]="user.address" required placeholder="Direccion">
+              <label for="floatingDireccion">Direccion</label>
+            </div>
+            <div class="form-floating mb-3">
               <input type="password" class="form-control" id="floatingPassword" name="password" [(ngModel)]="user.password" required placeholder="Contraseña">
               <label for="floatingPassword">Contraseña</label>
             </div>
-            <div class="form-floating mb-3">
-              <input type="password" class="form-control" id="floatingConfirmPassword" placeholder="Confirmar contraseña">
-              <label for="floatingConfirmPassword">Confirmar contraseña</label>
-            </div>
+           
             <button type="submit" class="btn">Registrarme</button>
           </form>
           
