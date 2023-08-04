@@ -7,6 +7,11 @@
     <div class="row">
       <div class="col-8">
         <div class="row">
+
+          <div class="no-data" *ngIf="shoppingCartProducts.length == 0">
+            <p>No hay productos en tu carrito</p>
+          </div>
+
           <div class="col-md-4" *ngFor="let product of shoppingCartProducts">
             <!-- Dev card -->
             <div class="card">
@@ -26,7 +31,7 @@
           </div>
         </div>
       </div>
-      <div class="col-4 ">
+      <div class="col-4" *ngIf="shoppingCartProducts.length > 0">
         <div class="d-flex justify-content-end align-items-center">
           <div class="card" style="width: 18rem;">
             <!-- Resumen de Compra -->
