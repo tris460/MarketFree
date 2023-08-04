@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class ProfileComponent implements OnInit {
   userInfo: any = '';
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private userService: UserService, public router: Router) { }
 
   // Variables to read option selected
   MisPedidos: boolean = false;

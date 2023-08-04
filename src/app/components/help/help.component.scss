@@ -30,3 +30,17 @@
 .link {
   color: #000;
 }
+
+@media (max-width: 600px) {
+  .flex {
+    flex-direction: column;
+
+    &__whatsapp {
+      border-right: none;
+    }
+
+    &__info {
+      text-align: center;
+    }
+  }
+}

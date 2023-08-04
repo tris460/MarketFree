@@ -17,3 +17,28 @@
 .subtitle {
   font-size: 20px;
 }
+
+.image-container {
+  text-align: center;
+}
+
+.image {
+  width: 100px;
+  height: 100px;
+}
+
+@media (max-width: 650px) {
+  .main {
+    padding: 30px;
+  }
+
+  .data {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .flex {
+    flex-direction: column;
+  }
+}
