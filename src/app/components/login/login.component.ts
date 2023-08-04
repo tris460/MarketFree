@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   @Output() output = new EventEmitter();
   user: UsersModel = new UsersModel();
+  showAlert: boolean = false;
 
   constructor(private userService: UserService, private router: Router) { }
 

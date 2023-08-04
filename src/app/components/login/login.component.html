@@ -26,12 +26,15 @@
           <form (ngSubmit)="login()" #loginForm="ngForm">
             <div class="form-floating mb-3">
               <input type="email" class="form-control" id="floatingInput" placeholder="Correo" [(ngModel)]="user.email" name="email" required>
+              <div *ngIf="form.submitted && !user.email" class="error">Este campo es obligatorio.</div>
               <label for="floatingInput">Correo</label>
             </div>
             <div class="form-floating">
               <input type="password" class="form-control" id="floatingPass" placeholder="Contraseña" [(ngModel)]="user.password" name="password" required>
+              <div *ngIf="form.submitted && !user.password" class="error">Este campo es obligatorio.</div>
               <label for="floatingPassword">Contraseña</label>
             </div>
+            <div *ngIf="showAlert && form.invalid" class="alert alert-danger">Por favor, completa todos los campos obligatorios.</div>
             <button type="submit" class="btn">Iniciar Sesión</button>
           </form>
 
@@ -43,25 +46,30 @@
           <form (ngSubmit)="register(form)" #form="ngForm" name="form">
             <div class="form-floating mb-3">
               <input type="text" class="form-control" id="floatingName" name="nombre" [(ngModel)]="user.name" required placeholder="Nombre">
+              <div *ngIf="form.submitted && !user.name" class="error">Este campo es obligatorio.</div>
               <label for="floatingNamet">Nombre</label>
             </div>
             <div class="form-floating mb-3">
               <input type="text" class="form-control" id="floatingApellido" name="lastname" [(ngModel)]="user.lastname" required placeholder="Apellidos">
+              <div *ngIf="form.submitted && !user.lastname" class="error">Este campo es obligatorio.</div>
               <label for="floatingNamet">Apellidos</label>
             </div>
             <div class="form-floating mb-3">
               <input type="email" class="form-control" id="floatingEmail" name="email" [(ngModel)]="user.email" required placeholder="Correo">
+              <div *ngIf="form.submitted && !user.email" class="error">Este campo es obligatorio.</div>
               <label for="floatingEmail">Correo</label>
             </div>
             <div class="form-floating mb-3">
               <input type="text" class="form-control" id="floatingDireccion" name="address" [(ngModel)]="user.address" required placeholder="Direccion">
+              <div *ngIf="form.submitted && !user.address" class="error">Este campo es obligatorio.</div>
               <label for="floatingDireccion">Direccion</label>
             </div>
             <div class="form-floating mb-3">
               <input type="password" class="form-control" id="floatingPassword" name="password" [(ngModel)]="user.password" required placeholder="Contraseña">
+              <div *ngIf="form.submitted && !user.password" class="error">Este campo es obligatorio.</div>
               <label for="floatingPassword">Contraseña</label>
             </div>
-
+            <div *ngIf="showAlert && form.invalid" class="alert alert-danger">Por favor, completa todos los campos obligatorios.</div>
             <button type="submit" class="btn">Registrarme</button>
           </form>
 
