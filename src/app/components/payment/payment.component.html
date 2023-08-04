@@ -8,22 +8,22 @@
     <thead>
       <tr>
         <th>Producto</th>
-        <th>Cantidad</th>
         <th>Precio Unitario</th>
-        <th>Total</th>
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let product of shoppingCartProducts">
-        <td>{{ product.name }}</td>
-        <td>{{ quantity1 }}</td>
-        <td>{{ product.price }}</td>
-        <td>${{ calculateTotal() }}</td>
+      <tr *ngFor="let product of productData">
+        <td>{{ product.name }} x1</td>
+        <td>${{ product.price }}</td>
       </tr>
     </tbody>
     <tfoot>
       <tr>
-        <td colspan="3" class="text-right">Depositar al siguiente numero de cuenta:</td>
+        <td class="text-right">Total:</td>
+        <td>${{total}}</td>
+      </tr>
+      <tr>
+        <td class="text-right">Depositar al siguiente numero de cuenta:</td>
         <td>6468464651684684</td>
       </tr>
     </tfoot>

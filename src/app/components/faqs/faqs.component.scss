@@ -27,3 +27,13 @@
     }
   }
 }
+
+@media (max-width: 450px) {
+  .main {
+    padding: 15px;
+  }
+
+  .faqs__question {
+    margin: 0;
+  }
+}

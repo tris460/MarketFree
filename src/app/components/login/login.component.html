@@ -22,7 +22,7 @@
       <div class="tab-content">
         <div class="tab-pane fade show active" id="login-content">
 
-          
+
           <form (ngSubmit)="login()" #loginForm="ngForm">
             <div class="form-floating mb-3">
               <input type="email" class="form-control" id="floatingInput" placeholder="Correo" [(ngModel)]="user.email" name="email" required>
@@ -34,8 +34,8 @@
             </div>
             <button type="submit" class="btn">Iniciar Sesión</button>
           </form>
-          
-          
+
+
         </div>
         <!-- Register content -->
         <div class="tab-pane fade" id="register-content">
@@ -61,10 +61,10 @@
               <input type="password" class="form-control" id="floatingPassword" name="password" [(ngModel)]="user.password" required placeholder="Contraseña">
               <label for="floatingPassword">Contraseña</label>
             </div>
-           
+
             <button type="submit" class="btn">Registrarme</button>
           </form>
-          
+
         </div>
       </div>
     </div>

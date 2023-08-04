@@ -6,7 +6,7 @@
 }
 
 .title {
-padding-top: 30px;
+  padding-top: 30px;
 }
 
 .card {
@@ -102,4 +102,10 @@ padding-top: 30px;
 
 .card .contact a:hover {
     background: #444;
+}
+
+@media (max-width: 400px) {
+  .main{
+    padding: 20px 0px 40px;
+  }
 }

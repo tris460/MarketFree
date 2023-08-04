@@ -4,33 +4,23 @@
     <a [routerLink]="'/home'">
       <img src="../../../assets/LogoMF.png" alt="MarketFree logo" title="MarketFree Logo">
     </a>
-    <!-- Search bar for products -->
-      <form class="menu__form">
-        <input class="form-control" type="search" placeholder="Busca entre nombres, códigos, marcas...">
-        <button class="btn" type="submit">Buscar</button>
-      </form>
-      <!-- Notifications button -->
-      <!-- <button type="button" class="btn position-relative">
-        <img src="../../../assets/bell.svg" alt="Notificaciones" title="Notificaciones">
-        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">10</span>
-      </button> -->
+      <div style="display: flex; flex: 1;"></div>
       <!-- Cart button -->
       <button [routerLink]="'/cart'" type="button" class="btn position-relative" *ngIf="userId">
         <img src="../../../assets/cart.svg" alt="Carrito" title="Mi carrito">
-        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">1</span>
       </button>
       <!-- Profile link -->
-      <a [routerLink]="'/profile'" class="link" *ngIf="userId">
-        Mi perfil
-      </a>
+      <button [routerLink]="'/profile'" type="button" class="btn position-relative" *ngIf="userId">
+        <img src="../../../assets/user.png" alt="Mi perfil" title="Mi perfil" class="icon">
+      </button>
       <!-- Login link -->
-      <a [routerLink]="'/login'" class="link" *ngIf="!userId">
-        Login
-      </a>
+      <button [routerLink]="'/login'" type="button" class="btn position-relative" *ngIf="!userId">
+        <img src="../../../assets/login.png" alt="Login" title="Login" class="icon">
+      </button>
       <!-- Logout button -->
-      <p class="link" (click)="logout()" style="margin: 20px 10px" *ngIf="userId">
-        Logout
-      </p>
+      <button (click)="logout()" type="button" class="btn position-relative" *ngIf="userId">
+        <img src="../../../assets/login.png" alt="Logout" title="Logout" class="icon">
+      </button>
   </div>
   <!-- Go to categories -->
   <div class="menu__categories">

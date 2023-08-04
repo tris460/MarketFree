@@ -1,6 +1,6 @@
 <app-header></app-header>
 <!-- Register content -->
-<div class="form m-3">
+<div class="form">
   <div class="container main">
     <div class="title">
       <p>Actualizar usuario</p>
@@ -27,7 +27,7 @@
           <input type="password" class="form-control" id="floatingPassword" name="password"  required placeholder="Contraseña" value={{userUpdated.password}} [(ngModel)]="userUpdated.password">
           <label for="floatingPassword">Contraseña</label>
         </div>
-        <button type="submit" class="btn m-3" (click)="updateUser()">Registrarme</button>
+        <button type="submit" class="btn m-3" (click)="updateUser()">Guardar</button>
       </form>
     </div>
 </div>
