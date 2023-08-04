@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 export class ProfileComponent implements OnInit {
   userInfo: any = '';
 
-  constructor(private userService: UserService, private router: Router) { }
+  constructor(private userService: UserService, public router: Router) { }
 
   // Variables to read option selected
   MisPedidos: boolean = false;
@@ -41,7 +41,6 @@ export class ProfileComponent implements OnInit {
       .getUserById(userId!)
       .then((data: any) => {
         this.userInfo = data;
-        console.log(data); // TODO: Mostrar la información del usuario
       })
       .catch((error) => {
         console.log(`Error getting users: ${error}`);

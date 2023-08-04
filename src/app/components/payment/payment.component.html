@@ -1,31 +1,34 @@
 <app-header></app-header>
-
-<div class="checkout">
-    <!-- Credit Card Design -->
-    <div class="credit-card-animation">
-      <img class="front-image" src="../../../assets/card-front.png" alt="Imagen frontal de tarjeta de crédito">
-      <img class="back-image" src="../../../assets/card-back.png" alt="Imagen trasera de tarjeta de crédito">
-    </div>
-    <!-- Credit Card Info Form -->
-    <form class="form" autocomplete="on">
-        <div class="form-floating mb-3">
-        <input type="num" class="form-control" id="floatingNumber" placeholder="Numero de tarjeta">
-        <label for="floatingNumber">Numero de tarjeta</label>
-        </div>
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="floatingName" placeholder="Nombre">
-        <label for="floatingName">Nombre</label>
-      </div>
-      <div class="form-floating mb-3">
-        <input type="num" class="form-control" id="floatingDate" placeholder="Fecha de expiración">
-        <label for="floatingDate">Fecha de expiración</label>
-      </div>
-      <div class="form-floating mb-3">
-        <input type="num" class="form-control" id="floatingCVV" placeholder="CVV">
-        <label for="floatingCVV">CVV</label>
-      </div>
-      <button class="btn">Pagar</button>
-    </form>
+<div class="container mt-5 mb-5 border border-dark border-3">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <img src="../../../assets/LogoMF.png" alt="Logo" width="130" height="90">
+    <h2>Factura</h2>
   </div>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Producto</th>
+        <th>Precio Unitario</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of productData">
+        <td>{{ product.name }} x1</td>
+        <td>${{ product.price }}</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td class="text-right">Total:</td>
+        <td>${{total}}</td>
+      </tr>
+      <tr>
+        <td class="text-right">Depositar al siguiente numero de cuenta:</td>
+        <td>6468464651684684</td>
+      </tr>
+    </tfoot>
+  </table>
+</div>
+
 
 <app-footer></app-footer>

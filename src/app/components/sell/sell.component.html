@@ -11,30 +11,36 @@
       <!-- Image -->
       <div class="input-group mb-3">
         <input type="text" class="form-control" name="image" [(ngModel)]="product.image" required  id="inputImage" aria-label="Upload" placeholder="URL de la imagen de tu producto">
+        <div *ngIf="form.submitted && !product.image" class="error">Este campo es obligatorio.</div>
       </div>
       <!-- Name -->
       <div class="form-floating mb-3">
         <input type="text" class="form-control" name="nombre" [(ngModel)]="product.name" required id="floatingName" placeholder="Nombre">
+        <div *ngIf="form.submitted && !product.name" class="error">Este campo es obligatorio.</div>
         <label for="floatingName">Nombre</label>
       </div>
       <!-- Price -->
       <div class="form-floating mb-3">
         <input type="number" class="form-control" id="floatingPrecio" name="Precio" [(ngModel)]="product.price" required placeholder="Precio">
+        <div *ngIf="form.submitted && !product.price" class="error">Este campo es obligatorio.</div>
         <label for="floatingPrecio">Precio</label>
       </div>
       <!-- Description -->
       <div class="form-floating mb-3">
         <input type="text" class="form-control" id="floatingDescription" name="Descripcion" [(ngModel)]="product.description" required placeholder="Descripción">
+        <div *ngIf="form.submitted && !product.description" class="error">Este campo es obligatorio.</div>
         <label for="floatingDescription">Descripción</label>
       </div>
       <!-- Quantity -->
       <div class="form-floating mb-3">
         <input type="text" class="form-control" id="floatingQuantity" name="quantity" [(ngModel)]="product.quantity" required  placeholder="Cantidad">
+        <div *ngIf="form.submitted && !product.quantity" class="error">Este campo es obligatorio.</div>
         <label for="floatingQuantity">Cantidad de productos</label>
       </div>
       <!-- Discount -->
       <div class="form-floating mb-3">
         <input type="number" class="form-control" id="floatingDiscount" name="discount" [(ngModel)]="product.discount" required placeholder="Descuento">
+        <div *ngIf="form.submitted && !product.discount" class="error">Este campo es obligatorio.</div>
         <label for="floatingDiscount">Descuento</label>
       </div>
       <!-- Promotions -->
@@ -50,17 +56,19 @@
         <p>Elige las categorías de tu producto:</p>
       </div>
       <div class="form-check form-switch" *ngFor="let category of categoriesData">
-        <input class="form-check-input radio" type="radio" [name]=category.name [id]=category._id (change)="product.category = category" [(ngModel)]="product.category">
-        <label class="form-check-label" [for]=category._id>{{category.name}}</label><br>
+        <input class="form-check-input radio" type="radio" name="category" [id]="category._id" (change)="selectedCategory = category" [(ngModel)]="selectedCategory" required>
+        <label class="form-check-label" [for]="category._id">{{category.name}}</label><br>
       </div>
+      <div *ngIf="form.submitted && !selectedCategory" class="error">Debes elegir una categoría.</div>
       <!-- Tags -->
       <div class="subtitle">
         <p>Elige la etiqueta que aplique a tu producto:</p>
       </div>
       <div class="form-check form-switch" *ngFor="let tag of tagsData">
-        <input class="form-check-input radio" type="radio" [name]=tag.name [id]=tag._id (change)="product.tags = tag" [(ngModel)]="product.tags">
-        <label class="form-check-label" [for]=tag._id>{{tag.name}}</label>
+        <input class="form-check-input radio" type="radio" name="tag" [id]="tag._id" (change)="selectedTag = tag" [(ngModel)]="selectedTag" required>
+        <label class="form-check-label" [for]="tag._id">{{tag.name}}</label>
       </div>
+      <div *ngIf="form.submitted && !selectedTag" class="error">Debes elegir una etiqueta.</div>
       <!-- Product visibility -->
       <div class="subtitle">
         <p>¿Qué visibilidad tendrá tu producto?</p>
@@ -69,6 +77,7 @@
         <input class="form-check-input" type="checkbox" name="status" [(ngModel)]="product.status" required role="switch" id="chVisible" checked>
         <label class="form-check-label" for="chVisible">Visible</label>
       </div>
+      <div *ngIf="showAlert && form.invalid" class="alert alert-danger">Por favor, completa todos los campos obligatorios.</div>
       <!-- Publish/save button -->
       <button type="submit" class="btn btn-dark">Publicar producto</button>
     </form>

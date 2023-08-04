@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   @Output() output = new EventEmitter();
   user: UsersModel = new UsersModel();
+  showAlert: boolean = false;
 
   constructor(private userService: UserService, private router: Router) { }
 
@@ -34,9 +35,7 @@ export class LoginComponent implements OnInit {
         this.router.navigateByUrl('/home');
       })
       .catch((err: any) => {
-        console.error(err);
         alert("Credenciales incorrectas intenta otra vez")
-        // Manejar el error de inicio de sesión (credenciales inválidas, error del servidor, etc.)
       });
   }
 

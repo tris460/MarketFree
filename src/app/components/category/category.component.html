@@ -4,7 +4,7 @@
     <p>No hay productos disponibles en este momento</p>
   </div>
 
-  <div class="title">
+  <div class="title" *ngIf="products.length != 0">
     <p>{{products[0].category[0].name}}</p>
   </div>
 
