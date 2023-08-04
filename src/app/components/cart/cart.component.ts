@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -11,6 +12,7 @@ export class CartComponent implements OnInit {
   constructor(
 
     private http:HttpClient,
+    private router:Router,
 
   ) { }
   quantity1: number = 1;
@@ -66,6 +68,26 @@ export class CartComponent implements OnInit {
     }
 
     return 0; // Retorna 0 si no hay productos en el carrito o el carrito no ha sido cargado aún
+  }
+
+  async deleteFromCart(id:any){
+
+    const userId = localStorage.getItem('userId');
+    try {
+
+      const productId= id;
+
+      const deletedProduct:any = await this.http.patch(`http://localhost:3000/users/${userId}/delete-from-cart`,{productId}).toPromise()
+      console.log(deletedProduct)
+
+      // Recargar la página actual
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate(['/cart']);
+
+    });
+    } catch(error:any) {
+      console.error(error.message)
+    }
   }
 }
 
