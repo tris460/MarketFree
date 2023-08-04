@@ -52,7 +52,7 @@ export class ProductComponent implements OnInit {
       this.userInfo = await this.userService.getUserById(this.userId);
 
     } catch(err) {
-      console.error(`Error: ${err}`);
+      console.error(Error, `Product ID incorrect: ${err}`);
     }
   }
 
