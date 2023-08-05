@@ -23,7 +23,6 @@ export class HistoryComponent implements OnInit {
       .getUserById(userId!)
       .then((data: any) => {
         this.userProducts = data.purchasedProducts;
-        console.log(this.userProducts); // TODO: Mostrar los productos comprados
       })
       .catch((error) => {
         console.log(`Error getting users: ${error}`);

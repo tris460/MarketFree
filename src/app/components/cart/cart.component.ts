@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Router, NavigationExtras } from '@angular/router';
 import { ProductsService } from 'src/app/service/products.service';
@@ -14,7 +15,7 @@ export class CartComponent implements OnInit {
   productData: any = [];
   total: number = 0;
 
-  constructor(private productsService: ProductsService, private userService: UserService, private router: Router) { }
+  constructor(private productsService: ProductsService, private userService: UserService, private router: Router, private http:HttpClient) { }
 
   ngOnInit(): void {
     const userId = localStorage.getItem('userId');
@@ -53,5 +54,25 @@ export class CartComponent implements OnInit {
     this.router.navigate(['/payment'], navigationExtras);
   }
 
+
+  async deleteFromCart(id:any){
+
+    const userId = localStorage.getItem('userId');
+    try {
+
+      const productId= id;
+
+      const deletedProduct:any = await this.http.patch(`http://localhost:3000/users/${userId}/delete-from-cart`,{productId}).toPromise()
+      console.log(deletedProduct)
+
+      // Recargar la página actual
+    this.router.navigateByUrl('/', { skipLocationChange: true }).then(() => {
+      this.router.navigate(['/cart']);
+
+    });
+    } catch(error:any) {
+      console.error(error.message)
+    }
+  }
 }
 

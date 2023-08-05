@@ -41,7 +41,6 @@ export class ProfileComponent implements OnInit {
       .getUserById(userId!)
       .then((data: any) => {
         this.userInfo = data;
-        console.log(data); // TODO: Mostrar la información del usuario
       })
       .catch((error) => {
         console.log(`Error getting users: ${error}`);
