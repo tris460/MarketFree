@@ -23,18 +23,17 @@
         <div class="tab-pane fade show active" id="login-content">
 
 
-          <form (ngSubmit)="login()" #loginForm="ngForm">
+          <form (ngSubmit)="login(loginForm)" #loginForm="ngForm">
             <div class="form-floating mb-3">
               <input type="email" class="form-control" id="floatingInput" placeholder="Correo" [(ngModel)]="user.email" name="email" required>
-              <div *ngIf="form.submitted && !user.email" class="error">Este campo es obligatorio.</div>
+              <div *ngIf="loginForm.submitted && loginForm.controls['email'].invalid" class="error">Este campo es obligatorio.</div>
               <label for="floatingInput">Correo</label>
             </div>
             <div class="form-floating">
               <input type="password" class="form-control" id="floatingPass" placeholder="Contraseña" [(ngModel)]="user.password" name="password" required>
-              <div *ngIf="form.submitted && !user.password" class="error">Este campo es obligatorio.</div>
+              <div *ngIf="loginForm.submitted && !user.password" class="error">Este campo es obligatorio.</div>
               <label for="floatingPassword">Contraseña</label>
             </div>
-            <div *ngIf="showAlert && form.invalid" class="alert alert-danger">Por favor, completa todos los campos obligatorios.</div>
             <button type="submit" class="btn">Iniciar Sesión</button>
           </form>
 
@@ -69,10 +68,8 @@
               <div *ngIf="form.submitted && !user.password" class="error">Este campo es obligatorio.</div>
               <label for="floatingPassword">Contraseña</label>
             </div>
-            <div *ngIf="showAlert && form.invalid" class="alert alert-danger">Por favor, completa todos los campos obligatorios.</div>
             <button type="submit" class="btn">Registrarme</button>
           </form>
-
         </div>
       </div>
     </div>
