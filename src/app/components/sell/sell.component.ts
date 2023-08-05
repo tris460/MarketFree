@@ -24,6 +24,7 @@ export class SellComponent implements OnInit {
   showAlert: boolean = false;
   selectedCategory: Category | null = null;
   selectedTag: Tags | null = null;
+  selectedPromotion: Promotions | null = null;
 
   constructor(
     private productsService: ProductsService,

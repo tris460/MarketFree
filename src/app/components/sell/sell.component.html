@@ -51,6 +51,7 @@
         <input class="form-check-input radio" type="radio" [name]=promotion.name [id]=promotion._id (change)="product.promotion = promotion" [(ngModel)]="product.promotion">
         <label class="form-check-label" [for]=promotion._id>{{promotion.name}}</label>
       </div>
+      <div *ngIf="form.submitted && !selectedPromotion" class="error">Debes elegir una promoción.</div>
       <!-- Category -->
       <div class="subtitle">
         <p>Elige las categorías de tu producto:</p>
