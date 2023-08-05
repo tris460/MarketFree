@@ -46,4 +46,24 @@ export class FormComponent implements OnInit {
       })
   }
 
+  updateName(value: any) {
+    this.userUpdated.name = value;
+  }
+
+  updateLastname(value: any) {
+    this.userUpdated.lastname = value;
+  }
+
+  updateEmail(value: any) {
+    this.userUpdated.email = value;
+  }
+
+  updateAddress(value: any) {
+    this.userUpdated.address = value;
+  }
+
+  updatePassword(value: any) {
+    this.userUpdated.password = value;
+  }
+
 }
