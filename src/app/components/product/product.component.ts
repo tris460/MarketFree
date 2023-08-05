@@ -1,10 +1,8 @@
 import {  Component, OnInit } from '@angular/core';
 import { ProductsService } from '../../service/products.service';
-import { PromotionServices } from '../../service/promotions.service';
-import { TagsService } from 'src/app/service/tags.service';
 import { Product } from '../../models/products';
 import { ActivatedRoute, Router } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+import { UserService } from 'src/app/service/user.service';
 
 @Component({
   selector: 'app-product',
@@ -17,15 +15,21 @@ export class ProductComponent implements OnInit {
   productInfo: any = '';
   promotionId: string = '';
   promotionName: string = '';
+  productQuantity = 0;
+  productArray: string[] = [];
+  userInfo: any = '';
+  userId: any = '';
 
   constructor(
     private productsService: ProductsService,
+    private userService: UserService,
     private route: ActivatedRoute,
-    private http : HttpClient,
     private router: Router) { }
 
   async ngOnInit() {
     try {
+      this.userId = localStorage.getItem('userId');
+
       this.route.queryParams.subscribe(params => {
         this.productId = params['id'];
 
@@ -38,35 +42,29 @@ export class ProductComponent implements OnInit {
       this.productInfo = await this.productsService.getProductById(this.productId);
       this.promotionId = this.productInfo.promotion[0]._id;
       this.promotionName = this.productInfo.promotion[0].name;
+      this.productQuantity = this.productInfo.quantity;
 
-      console.log(this.productInfo)
+      for (let i = 1; i <= this.productQuantity; i++) {
+        this.productArray.push(`${i}`)
+      }
 
-      //Get for products
-      const products = await this.productsService.getProducts();
+      // Get for user information
+      this.userInfo = await this.userService.getUserById(this.userId);
+
     } catch(err) {
-      console.error(`Error: ${err}`);
+      console.error(Error, `Product ID incorrect: ${err}`);
     }
   }
-  async addToCart(){
 
-    const userId = localStorage.getItem('userId');
-    try {
-      this.route.queryParams.subscribe(params => {
-        this.productId = params['id'];
-
-        if(this.productId == '' || this.productId == undefined) {
-          this.router.navigate(['/']);
-        }
-      });
-      const productId= this.productId
-
-      const addedProduct:any = await this.http.post(`http://localhost:3000/users/${userId}/add-to-cart`,{productId}).toPromise()
-      if(!addedProduct.ok){
-        this.router.navigate(['/']);
-      }
-      this.router.navigate(['/cart'])
-    } catch(error:any) {
-      console.error(error.message)
+  addToCart() {
+    if(!this.userId) {
+      alert('Inicia sesión para agregarlo a tu carrito');
+      return;
     }
+
+    this.userInfo.shoppingCart = [...this.userInfo.shoppingCart, this.productInfo];
+    this.userService.updateUser(this.userId, this.userInfo)
+      .then((product) => alert('Producto agregado al carrito'))
+      .catch((err) => console.error(`Error adding product to cart: ${err}`));
   }
 }

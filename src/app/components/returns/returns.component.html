@@ -6,27 +6,30 @@
             Devoluciones
         </div>
         <!-- Returns form -->
-        <form>
+        <form #form="ngForm" (ngSubmit)="submitRefund(form)">
           <!-- Order ID -->
-            <div class="form-floating mb-3">
-                <input type="number" class="form-control" id="floatingOrder" placeholder="Numero de orden">
-                <label for="floatingOrder">Numero de orden</label>
-            </div>
-            <!-- Return reason -->
-            <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingMotive" placeholder="Motivo de devolución">
-                <label for="floatingMotive">Motivo de devolución</label>
-            </div>
+          <div class="form-floating mb-3">
+            <input type="number" class="form-control" id="floatingOrder" placeholder="Numero de orden" #orderIdInput (input)="updateOrderId(orderIdInput.value)">
+            <label for="floatingOrder">Numero de orden</label>
+            <div *ngIf="form.submitted && !refunds._id" class="error">Número de orden inválido.</div>
+          </div>
+          <!-- Return reason -->
+          <div class="form-floating mb-3">
+            <input type="text" class="form-control" id="floatingMotive" placeholder="Motivo de devolución" #motiveInput (input)="updateMotive(motiveInput.value)">
+            <label for="floatingMotive">Motivo de devolución</label>
+            <div *ngIf="form.submitted && !refunds.motive" class="error">Este campo es obligatorio.</div>
+          </div>
             <!-- Return method -->
             <div class="form-group">
                 <label for="refund-method">Método de Reembolso:</label>
-                <select id="refund-method" name="refund-method" required>
+                <select id="refund-method" name="refund-method" required [(ngModel)]="selectedMethod">
                 <option value="">Seleccione un método de reembolso</option>
                 <option value="paypal">PayPal</option>
                 <option value="credit-card">Tarjeta de Crédito</option>
                 <option value="bank-transfer">Transferencia Bancaria</option>
                 </select>
             </div>
+            <div *ngIf="form.submitted && form.controls['refund-method'].invalid" class="error">Debes elegir un método.</div>
             <!-- Submit return -->
             <div class="flex">
                 <button type="submit">Enviar Devolución</button>

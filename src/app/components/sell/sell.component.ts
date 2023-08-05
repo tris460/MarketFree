@@ -21,6 +21,10 @@ export class SellComponent implements OnInit {
   categoriesData: Category[] = [];
   tagsData: Tags[] = [];
   promotionsData: Promotions[] = [];
+  showAlert: boolean = false;
+  selectedCategory: Category | null = null;
+  selectedTag: Tags | null = null;
+  selectedPromotion: Promotions | null = null;
 
   constructor(
     private productsService: ProductsService,

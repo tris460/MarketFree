@@ -1,42 +1,36 @@
 <app-header></app-header>
-<div class="container">
+<div class="main">
   <div class="product-list">
     <div class="title">
       <p>Carrito de compras</p>
     </div>
-    <div class="row">
+    <div class="row container-products-data">
       <div class="col-8">
-        <div class="row">
-          <div class="col-md-4" *ngFor="let product of shoppingCartProducts">
+        <div class="row" style="justify-content: center;">
+            <div class="no-data" *ngIf="productData.length == 0">
+              <p>No tienes productos agregados este momento</p>
+            </div>
             <!-- Dev card -->
-            <div class="card">
-              <img [src]="product.image" class="card-img-top" [alt]="product.name">
+            <div class="card" *ngFor="let p of productData" style="width: 220px; margin: 5px;">
+              <img [src]="p.image" class="card-img-top" [alt]="p.name">
               <div class="card-body">
-                <h5 class="card-title">{{ product.name }}</h5>
-                <p class="card-text">Precio: ${{ product.price }}</p>
-                <button type="button" class="btn btn-danger btn-sm mb-2">Eliminar</button>
-                <div class="counter">
-                  <!-- Dev Button -->
-                  <button class="btn btn-counter" (click)="decreaseQuantity1()">-</button>
-                  <span class="quantity">{{ quantity1 }}</span>
-                  <button class="btn btn-counter" (click)="increaseQuantity1()">+</button>
-                </div>
+                <h5 class="card-title">{{p.name}}</h5>
+                <p class="card-text">Precio: ${{p.price}}</p>
+                <button type="button" class="btn btn-danger btn-sm mb-2" (click)="deleteFromCart(p._id)">Eliminar</button>
               </div>
             </div>
-          </div>
         </div>
       </div>
-      <div class="col-4 ">
+      <div class="col-4">
         <div class="d-flex justify-content-end align-items-center">
-          <div class="card" style="width: 18rem;">
+          <div class="card">
             <!-- Resumen de Compra -->
             <div class="card-body">
               <h4 class="card-title">Resumen de compra</h4>
-              <h6 class="card-subtitle mb-2 text-body-secondary">Producto: {{ shoppingCartProducts.length }}</h6>
-              <!-- Calcula el total de la compra sumando los precios de los productos -->
-              <h6 class="card-subtitle mb-2 text-body-secondary">Total: ${{ calculateTotal() }}</h6>
-              <a [routerLink]="'/payment'" class="link">
-                <button type="button" class="btn btn-dark btn-sm m-2">
+              <h6 class="card-subtitle mb-2 text-body-secondary">Productos: {{productData.length}}</h6>
+              <h6 class="card-subtitle mb-2 text-body-secondary">Total: <b>${{total}}</b></h6>
+              <a (click)="continueToPayment()" class="link">
+                <button type="button" class="btn btn-dark btn-sm m-2" *ngIf="productData.length != 0">
                   Continuar compra
                 </button>
               </a>

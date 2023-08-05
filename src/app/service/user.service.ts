@@ -13,6 +13,10 @@ export class UserService {
     return this.http.get(`${this.url}/users`).toPromise();
   }
 
+  loginUser(user: UsersModel) {
+    return this.http.put(`${this.url}/login`, user).toPromise();
+  }
+
   registerUser(user: UsersModel) {
     return this.http.post(`${this.url}/users`, user).toPromise();
   }

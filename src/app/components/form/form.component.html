@@ -1,29 +1,40 @@
 <app-header></app-header>
-
-
 <!-- Register content -->
-<div class="container m-5">
-    <h4>Actualizar usuario</h4>
-    <!-- Form to register an user -->
-    <form  #form="ngForm" name="form">
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="floatingName" name="nombre"  required placeholder="Nombre" value={{userUpdated.name}} [(ngModel)]="userUpdated.name">
-        <label for="floatingNamet">Nombre</label>
-      </div>
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="floatingApellido" name="lastname"  required placeholder="Apellidos" value={{userUpdated.lastname}} [(ngModel)]="userUpdated.lastname">
-        <label for="floatingNamet">Apellidos</label>
-      </div>
-      <div class="form-floating mb-3">
-        <input type="email" class="form-control" id="floatingEmail" name="email"  required placeholder="Correo" value={{userUpdated.email}} [(ngModel)]="userUpdated.email">
-        <label for="floatingEmail">Correo</label>
-      </div>
-      <div class="form-floating mb-3">
-        <input type="password" class="form-control" id="floatingPassword" name="password"  required placeholder="Contraseña" value={{userUpdated.password}} [(ngModel)]="userUpdated.password">
-        <label for="floatingPassword">Contraseña</label>
-      </div>
-      <button type="submit" class="btn" (click)="updateUser()">Registrarme</button>
-    </form>
-  </div>
+<div class="form">
+  <div class="container main">
+    <div class="title">
+      <p>Actualizar usuario</p>
+    </div>
+      <!-- Form to register an user -->
+      <form #form="ngForm" name="form" class="form">
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="floatingName" name="nombre" required placeholder="Nombre" [(ngModel)]="userUpdated.name" (input)="updateName(form.controls['nombre'].value)">
+          <label for="floatingNamet">Nombre</label>
+          <div *ngIf="form.submitted && form.controls['nombre'].invalid" class="error">Este campo es obligatorio.</div>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="floatingApellido" name="lastname" required placeholder="Apellidos" [(ngModel)]="userUpdated.lastname" (input)="updateLastname(form.controls['lastname'].value)">
+          <label for="floatingNamet">Apellidos</label>
+          <div *ngIf="form.submitted && form.controls['lastname'].invalid" class="error">Este campo es obligatorio.</div>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control" id="floatingEmail" name="email" required placeholder="Correo" [(ngModel)]="userUpdated.email" (input)="updateEmail(form.controls['email'].value)">
+          <label for="floatingEmail">Correo</label>
+          <div *ngIf="form.submitted && form.controls['email'].invalid" class="error">Este campo es obligatorio.</div>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" id="floatingDireccion" name="direccion" required placeholder="Direccion" [(ngModel)]="userUpdated.address" (input)="updateAddress(form.controls['direccion'].value)">
+          <label for="floatingDireccion">Direccion</label>
+          <div *ngIf="form.submitted && form.controls['direccion'].invalid" class="error">Este campo es obligatorio.</div>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="password" class="form-control" id="floatingPassword" name="password" required placeholder="Contraseña" [(ngModel)]="userUpdated.password" (input)="updatePassword(form.controls['password'].value)">
+          <label for="floatingPassword">Contraseña</label>
+          <div *ngIf="form.submitted && form.controls['password'].invalid" class="error">Este campo es obligatorio.</div>
+        </div>
+        <button type="submit" class="btn m-3" (click)="updateUser()">Guardar</button>
+      </form>
+    </div>
+</div>
 
 <app-footer></app-footer>

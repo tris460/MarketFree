@@ -10,9 +10,26 @@
   text-align: center;
 }
 
+.row-700 {
+  display: none;
+  flex-direction: row;
+}
+
+
 .black {
   padding: 15px;
   background-color: #000;
   color: #fff;
   border-radius: 30px;
+}
+
+@media (max-width: 700px) {
+  .row {
+    display: none;
+  }
+
+  .row-700 {
+    display: flex;
+    flex-wrap: wrap;
+  }
 }
