@@ -27,14 +27,7 @@ export class ReturnsComponent implements OnInit {
 
   submitRefund(form: NgForm){
     this.showAlert = form.invalid;
-
-    // Simulación de validación del número de orden (reemplaza esta parte con tu lógica real)
-    if (!this.refunds._id) {
       alert("Orden no encontrada.");
-    } else {
-      alert("Devolución enviada correctamente.");
-      // Resto de la lógica para enviar la devolución si el número de orden existe
-    }
   }
 
 }
